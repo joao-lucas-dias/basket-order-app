@@ -6,13 +6,12 @@ const HomePage = () => {
 	const router = useRouter();
 
 	const goToStoreHandler = () => {
-		router.push("/store/categories");
+		router.push("/store");
 	};
 
 	return (
 		<>
 			<h1>Home Page!</h1>
-			<div>NavBar</div>
 			<section className={classes.section} id="hero-section">
 				<div id="main">
 					<h1>Fresh produce from our Garden to your Table</h1>
@@ -26,7 +25,7 @@ const HomePage = () => {
 			</section>
 			<section className={classes.section} id="benefits-section">
 				<h2>Why choose us?</h2>
-				<div className={classes['container-cols']}>
+				<div className={classes["container-cols"]}>
 					<div className={classes.column}>
 						<img></img>
 						<h3>Freshest Products</h3>
@@ -147,7 +146,6 @@ const HomePage = () => {
 				<p>Take the next step and experience the quality of our products for yourself.</p>
 				<button onClick={goToStoreHandler}>Visit our Store</button>
 			</section>
-			<div>Footer</div>
 		</>
 	);
 };
