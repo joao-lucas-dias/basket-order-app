@@ -1,0 +1,35 @@
+.section {
+  width: 100%;
+  border: 1px solid red;
+  padding-block: 6rem;
+  padding-inline: 8rem;
+}
+
+.section > h2 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+}
+
+.section p {
+  font-size: 1.5rem;
+}
+
+.container-cols {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  border: 1px solid green;
+}
+
+.column {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.column > h3 {
+  font-size: 3rem;
+}

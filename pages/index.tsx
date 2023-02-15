@@ -1,5 +1,7 @@
 import { useRouter } from "next/router";
 
+import classes from "../styles/home.module.css";
+
 const HomePage = () => {
 	const router = useRouter();
 
@@ -11,7 +13,7 @@ const HomePage = () => {
 		<>
 			<h1>Home Page!</h1>
 			<div>NavBar</div>
-			<section id="hero-section">
+			<section className={classes.section} id="hero-section">
 				<div id="main">
 					<h1>Fresh produce from our Garden to your Table</h1>
 					<p>
@@ -22,36 +24,38 @@ const HomePage = () => {
 				</div>
 				<img></img>
 			</section>
-			<section id="benefits-section">
+			<section className={classes.section} id="benefits-section">
 				<h2>Why choose us?</h2>
-				<div>
-					<img></img>
-					<h3>Freshest Products</h3>
-					<p>
-						Choose from a wide variety of fresh, healthy an in-season products directly
-						from our garden, with the guaranty that they are picked at their peak of
-						flavor.
-					</p>
-				</div>
-				<div>
-					<img></img>
-					<h3>Responsible Farming</h3>
-					<p>
-						At Local Greens, we make sure that our products are grown with the most
-						sustainable and responsible farming methods, making our products healthier for
-						you and for the environment.
-					</p>
-				</div>
-				<div>
-					<img></img>
-					<h3>Personalization</h3>
-					<p>
-						Don’t get stuck with products you don’t want. Personalize your basket to your
-						own liking by choosing only your favorite products.
-					</p>
+				<div className={classes['container-cols']}>
+					<div className={classes.column}>
+						<img></img>
+						<h3>Freshest Products</h3>
+						<p>
+							Choose from a wide variety of fresh, healthy an in-season products directly
+							from our garden, with the guaranty that they are picked at their peak of
+							flavor.
+						</p>
+					</div>
+					<div className={classes.column}>
+						<img></img>
+						<h3>Responsible Farming</h3>
+						<p>
+							At Local Greens, we make sure that our products are grown with the most
+							sustainable and responsible farming methods, making our products healthier
+							for you and for the environment.
+						</p>
+					</div>
+					<div className={classes.column}>
+						<img></img>
+						<h3>Personalization</h3>
+						<p>
+							Don’t get stuck with products you don’t want. Personalize your basket to
+							your own liking by choosing only your favorite products.
+						</p>
+					</div>
 				</div>
 			</section>
-			<section id="social-proof-section">
+			<section className={classes.section} id="social-proof-section">
 				<h2>Hear from some of our satisfied customers</h2>
 				<div>
 					<p>
@@ -115,7 +119,7 @@ const HomePage = () => {
 					</div>
 				</div>
 			</section>
-			<section id="features-section">
+			<section className={classes.section} id="features-section">
 				<h2>What we offer</h2>
 				<div>
 					<img></img>
@@ -138,7 +142,7 @@ const HomePage = () => {
 					<p>Possibility to schedule a visit to the garden and get to know us better.</p>
 				</div>
 			</section>
-			<section id="secondary-cta">
+			<section className={classes.section} id="secondary-cta">
 				<h2>Like what you see?</h2>
 				<p>Take the next step and experience the quality of our products for yourself.</p>
 				<button onClick={goToStoreHandler}>Visit our Store</button>
