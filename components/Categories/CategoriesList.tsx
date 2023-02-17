@@ -4,19 +4,23 @@ import CategoryItem from "./CategoryItem";
 const CATEGORIES: Category[] = [
 	{
 		id: "category1",
-		name: "Aromatic Herbs"
+		name: "Aromatic Herbs",
+		products: []
 	},
 	{
 		id: "category2",
-		name: "Vegetables"
+		name: "Vegetables",
+		products: []
 	},
 	{
 		id: "category3",
-		name: "Fruits"
+		name: "Fruits",
+		products: []
 	},
 	{
 		id: "category4",
-		name: "Other"
+		name: "Other",
+		products: []
 	}
 ];
 

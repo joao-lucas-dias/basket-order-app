@@ -1,18 +1,29 @@
 export default interface Product {
-  id: string;
-  title: {
-    name: string;
-    units: string;
-  };
-  units: string;
-  price: {
-    value: number;
-    unit: string;
-  }
-  quantity: {
-    unit: string;
-    min: number;
-    step: number;
-    max: number | null;
-  }
+	id: string;
+	sellingType: string; // "unit", "group-bunch", "group-bag", "weight-unit", "weight-weight", "volume-liter"
+	title: {
+		name: string;
+		description?: string;
+		sellingUnit: string; // "unit", "bunch", "bag", "weight-kg"
+		extraInfo?: {
+			baseUnit: string; // "unit", "molho", "bag"
+			correspUnit: {
+				amount: number;
+				unit: string; // "gr", "kg"
+			};
+		};
+	};
+	price: {
+		amount: number;
+		currency: string;
+		unit: string; // "unit", "bunch", "bag", "weight-kg"
+	};
+	quantityInfo: {
+		amount: {
+			min: number;
+			step: number;
+			max?: number;
+		};
+		unit: string; // "unit", "bunch", "bag", "weight-kg"
+	};
 }
