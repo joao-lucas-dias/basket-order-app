@@ -1,5 +1,5 @@
 import Category from "@/models/category";
-import CategoryItem from "./CategoryItem";
+import CategoryItem from "../CategoryItem/CategoryItem";
 
 import classes from "./CategoriesList.module.css";
 

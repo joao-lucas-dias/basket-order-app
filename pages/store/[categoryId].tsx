@@ -53,11 +53,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 		.find({ name: { $eq: context.params!.categoryId } }, { projection: { _id: 0, name: 0 } })
 		.toArray();
 
-	console.log(data);
-
 	const products: Product[] = data[0].products;
-
-	console.log(products);
 
 	client.close();
 

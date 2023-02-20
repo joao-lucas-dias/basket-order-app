@@ -1,4 +1,4 @@
-import CategoriesList from "@/components/Categories/CategoriesList";
+import CategoriesList from "@/components/Categories/CategoriesList/CategoriesList";
 import Category from "@/models/category";
 import { mongoDBConnectionString } from "@/secrets";
 import { MongoClient } from "mongodb";
