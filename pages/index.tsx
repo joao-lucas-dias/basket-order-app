@@ -11,7 +11,6 @@ const HomePage = () => {
 
 	return (
 		<>
-			<h1>Home Page!</h1>
 			<section className={classes.section} id="hero-section">
 				<div id="main">
 					<h1>Fresh produce from our Garden to your Table</h1>

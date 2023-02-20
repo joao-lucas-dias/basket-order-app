@@ -1,0 +1,57 @@
+.nav {
+	width: 100%;
+	padding-inline: 10em;
+	padding-block: 4em;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	border: 1px solid green;
+}
+
+.link {
+	text-decoration: none;
+	color: black;
+}
+
+.logo {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1em;
+}
+
+.logo > span {
+	height: 100%;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color: #89f08e;
+}
+
+.logo > h1 {
+	font-size: 3.5rem;
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+.menu {
+	font-size: 2rem;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 6rem;
+}
+
+.menu > li {
+	list-style: none;
+}
+
+.store {
+	font-weight: bold;
+	padding-inline: 2em;
+	padding-block: 0.5em;
+
+	border: 3px solid #89f08e;
+}
