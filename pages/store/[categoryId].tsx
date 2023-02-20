@@ -1,4 +1,4 @@
-import ProductsList from "@/components/Products/ProductsList";
+import ProductsList from "@/components/Products/ProductsList/ProductsList";
 import Product from "@/models/product";
 import { mongoDBConnectionString } from "@/secrets";
 import { MongoClient } from "mongodb";

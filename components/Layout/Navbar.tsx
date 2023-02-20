@@ -6,7 +6,7 @@ const Navbar = () => {
 		<nav className={classes.nav}>
 			<Link href="/" className={`${classes.logo} ${classes.link}`} >
 				<span></span>
-				<h1>Didly Squat</h1>
+				<h1>Diddly Squat</h1>
 			</Link>
 			<ul className={classes.menu}>
 				<li>
