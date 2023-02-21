@@ -50,16 +50,38 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 	const db = client.db();
 
-	const dataCollection = db.collection("data");
+	let collectionName: string = "";
 
-	const data = await dataCollection
-		.find(
-			{ name: { $eq: context.params!.categoryId } },
-			{ projection: { _id: 0, name: 0 } }
-		)
-		.toArray();
+	if (context.params!.categoryId) {
+		collectionName = context.params!.categoryId.toString();
+	}
 
-	const products: Product[] = data[0].products;
+	const dataCollection = db.collection(collectionName);
+
+	const data = await dataCollection.find().toArray();
+
+	const products: Product[] = data.map(({ _id, ...rest }) => {
+		console.log(rest);
+
+		const {
+			sellingType,
+			title,
+			price,
+			quantityInfo
+		} = rest;
+
+		const product: Product = {
+			id: _id.toString(),
+			sellingType: sellingType,
+			title: title,
+			price: price,
+			quantityInfo: quantityInfo
+		};
+
+		return product;
+	});
+
+	console.log(products);
 
 	client.close();
 
