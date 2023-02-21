@@ -6,14 +6,17 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import classes from "@/styles/products.module.css";
+
 const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 	const router = useRouter();
 
 	return (
 		<>
-			<h1>Products Page!</h1>
-			<Link href="/store">Categories</Link>
-			<p>{router.query.categoryId}</p>
+			<div className={classes.header}>
+				<Link href="/store">{`< Categories`}</Link>
+				<h1>{router.query.categoryId}</h1>
+			</div>
 			<ProductsList products={props.products} />
 		</>
 	);
@@ -40,7 +43,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 			}
 		]
 	};
-}
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
 	const client = await MongoClient.connect(mongoDBConnectionString);
@@ -50,7 +53,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const dataCollection = db.collection("data");
 
 	const data = await dataCollection
-		.find({ name: { $eq: context.params!.categoryId } }, { projection: { _id: 0, name: 0 } })
+		.find(
+			{ name: { $eq: context.params!.categoryId } },
+			{ projection: { _id: 0, name: 0 } }
+		)
 		.toArray();
 
 	const products: Product[] = data[0].products;
@@ -63,6 +69,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 		},
 		revalidate: 1
 	};
-}
+};
 
 export default ProductsPage;

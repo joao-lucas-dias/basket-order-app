@@ -21,7 +21,9 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 					<div></div>
 				</div>
 			</div>
-			<button className={classes.button}>ADD TO BASKET</button>
+			<button className={classes.button} onClick={() => console.log("clicked")}>
+				ADD TO BASKET
+			</button>
 		</li>
 	);
 };
