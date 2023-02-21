@@ -1,7 +1,4 @@
 .grid {
-  padding-inline: 10em;
-  padding-block: 4em;
-
   list-style: none;
 
   display: grid;

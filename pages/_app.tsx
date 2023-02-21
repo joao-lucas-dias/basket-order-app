@@ -6,7 +6,9 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Navbar />
-			<Component {...pageProps} />
+			<main>
+				<Component {...pageProps} />
+			</main>
 			<div>FOOTER</div>
 		</>
 	);

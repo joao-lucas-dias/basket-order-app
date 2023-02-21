@@ -7,7 +7,7 @@ const ProductsList: React.FC<{ products: Product[] }> = (props) => {
 	return (
 		<ul className={classes.grid}>
 			{props.products.map((product) => (
-				<ProductItem key={product.id} product={product}/>
+				<ProductItem key={product.id} product={product} />
 			))}
 		</ul>
 	);

@@ -19,16 +19,12 @@ export const getStaticProps: GetStaticProps = async () => {
 		.find({}, { projection: { name: 1 } })
 		.toArray();
 
-	console.log(data);
-
 	const categories: Category[] = data.map((element) => {
 		return {
 			id: element._id.toString(),
 			name: element.name
 		}
 	});
-
-	//console.log(categories);
 
 	client.close();
 
