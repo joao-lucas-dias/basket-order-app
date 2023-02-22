@@ -25,6 +25,13 @@
   height: 50%;
 }
 
+.display > input {
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 100%;
+}
+
 .buttons {
   width: 50%;
   justify-content: space-between;
