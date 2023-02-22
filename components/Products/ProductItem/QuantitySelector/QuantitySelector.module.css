@@ -1,0 +1,48 @@
+.wrapper {
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.container > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  width: 100%;
+  text-align: center;
+  justify-content: space-around;
+  padding: .5em;
+}
+
+.display > * {
+  height: 50%;
+}
+
+.buttons {
+  width: 50%;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.buttons > * {
+  height: 90%;
+  padding: .25em .5em;
+  border: none;
+
+  background-color: gray;
+}
+
+.increment {
+  border-radius: 0 5px 0 0;
+}
+
+.decrement {
+  border-radius: 0 0 5px 0;
+}

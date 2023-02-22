@@ -34,9 +34,14 @@
 
 .price-quantity {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
 
   border: 1px solid pink;
+}
+
+.price {
+  width: 50%;
 }
 
 .button {

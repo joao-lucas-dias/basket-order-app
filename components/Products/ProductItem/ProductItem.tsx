@@ -1,6 +1,7 @@
 import Product from "@/models/product";
 
 import classes from "./ProductItem.module.css";
+import QuantitySelector from "./QuantitySelector/QuantitySelector";
 
 const ProductItem: React.FC<{ product: Product }> = (props) => {
 	return (
@@ -18,7 +19,7 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 						<h4>{`${props.product.price.amount} ${props.product.price.currency}`}</h4>
 						<p>{`/ ${props.product.price.unit}`}</p>
 					</div>
-					<div></div>
+					<QuantitySelector quantityInfo={props.product.quantityInfo} />
 				</div>
 			</div>
 			<button className={classes.button} onClick={() => console.log("clicked")}>

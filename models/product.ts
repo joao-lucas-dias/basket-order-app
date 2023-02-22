@@ -1,3 +1,12 @@
+export interface QuantityInfo {
+	amount: {
+		min: number;
+		step: number;
+		max?: number;
+	};
+	unit: string; // "unit", "bunch", "bag", "weight-kg"
+}
+
 export default interface Product {
 	id: string;
 	sellingType: string; // "unit", "group-bunch", "group-bag", "weight-unit", "weight-weight", "volume-liter"
@@ -18,12 +27,5 @@ export default interface Product {
 		currency: string;
 		unit: string; // "unit", "bunch", "bag", "weight-kg"
 	};
-	quantityInfo: {
-		amount: {
-			min: number;
-			step: number;
-			max?: number;
-		};
-		unit: string; // "unit", "bunch", "bag", "weight-kg"
-	};
+	quantityInfo: QuantityInfo;
 }

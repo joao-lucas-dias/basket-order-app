@@ -61,8 +61,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const data = await dataCollection.find().toArray();
 
 	const products: Product[] = data.map(({ _id, ...rest }) => {
-		console.log(rest);
-
 		const {
 			sellingType,
 			title,
@@ -80,8 +78,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 		return product;
 	});
-
-	console.log(products);
 
 	client.close();
 
