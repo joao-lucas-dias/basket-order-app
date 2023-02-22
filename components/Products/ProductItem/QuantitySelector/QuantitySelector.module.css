@@ -42,6 +42,7 @@
   height: 90%;
   padding: .25em .5em;
   border: none;
+  cursor: pointer;
 
   background-color: gray;
 }
