@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import BasketButton from "./BasketButton/BasketButton";
 
 import classes from "./Navbar.module.css";
 
@@ -25,9 +26,9 @@ const Navbar = () => {
 						Contact Us
 					</Link>
 				</li>
-				<Link href="/store" className={classes.link}>
-					<li className={`${classes.store} ${classes.link}`}>{inStore ? "My Basket" : "Store"}</li>
-				</Link>
+				<li>
+					{inStore ? <BasketButton /> : <Link href="/store" className={`${classes.store} ${classes.link}`}>Store</Link>}
+				</li>
 			</ul>
 		</nav>
 	);
