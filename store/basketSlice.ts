@@ -1,4 +1,5 @@
 import Item from "@/models/basketItem";
+import { QuantityInfo } from "@/models/product";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type State = {
@@ -11,7 +12,8 @@ const initialState: State = {
 
 interface QuantityUpdate {
   id: string;
-  step: number;
+  type: string;
+  quantityInfo: QuantityInfo;
 }
 
 const basketSlice = createSlice({
@@ -22,11 +24,23 @@ const basketSlice = createSlice({
       state.items.push(action.payload);
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
-      state.items.filter((item) => item.name !== action.payload);
+      const item = state.items.findIndex((item) => item.name === action.payload);
+      state.items.splice(item, 1);
     },
     updateQuantity: (state, action: PayloadAction<QuantityUpdate>) => {
       const item = state.items.findIndex((item) => item.name === action.payload.id);
-      state.items[item].quantity += action.payload.step;
+
+      if (action.payload.type === "INC") {
+        let parsedMax: number = action.payload.quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
+
+        if (state.items[item].quantity < parsedMax) {
+          state.items[item].quantity += action.payload.quantityInfo.amount.step;
+        }
+      } else {
+        if (state.items[item].quantity > action.payload.quantityInfo.amount.min) {
+          state.items[item].quantity -= action.payload.quantityInfo.amount.step;
+        }
+      }
     },
   },
 });
