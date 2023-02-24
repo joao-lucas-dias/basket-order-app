@@ -27,7 +27,6 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 	};
 
 	const addToCartHandler = () => {
-		//TODO: dispatch action to add to cart store
 		dispatch(addToCart({
 			name: props.product.title.name,
 			sellingUnit: props.product.title.sellingUnit,
