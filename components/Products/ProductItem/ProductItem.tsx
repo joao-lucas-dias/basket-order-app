@@ -3,11 +3,14 @@ import { useState } from "react";
 import Product from "@/models/product";
 import classes from "./ProductItem.module.css";
 import QuantitySelector from "./QuantitySelector/QuantitySelector";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/store/basketSlice";
 
 const ProductItem: React.FC<{ product: Product }> = (props) => {
 	const { quantityInfo } = props.product;
 
 	const [quantity, setQuantity] = useState(quantityInfo.amount.min);
+	const dispatch = useDispatch();
 
 	const incrementHandler = () => {
 		let parsedMax: number = quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
@@ -25,7 +28,25 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 
 	const addToCartHandler = () => {
 		//TODO: dispatch action to add to cart store
-		console.log(quantity);
+		dispatch(addToCart({
+			name: props.product.title.name,
+			sellingUnit: props.product.title.sellingUnit,
+			quantity: quantity,
+			quantityInfo: {
+				amount: {
+					min: quantityInfo.amount.min,
+					step: quantityInfo.amount.step,
+					max: quantityInfo.amount.max
+				},
+				unit: quantityInfo.unit
+			},
+			price: 10,
+			priceInfo: {
+				amount: props.product.price.amount,
+				currency: props.product.price.currency,
+				unit: props.product.price.unit
+			}
+		}))
 	};
 
 	return (

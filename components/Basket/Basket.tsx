@@ -1,54 +1,18 @@
-import Item from "@/models/basketItem";
+import { RootState } from "@/store/store";
+import { useSelector } from "react-redux";
 import BasketItem from "./BasketItem/BasketItem";
 
-const ITEMS: Item[] = [
-	{
-		name: "Louro",
-		sellingUnit: "bunch",
-		price: 12.5,
-		priceInfo: {
-			amount: 0.5,
-			currency: "EUR",
-			unit: "unit"
-		},
-		quantity: 50,
-		quantityInfo: {
-			amount: {
-				min: 1,
-				step: 1,
-				max: 10
-			},
-			unit: "gr"
-		}
-	},
-	{
-		name: "Oregãos",
-		sellingUnit: "bunch",
-		price: 12.5,
-		priceInfo: {
-			amount: 0.5,
-			currency: "EUR",
-			unit: "unit"
-		},
-		quantity: 50,
-		quantityInfo: {
-			amount: {
-				min: 1,
-				step: 1,
-				max: 10
-			},
-			unit: "gr"
-		}
-	}
-];
-
 const Basket = () => {
+	const items = useSelector((state: RootState) => state.basket.items);
+
 	return (
-		<ul>
-			{ITEMS.map((item) => {
-				return <BasketItem key={item.name} item={item} />;
-			})}
-		</ul>
+		<>
+			<ul>
+				{items.map((item) => {
+					return <BasketItem key={item.name} item={item} />;
+				})}
+			</ul>
+		</>
 	);
 };
 
