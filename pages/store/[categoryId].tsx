@@ -8,15 +8,18 @@ import { useRouter } from "next/router";
 
 import classes from "@/styles/products.module.css";
 import Basket from "@/components/Basket/Basket";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
+	const showBasket = useSelector((state: RootState) => state.basket.showBasket);
 	const router = useRouter();
 
 	return (
 		<>
 			<div className={classes.header}>
 				<Link href="/store">{`< Categories`}</Link>
-				<Basket />
+				{showBasket && <Basket />}
 				<h1>{router.query.categoryId}</h1>
 			</div>
 			<ProductsList products={props.products} />

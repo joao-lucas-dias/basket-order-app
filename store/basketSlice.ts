@@ -3,10 +3,12 @@ import { QuantityInfo } from "@/models/product";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type State = {
+  showBasket: boolean;
   items: Item[];
 };
 
 const initialState: State = {
+  showBasket: false,
   items: [],
 };
 
@@ -20,6 +22,9 @@ const basketSlice = createSlice({
   name: "basket",
   initialState,
   reducers: {
+    toggleCartVisibility: (state) => {
+      state.showBasket = !state.showBasket
+    },
     addToCart: (state, action: PayloadAction<Item>) => {
       state.items.push(action.payload);
     },
@@ -45,6 +50,6 @@ const basketSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, updateQuantity } = basketSlice.actions;
+export const { toggleCartVisibility, addToCart, removeFromCart, updateQuantity } = basketSlice.actions;
 
 export default basketSlice.reducer;
