@@ -26,7 +26,20 @@ const basketSlice = createSlice({
       state.showBasket = !state.showBasket
     },
     addToCart: (state, action: PayloadAction<Item>) => {
-      state.items.push(action.payload);
+      const item = state.items.find((item) => item.name === action.payload.name);
+
+      if (item) {
+        const quantityInfo = item.quantityInfo;
+        const parsedMax: number = quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
+
+        if (item.quantity + action.payload.quantity > parsedMax) {
+          item.quantity = parsedMax;
+        } else {
+          item.quantity += action.payload.quantity;
+        }
+      } else {
+        state.items.push(action.payload);
+      }
     },
     removeFromCart: (state, action: PayloadAction<string>) => {
       const item = state.items.findIndex((item) => item.name === action.payload);

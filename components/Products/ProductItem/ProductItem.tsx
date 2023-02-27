@@ -13,7 +13,7 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 	const dispatch = useDispatch();
 
 	const incrementHandler = () => {
-		let parsedMax: number = quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
+		const parsedMax: number = quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
 
 		if (quantity < parsedMax) {
 			setQuantity((oldValue) => (oldValue += quantityInfo.amount.step));
