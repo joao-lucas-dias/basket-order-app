@@ -33,17 +33,18 @@ const basketSlice = createSlice({
       state.items.splice(item, 1);
     },
     updateQuantity: (state, action: PayloadAction<QuantityUpdate>) => {
-      const item = state.items.findIndex((item) => item.name === action.payload.id);
+      const item = state.items.find((item) => item.name === action.payload.id);
+      const quantityInfo = action.payload.quantityInfo;
 
       if (action.payload.type === "INC") {
-        let parsedMax: number = action.payload.quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
+        const parsedMax: number = quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
 
-        if (state.items[item].quantity < parsedMax) {
-          state.items[item].quantity += action.payload.quantityInfo.amount.step;
+        if (item!.quantity < parsedMax) {
+          item!.quantity += quantityInfo.amount.step;
         }
       } else {
-        if (state.items[item].quantity > action.payload.quantityInfo.amount.min) {
-          state.items[item].quantity -= action.payload.quantityInfo.amount.step;
+        if (item!.quantity > quantityInfo.amount.min) {
+          item!.quantity -= quantityInfo.amount.step;
         }
       }
     },
