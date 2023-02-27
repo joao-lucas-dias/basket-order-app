@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: .25em;
+  border: 1px solid red;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.info {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: gray;
+}

@@ -3,6 +3,7 @@
 }
 
 .container {
+  margin-top: .25em;
   display: flex;
   flex-direction: row;
   border: 1px solid black;
@@ -19,17 +20,21 @@
   text-align: center;
   justify-content: space-around;
   padding: .5em;
+  gap: .15em;
 }
 
 .display > * {
   height: 50%;
 }
 
-.display > input {
-  border: none;
-  outline: none;
-  text-align: center;
-  width: 100%;
+.quantity {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 1rem;
+  color: gray;
 }
 
 .buttons {

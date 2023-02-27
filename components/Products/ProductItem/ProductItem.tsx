@@ -5,6 +5,8 @@ import Product from "@/models/product";
 import classes from "./ProductItem.module.css";
 import QuantitySelector from "./QuantitySelector/QuantitySelector";
 import { addToCart } from "@/store/basketSlice";
+import Header from "./Header/Header";
+import PriceDisplay from "./PriceDisplay/PriceDisplay";
 
 const ProductItem: React.FC<{ product: Product }> = (props) => {
 	const { quantityInfo } = props.product;
@@ -56,17 +58,10 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 		<li className={classes.wrapper}>
 			<span className={classes.image}></span>
 			<div className={classes.body}>
-				<div className={classes.header}>
-					<h5>{props.product.title.name}</h5>
-					<h5>{props.product.title.sellingUnit}</h5>
-					<p>{`1 ${props.product.title.extraInfo?.baseUnit} = ${props.product.title.extraInfo?.correspUnit.amount} ${props.product.title.extraInfo?.correspUnit.unit}`}</p>
-				</div>
+				<Header product={props.product} />
 				<span className={classes.line}></span>
 				<div className={classes["price-quantity"]}>
-					<div className={classes.price}>
-						<h4>{`${props.product.price.amount} ${props.product.price.currency}`}</h4>
-						<p>{`/ ${props.product.price.unit}`}</p>
-					</div>
+					<PriceDisplay price={props.product.price} />
 					<QuantitySelector
 						quantity={quantity}
 						onIncrement={incrementHandler}

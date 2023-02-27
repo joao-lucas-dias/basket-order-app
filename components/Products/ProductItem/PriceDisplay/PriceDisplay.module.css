@@ -1,0 +1,17 @@
+.price {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.amount {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.unit {
+	font-size: 1.25rem;
+	color: gray;
+}

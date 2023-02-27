@@ -7,11 +7,11 @@ const QuantitySelector: React.FC<{
 }> = (props) => {
 	return (
 		<div className={classes.wrapper}>
-			QTY
+			<span>QTY</span>
 			<div className={classes.container}>
 				<div className={classes.display}>
-					<span>{props.quantity}</span>
-					<p>/ unit</p>
+					<span className={classes.quantity}>{props.quantity}</span>
+					<span className={classes.unit}>/ unit</span>
 				</div>
 				<div className={classes.buttons}>
 					<button onClick={props.onIncrement} className={classes.increment}>
