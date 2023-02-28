@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import BasketButton from "./BasketButton/BasketButton";
+import BasketOverlay from "./BasketOverlay/BasketOverlay";
 
 import classes from "./Navbar.module.css";
 
@@ -27,7 +27,7 @@ const Navbar = () => {
 					</Link>
 				</li>
 				<li>
-					{inStore ? <BasketButton /> : <Link href="/store" className={`${classes.store} ${classes.link}`}>Store</Link>}
+					{inStore ? <BasketOverlay /> : <Link href="/store" className={`${classes.store} ${classes.link}`}>Store</Link>}
 				</li>
 			</ul>
 		</nav>

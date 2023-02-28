@@ -1,4 +1,8 @@
 .nav {
+	position: sticky;
+	top: 0;
+	left: 0;
+	
 	width: 100%;
 	padding-inline: 10em;
 	padding-block: 4em;
@@ -7,7 +11,8 @@
 	flex-direction: row;
 	justify-content: space-between;
 
-	border: 1px solid green;
+	background-color: white;
+	border-bottom: 1px solid black;
 }
 
 .link {

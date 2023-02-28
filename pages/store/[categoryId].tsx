@@ -12,14 +12,12 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 
 const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
-	const showBasket = useSelector((state: RootState) => state.basket.showBasket);
 	const router = useRouter();
 
 	return (
 		<>
 			<div className={classes.header}>
 				<Link href="/store">{`< Categories`}</Link>
-				{showBasket && <Basket />}
 				<h1>{router.query.categoryId}</h1>
 			</div>
 			<ProductsList products={props.products} />
@@ -66,12 +64,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const data = await dataCollection.find().toArray();
 
 	const products: Product[] = data.map(({ _id, ...rest }) => {
-		const {
-			sellingType,
-			title,
-			price,
-			quantityInfo
-		} = rest;
+		const { sellingType, title, price, quantityInfo } = rest;
 
 		const product: Product = {
 			id: _id.toString(),

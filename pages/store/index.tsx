@@ -1,4 +1,3 @@
-import Basket from "@/components/Basket/Basket";
 import CategoriesList from "@/components/Categories/CategoriesList/CategoriesList";
 import Category from "@/models/category";
 import { mongoDBConnectionString } from "@/secrets";
@@ -8,14 +7,7 @@ import { GetStaticProps } from "next";
 import { useSelector } from "react-redux";
 
 const CategoriesPage: React.FC<{ categories: Category[] }> = (props) => {
-	const showBasket = useSelector((state: RootState) => state.basket.showBasket);
-
-	return (
-		<>
-			{showBasket && <Basket />}
-			<CategoriesList categories={props.categories} />
-		</>
-	);
+	return <CategoriesList categories={props.categories} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {
