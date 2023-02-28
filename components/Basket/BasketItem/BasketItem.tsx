@@ -1,7 +1,8 @@
 import Item from "@/models/basketItem";
 import { removeFromCart } from "@/store/basketSlice";
 import { useDispatch } from "react-redux";
-import ItemQuantitySelector from "./ItemQuantitySelector/ItemQuantitySelector";
+
+import classes from "./BasketItem.module.css";
 
 const BasketItem: React.FC<{ item: Item }> = (props) => {
 	const dispatch = useDispatch();
@@ -11,14 +12,27 @@ const BasketItem: React.FC<{ item: Item }> = (props) => {
 	};
 
 	return (
-		<li>
-			<h1>{props.item.name}</h1>
-			<ItemQuantitySelector
-				id={props.item.name}
-				quantity={props.item.quantity}
-				quantityInfo={props.item.quantityInfo}
-			/>
-			<button onClick={removeItemHandler}>Remove</button>
+		<li className={classes.wrapper}>
+			<span className={classes.image}></span>
+			<div className={classes.body}>
+				<div>
+					<span className={classes.name}>
+						{`${props.item.name} (${props.item.sellingUnit})`}
+					</span>
+					<span className={classes.quantity}>{`Quantity: ${props.item.quantity}`}</span>
+				</div>
+				<div>
+					<button onClick={removeItemHandler} className={classes.button}>
+						X
+					</button>
+					<div className={classes["price-info"]}>
+						<span className={classes.info}>
+							{props.item.priceInfo.amount} / {props.item.priceInfo.unit}
+						</span>
+						<span className={classes.price}>{props.item.price}</span>
+					</div>
+				</div>
+			</div>
 		</li>
 	);
 };

@@ -1,9 +1,17 @@
 .wrapper {
-	border: 1px solid red;
 	position: fixed;
 	right: 10rem;
 	top: 10rem;
-	background-color: white;
 	z-index: 1000;
+	max-height: calc(100vh - 10rem);
+	overflow-y: scroll;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	padding: 1rem;
+	border: 1px solid red;
+	background-color: burlywood;
 	list-style: none;
 }
