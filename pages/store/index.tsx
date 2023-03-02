@@ -1,10 +1,8 @@
 import CategoriesList from "@/components/Categories/CategoriesList/CategoriesList";
 import Category from "@/models/category";
 import { mongoDBConnectionString } from "@/secrets";
-import { RootState } from "@/store/store";
 import { MongoClient } from "mongodb";
 import { GetStaticProps } from "next";
-import { useSelector } from "react-redux";
 
 const CategoriesPage: React.FC<{ categories: Category[] }> = (props) => {
 	return <CategoriesList categories={props.categories} />;

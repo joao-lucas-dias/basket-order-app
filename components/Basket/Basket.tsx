@@ -9,9 +9,11 @@ const Basket = () => {
 
 	return (
 		<ul className={classes.wrapper}>
-			{items.map((item) => {
-				return <BasketItem key={item.name} item={item} />;
-			})}
+			{items.length === 0
+				? "Basket is Empty!"
+				: items.map((item) => {
+						return <BasketItem key={item.name} item={item} />;
+				  })}
 		</ul>
 	);
 };

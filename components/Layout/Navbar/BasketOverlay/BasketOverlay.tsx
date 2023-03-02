@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 import BasketButton from "./BasketButton/BasketButton";
 
 const BasketOverlay = () => {
-	const showBasket = useSelector((state: RootState) => state.basket.showBasket);
+	const basket = useSelector((state: RootState) => state.basket);
 
 	return (
 		<>
-			<BasketButton />
-			{showBasket && <Basket />}
+			<BasketButton numOfItems={basket.items.length} />
+			{basket.showBasket && <Basket />}
 		</>
 	);
 };

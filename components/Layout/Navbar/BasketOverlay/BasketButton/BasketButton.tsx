@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import classes from "./BasketButton.module.css";
 
-const BasketButton = () => {
+const BasketButton: React.FC<{ numOfItems: number }> = (props) => {
 	const dispatch = useDispatch();
   
   const toggleBasketHandler = () => {
@@ -13,7 +13,7 @@ const BasketButton = () => {
 	return (
 		<button onClick={toggleBasketHandler} className={classes.button}>
 			My Basket
-			{<span className={classes.badge}>{5}</span>}
+			{<span className={classes.badge}>{props.numOfItems}</span>}
 		</button>
 	);
 };
