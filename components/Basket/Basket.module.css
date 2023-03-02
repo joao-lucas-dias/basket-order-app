@@ -4,14 +4,19 @@
 	top: 10rem;
 	z-index: 1000;
 	max-height: calc(100vh - 10rem);
-	overflow-y: scroll;
 
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
 
-	padding: 1rem;
 	border: 1px solid red;
 	background-color: burlywood;
+}
+
+.item-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 1rem;
 	list-style: none;
+	overflow-y: scroll;
 }
