@@ -64,12 +64,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const data = await dataCollection.find().toArray();
 
 	const products: Product[] = data.map(({ _id, ...rest }) => {
-		const { sellingType, title, price, quantityInfo } = rest;
+		const { header, description, price, quantityInfo } = rest;
 
 		const product: Product = {
 			id: _id.toString(),
-			sellingType: sellingType,
-			title: title,
+			header: header,
+			description: description,
 			price: price,
 			quantityInfo: quantityInfo
 		};

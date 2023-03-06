@@ -31,8 +31,8 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 	const addToCartHandler = () => {
 		dispatch(
 			addToCart({
-				name: props.product.title.name,
-				sellingUnit: props.product.title.sellingUnit,
+				name: props.product.header.name,
+				sellingUnit: props.product.header.sellingUnit,
 				quantity: quantity,
 				quantityInfo: {
 					amount: {
@@ -45,7 +45,6 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 				price: 10,
 				priceInfo: {
 					amount: props.product.price.amount,
-					currency: props.product.price.currency,
 					unit: props.product.price.unit
 				}
 			})
@@ -64,6 +63,7 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 					<PriceDisplay price={props.product.price} />
 					<QuantitySelector
 						quantity={quantity}
+						quantityInfo={quantityInfo}
 						onIncrement={incrementHandler}
 						onDecrement={decrementHandler}
 					/>

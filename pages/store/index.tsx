@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	const db = client.db();
 
-	const dataCollection = db.collection("data");
+	const dataCollection = db.collection("categories");
 
 	const data = await dataCollection.find({}, { projection: { name: 1 } }).toArray();
 

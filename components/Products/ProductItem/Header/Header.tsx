@@ -2,15 +2,21 @@ import Product from "@/models/product";
 import classes from "./Header.module.css";
 
 const Header: React.FC<{ product: Product }> = (props) => {
-  const title = props.product.title;
-  const extraInfo = title.extraInfo;
+  const header = props.product.header;
+  const unitInfo = header.unitInfo;
+
+	const parseUnit = (unit: string) => {
+		const split = unit.split("-");
+
+		return split[1] ?? split[0];
+	};
 
 	return (
 		<div className={classes.header}>
-			<span className={classes.name}>{`${title.name} (${title.sellingUnit})`}</span>
-			{Object.keys(title.extraInfo!).length > 0 && (
+			<span className={classes.name}>{`${header.name} (${parseUnit(header.sellingUnit)})`}</span>
+			{Object.values(unitInfo)[0] !== "" && (
 				<span className={classes.info}>
-          {`1 ${extraInfo?.baseUnit} = ${extraInfo?.correspUnit.amount} ${extraInfo?.correspUnit.unit}`}
+          {`1 ${unitInfo.base} = ${unitInfo.comp.amount} ${unitInfo.comp.unit}`}
         </span>
 			)}
 		</div>

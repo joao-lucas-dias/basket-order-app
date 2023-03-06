@@ -8,7 +8,6 @@ export default interface Item {
   price: number;
   priceInfo: {
     amount: number;
-    currency: string;
     unit: string;
   }
 }

@@ -1,7 +1,9 @@
+import { QuantityInfo } from "@/models/product";
 import classes from "./QuantitySelector.module.css";
 
 const QuantitySelector: React.FC<{
-	quantity: number;
+	quantity: number, 
+	quantityInfo: QuantityInfo,
 	onIncrement: () => void;
 	onDecrement: () => void;
 }> = (props) => {
@@ -11,7 +13,7 @@ const QuantitySelector: React.FC<{
 			<div className={classes.container}>
 				<div className={classes.display}>
 					<span className={classes.quantity}>{props.quantity}</span>
-					<span className={classes.unit}>/ unit</span>
+					<span className={classes.unit}>{props.quantityInfo.unit}</span>
 				</div>
 				<div className={classes.buttons}>
 					<button onClick={props.onIncrement} className={classes.increment}>

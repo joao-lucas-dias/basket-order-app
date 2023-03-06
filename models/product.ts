@@ -1,31 +1,33 @@
+export interface UnitInfo {
+	base: string;
+	comp: {
+		amount: number | string;
+		unit: string;
+	};
+}
+
+export interface Header {
+	name: string;
+	sellingUnit: string;
+	unitInfo: UnitInfo;
+}
+
 export interface QuantityInfo {
 	amount: {
 		min: number;
 		step: number;
-		max?: number;
+		max: number;
 	};
-	unit: string; // "unit", "bunch", "bag", "weight-kg"
+	unit: string;
 }
 
 export default interface Product {
 	id: string;
-	sellingType: string; // "unit", "group-bunch", "group-bag", "weight-unit", "weight-weight", "volume-liter"
-	title: {
-		name: string;
-		description?: string;
-		sellingUnit: string; // "unit", "bunch", "bag", "weight-kg"
-		extraInfo?: {
-			baseUnit: string; // "unit", "molho", "bag"
-			correspUnit: {
-				amount: number;
-				unit: string; // "gr", "kg"
-			};
-		};
-	};
+	header: Header;
+	description: string;
 	price: {
 		amount: number;
-		currency: string;
-		unit: string; // "unit", "bunch", "bag", "weight-kg"
+		unit: string;
 	};
 	quantityInfo: QuantityInfo;
 }
