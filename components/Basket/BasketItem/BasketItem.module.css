@@ -32,6 +32,10 @@
 	font-weight: bold;
 }
 
+.unit-info {
+	font-size: 1.1rem;
+}
+
 .quantity {
 	font-size: 1.2rem;
 }
@@ -48,6 +52,7 @@
 
 .price {
 	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .button {

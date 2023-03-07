@@ -9,7 +9,7 @@ const QuantitySelector: React.FC<{
 }> = (props) => {
 	return (
 		<div className={classes.wrapper}>
-			<span>QTY</span>
+			<span>Quantity</span>
 			<div className={classes.container}>
 				<div className={classes.display}>
 					<span className={classes.quantity}>{props.quantity}</span>
