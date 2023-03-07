@@ -42,7 +42,7 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 					},
 					unit: quantityInfo.unit
 				},
-				price: 10,
+				price: props.product.price.amount * quantity,
 				priceInfo: {
 					amount: props.product.price.amount,
 					unit: props.product.price.unit
