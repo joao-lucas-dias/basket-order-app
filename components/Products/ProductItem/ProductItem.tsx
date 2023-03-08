@@ -15,11 +15,7 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 	const dispatch = useDispatch();
 
 	const incrementHandler = () => {
-		const parsedMax: number = quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
-
-		if (quantity < parsedMax) {
-			setQuantity((oldValue) => (oldValue += quantityInfo.amount.step));
-		}
+		setQuantity((oldValue) => (oldValue += quantityInfo.amount.step));
 	};
 
 	const decrementHandler = () => {
@@ -31,18 +27,11 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 	const addToCartHandler = () => {
 		dispatch(
 			addToCart({
+				id: `item-${props.product.id}`,
 				name: props.product.header.name,
 				sellingUnit: props.product.header.sellingUnit,
 				quantity: quantity,
-				quantityInfo: {
-					amount: {
-						min: quantityInfo.amount.min,
-						step: quantityInfo.amount.step,
-						max: quantityInfo.amount.max
-					},
-					unit: quantityInfo.unit
-				},
-				price: props.product.price.amount * quantity,
+				quantityInfo: quantityInfo,
 				priceInfo: {
 					amount: props.product.price.amount,
 					unit: props.product.price.unit

@@ -3,88 +3,86 @@ import { QuantityInfo } from "@/models/product";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type State = {
-  showBasket: boolean;
-  items: Item[];
-  cost: {
-    subtotal: number;
-    delivery: number;
-    total: number;
-  }
+	showBasket: boolean;
+	items: Item[];
+	cost: {
+		subtotal: number;
+		delivery: number;
+	};
 };
 
 const initialState: State = {
-  showBasket: false,
-  items: [],
-  cost: {
-    subtotal: 0,
-    delivery: 5,
-    total: 0
-  }
+	showBasket: false,
+	items: [],
+	cost: {
+		subtotal: 0,
+		delivery: 5
+	}
 };
 
 interface QuantityUpdate {
-  id: string;
-  type: string;
-  price: number;
-  quantityInfo: QuantityInfo;
+	id: string;
+	type: string;
+	quantityInfo: QuantityInfo;
 }
 
 const basketSlice = createSlice({
-  name: "basket",
-  initialState,
-  reducers: {
-    toggleCartVisibility: (state) => {
-      state.showBasket = !state.showBasket
-    },
-    addToCart: (state, action: PayloadAction<Item>) => {
-      const item = state.items.find((item) => item.name === action.payload.name);
+	name: "basket",
+	initialState,
+	reducers: {
+		toggleCartVisibility: (state) => {
+			state.showBasket = !state.showBasket;
+		},
+		addToCart: (state, action: PayloadAction<Item>) => {
+			// Check if Item is already in the basket
 
-      if (item) {
-        const quantityInfo = item.quantityInfo;
-        const parsedMax: number = quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
+			const item = state.items.find((item) => item.id === action.payload.id);
+      const payloadItem = action.payload;
 
-        if (item.quantity + action.payload.quantity > parsedMax) {
-          const parsedQty = parsedMax - item.quantity;
+			if (item) {
+				// If it is, update quantity and basket value accordingly
 
-          item.quantity = parsedMax;
-          item.price = parsedMax * item.priceInfo.amount;
-          state.cost.subtotal += parsedQty * item.priceInfo.amount;
-        } else {
-          item.quantity += action.payload.quantity;
-          item.price += action.payload.price;
-          state.cost.subtotal += action.payload.price;
-        }
-      } else {
-        state.items.push(action.payload);
-        state.cost.subtotal += action.payload.price;
-      }
-    },
-    removeFromCart: (state, action: PayloadAction<string>) => {
-      const item = state.items.findIndex((item) => item.name === action.payload);
-      const deletedItem = state.items.splice(item, 1);
-      state.cost.subtotal -= deletedItem[0].price;
-    },
-    updateQuantity: (state, action: PayloadAction<QuantityUpdate>) => {
-      const item = state.items.find((item) => item.name === action.payload.id);
-      const quantityInfo = action.payload.quantityInfo;
+        const oldQuantity = item.quantity;
+        const quantityToAdd = payloadItem.quantity;
+        const newQuantity = oldQuantity + quantityToAdd;
+        item.quantity = newQuantity;
 
-      if (action.payload.type === "INC") {
-        const parsedMax: number = quantityInfo.amount.max ?? Number.MAX_SAFE_INTEGER;
+        const oldSubtotal = state.cost.subtotal;
+        const priceToAdd = payloadItem.quantity * payloadItem.priceInfo.amount;
+        const newSubtotal = oldSubtotal + priceToAdd;
+				state.cost.subtotal = newSubtotal;
+			} else {
+				// If it isn't, add the Item to the basket
 
-        if (item!.quantity < parsedMax) {
-          item!.quantity += quantityInfo.amount.step;
-          item!.price += action.payload.price * quantityInfo.amount.step;
-        }
-      } else {
-        if (item!.quantity > quantityInfo.amount.min) {
-          item!.quantity -= quantityInfo.amount.step;
-          item!.price -= action.payload.price * quantityInfo.amount.step;
-        }
-      }
-    },
-  },
+				state.items.push(payloadItem);
+
+				const oldSubtotal = state.cost.subtotal;
+        const priceToAdd = payloadItem.quantity * payloadItem.priceInfo.amount;
+        const newSubtotal = oldSubtotal + priceToAdd;
+				state.cost.subtotal = newSubtotal;
+			}
+		},
+		removeFromCart: (state, action: PayloadAction<string>) => {
+			const item = state.items.findIndex((item) => item.name === action.payload);
+			const deletedItem = state.items.splice(item, 1);
+      state.cost.subtotal -= deletedItem[0].quantity * deletedItem[0].priceInfo.amount;
+		},
+		updateQuantity: (state, action: PayloadAction<QuantityUpdate>) => {
+			const item = state.items.find((item) => item.name === action.payload.id);
+			const quantityInfo = action.payload.quantityInfo;
+
+			if (action.payload.type === "INC") {
+				item!.quantity += quantityInfo.amount.step;
+			} else {
+				if (item!.quantity > quantityInfo.amount.min) {
+					item!.quantity -= quantityInfo.amount.step;
+				}
+			}
+		}
+	}
 });
 
-export const { toggleCartVisibility, addToCart, removeFromCart, updateQuantity } = basketSlice.actions;
+export const { toggleCartVisibility, addToCart, removeFromCart, updateQuantity} =
+	basketSlice.actions;
 
 export default basketSlice.reducer;

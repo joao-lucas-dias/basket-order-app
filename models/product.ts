@@ -16,7 +16,6 @@ export interface QuantityInfo {
 	amount: {
 		min: number;
 		step: number;
-		max: number;
 	};
 	unit: string;
 }

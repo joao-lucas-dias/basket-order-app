@@ -1,5 +1,6 @@
 import Item from "@/models/basketItem";
 import { removeFromCart } from "@/store/basketSlice";
+import { euro } from "@/store/utils";
 import { useDispatch } from "react-redux";
 
 import classes from "./BasketItem.module.css";
@@ -24,7 +25,9 @@ const BasketItem: React.FC<{ item: Item }> = (props) => {
 				<div>
 					<span>
 						<span className={classes.name}>{props.item.name}</span>
-						<span className={classes["unit-info"]}>{` (${parseUnit(props.item.sellingUnit)})`}</span>
+						<span className={classes["unit-info"]}>{` (${parseUnit(
+							props.item.sellingUnit
+						)})`}</span>
 					</span>
 					<span className={classes.quantity}>{`Quantity: ${props.item.quantity}`}</span>
 				</div>
@@ -34,9 +37,11 @@ const BasketItem: React.FC<{ item: Item }> = (props) => {
 					</button>
 					<div className={classes["price-info"]}>
 						<span className={classes.info}>
-							{props.item.priceInfo.amount} € / {props.item.priceInfo.unit}
+							{euro.format(props.item.priceInfo.amount)} / {props.item.priceInfo.unit}
 						</span>
-						<span className={classes.price}>{props.item.price} €</span>
+						<span className={classes.price}>
+							{euro.format(props.item.quantity * props.item.priceInfo.amount)}
+						</span>
 					</div>
 				</div>
 			</div>
