@@ -16,14 +16,21 @@
 .body {
 	width: 100%;
 	display: flex;
-  justify-content: space-between;
+	justify-content: space-between;
 	gap: 0.5em;
 }
 
 .body > * {
 	display: flex;
-  flex-direction: column;
+	flex-direction: column;
 	justify-content: space-between;
+}
+
+.header {
+	max-width: 12ch;
+	word-wrap: break-word;
+	vertical-align: top;
+	line-height: 60%;
 }
 
 .name {
@@ -60,5 +67,5 @@
 	border: none;
 	align-self: flex-end;
 	cursor: pointer;
-  font-size: 1.2rem;
+	font-size: 1.2rem;
 }

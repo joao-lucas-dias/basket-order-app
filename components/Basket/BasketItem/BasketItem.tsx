@@ -23,7 +23,7 @@ const BasketItem: React.FC<{ item: Item }> = (props) => {
 			<span className={classes.image}></span>
 			<div className={classes.body}>
 				<div>
-					<span>
+					<span className={classes.header}>
 						<span className={classes.name}>{props.item.name}</span>
 						<span className={classes["unit-info"]}>{` (${parseUnit(
 							props.item.sellingUnit
