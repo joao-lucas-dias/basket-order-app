@@ -1,6 +1,7 @@
 import Item from "@/models/basketItem";
 import { removeFromCart } from "@/store/basketSlice";
 import { euro } from "@/store/utils";
+import Image from "next/image";
 import { useDispatch } from "react-redux";
 
 import classes from "./BasketItem.module.css";
@@ -20,7 +21,14 @@ const BasketItem: React.FC<{ item: Item }> = (props) => {
 
 	return (
 		<li className={classes.wrapper}>
-			<span className={classes.image}></span>
+			<Image
+				src={`/images/products/${""}/${props.item.image.url}`}
+				alt={props.item.image.alt}
+				className={classes.image}
+				width={2000}
+				height={2000}
+				quality={100}
+			/>
 			<div className={classes.body}>
 				<div>
 					<span className={classes.header}>

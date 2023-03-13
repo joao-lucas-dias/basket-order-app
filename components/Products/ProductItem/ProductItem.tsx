@@ -7,6 +7,7 @@ import QuantitySelector from "./QuantitySelector/QuantitySelector";
 import { addToCart } from "@/store/basketSlice";
 import Header from "./Header/Header";
 import PriceDisplay from "./PriceDisplay/PriceDisplay";
+import Image from "next/image";
 
 const ProductItem: React.FC<{ product: Product }> = (props) => {
 	const { quantityInfo } = props.product;
@@ -28,6 +29,7 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 		dispatch(
 			addToCart({
 				id: `item-${props.product.id}`,
+				image: props.product.image,
 				name: props.product.header.name,
 				sellingUnit: props.product.header.sellingUnit,
 				quantity: quantity,
@@ -44,7 +46,15 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 
 	return (
 		<li className={classes.wrapper}>
-			<span className={classes.image}></span>
+			<Image
+				src={`/images/products${props.product.image.url}`}
+				alt={props.product.image.alt}
+				className={classes.image}
+				width={2000}
+				height={2000}
+				quality={100}
+				priority
+			/>
 			<div className={classes.body}>
 				<Header product={props.product} />
 				<span className={classes.line}></span>

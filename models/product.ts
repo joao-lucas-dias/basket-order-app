@@ -22,6 +22,10 @@ export interface QuantityInfo {
 
 export default interface Product {
 	id: string;
+	image: {
+		url: string;
+		alt: string;
+	};
 	header: Header;
 	description: string;
 	price: {

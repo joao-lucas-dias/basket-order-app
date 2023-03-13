@@ -15,12 +15,13 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	const dataCollection = db.collection("categories");
 
-	const data = await dataCollection.find({}, { projection: { name: 1 } }).toArray();
+	const data = await dataCollection.find({}, { projection: { name: 1, image: 1 } }).toArray();
 
 	const categories: Category[] = data.map((element) => {
 		return {
 			id: element._id.toString(),
-			name: element.name
+			name: element.name,
+			image: element.image
 		};
 	});
 

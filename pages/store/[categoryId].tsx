@@ -51,6 +51,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 				params: {
 					categoryId: "fruits"
 				}
+			},
+			{
+				params: {
+					categoryId: "aromatics"
+				}
 			}
 		]
 	};
@@ -72,10 +77,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 	const data = await dataCollection.find().toArray();
 
 	const products: Product[] = data.map(({ _id, ...rest }) => {
-		const { header, description, price, quantityInfo } = rest;
+		const { image, header, description, price, quantityInfo } = rest;
 
 		const product: Product = {
 			id: _id.toString(),
+			image: image,
 			header: header,
 			description: description,
 			price: price,
