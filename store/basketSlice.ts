@@ -35,6 +35,10 @@ const basketSlice = createSlice({
 		toggleCartVisibility: (state) => {
 			state.showBasket = !state.showBasket;
 		},
+		toggleCategoryVisibility: (state, action: PayloadAction<string>) => {
+			const category = state.categories.find((category) => category.name === action.payload);
+			category!.showCategory = !category!.showCategory;
+		},
 		addToCart: (state, action: PayloadAction<BasketItem>) => {
 			const payloadCategory = action.payload.category;
 			const payloadItem = action.payload;
@@ -46,6 +50,7 @@ const basketSlice = createSlice({
 				const newItems: BasketItem[] = [action.payload];
 
 				const newCategory: BasketCategory = {
+					showCategory: true,
 					name: payloadCategory,
 					items: newItems
 				};
@@ -113,7 +118,7 @@ const basketSlice = createSlice({
 	}
 });
 
-export const { toggleCartVisibility, addToCart, removeFromCart, updateQuantity } =
+export const { toggleCartVisibility, toggleCategoryVisibility, addToCart, removeFromCart, updateQuantity } =
 	basketSlice.actions;
 
 export default basketSlice.reducer;

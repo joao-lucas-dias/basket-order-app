@@ -1,6 +1,7 @@
 import { QuantityInfo } from "./product";
 
 export interface BasketCategory {
+  showCategory: boolean;
   name: string;
   items: BasketItem[];
 }
