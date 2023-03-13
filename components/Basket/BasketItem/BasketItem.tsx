@@ -22,7 +22,7 @@ const BasketItem: React.FC<{ item: Item }> = (props) => {
 	return (
 		<li className={classes.wrapper}>
 			<Image
-				src={`/images/products/${""}/${props.item.image.url}`}
+				src={`/images/products${props.item.image.url}`}
 				alt={props.item.image.alt}
 				className={classes.image}
 				width={2000}

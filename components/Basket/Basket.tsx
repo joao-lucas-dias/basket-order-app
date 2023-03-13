@@ -20,7 +20,7 @@ const Basket = () => {
 				<>
 					<ul className={classes["item-list"]}>
 						{items.map((item) => {
-							return <BasketItem key={item.name} item={item} />;
+							return <BasketItem key={item.id} item={item} />;
 						})}
 					</ul>
 					<Checkout onCheckout={checkoutHandler} />
