@@ -1,7 +1,6 @@
 import { BasketCategory } from "@/models/basket";
 import { toggleCategoryVisibility } from "@/store/basketSlice";
-import { RootState } from "@/store/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import BasketItem from "../BasketItem/BasketItem";
 
 import classes from "./BasketCategory.module.css";
@@ -19,7 +18,7 @@ const BasketCategory: React.FC<{ category: BasketCategory }> = (props) => {
 				<span
 					className={classes.label}
 				>{`${props.category.name} (${props.category.items.length})`}</span>
-				<span className={classes.toggle}></span>
+				<span className={props.category.showCategory ? classes["toggle-open"] : classes["toggle-close"]}></span>
 			</button>
 			{props.category.showCategory && (
 				<ul className={classes["item-list"]}>
