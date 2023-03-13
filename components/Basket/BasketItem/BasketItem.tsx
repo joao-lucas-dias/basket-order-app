@@ -1,4 +1,4 @@
-import Item from "@/models/basketItem";
+import { BasketItem } from "@/models/basket";
 import { removeFromCart } from "@/store/basketSlice";
 import { euro } from "@/store/utils";
 import Image from "next/image";
@@ -6,11 +6,14 @@ import { useDispatch } from "react-redux";
 
 import classes from "./BasketItem.module.css";
 
-const BasketItem: React.FC<{ item: Item }> = (props) => {
+const BasketItem: React.FC<{ item: BasketItem }> = (props) => {
 	const dispatch = useDispatch();
 
 	const removeItemHandler = () => {
-		dispatch(removeFromCart(props.item.name));
+		dispatch(removeFromCart({
+			itemId: props.item.id,
+			category: props.item.category
+		}));
 	};
 
 	const parseUnit = (unit: string) => {

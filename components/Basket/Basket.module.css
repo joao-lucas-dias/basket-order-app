@@ -13,11 +13,11 @@
 	background-color: burlywood;
 }
 
-.item-list {
+.category-list {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
-	padding: 1rem;
+	gap: 0.5em;
 	list-style: none;
 	overflow-y: scroll;
+	padding: 1rem;
 }

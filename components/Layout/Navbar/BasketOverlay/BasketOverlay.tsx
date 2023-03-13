@@ -6,9 +6,19 @@ import BasketButton from "./BasketButton/BasketButton";
 const BasketOverlay = () => {
 	const basket = useSelector((state: RootState) => state.basket);
 
+	const getNumberOfBasketItems = () => {
+		let counter: number = 0;
+
+		for (var category of basket.categories) {
+			counter += category.items.length;
+		}
+
+		return counter;
+	};
+
 	return (
 		<>
-			<BasketButton numOfItems={basket.items.length} />
+			<BasketButton numOfItems={getNumberOfBasketItems()} />
 			{basket.showBasket && <Basket />}
 		</>
 	);

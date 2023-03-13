@@ -27,6 +27,7 @@
 }
 
 .header {
+	min-width: 10ch;
 	max-width: 12ch;
 	word-wrap: break-word;
 	vertical-align: top;

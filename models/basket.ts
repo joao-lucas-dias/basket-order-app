@@ -1,7 +1,13 @@
 import { QuantityInfo } from "./product";
 
-export default interface Item {
+export interface BasketCategory {
+  name: string;
+  items: BasketItem[];
+}
+
+export interface BasketItem {
   id: string;
+  category: string;
   image: {
 		url: string;
 		alt: string;

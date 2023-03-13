@@ -3,11 +3,11 @@ import ProductItem from "../ProductItem/ProductItem";
 
 import classes from "./ProductsList.module.css";
 
-const ProductsList: React.FC<{ products: Product[] }> = (props) => {
+const ProductsList: React.FC<{ category: string; products: Product[] }> = (props) => {
 	return (
 		<ul className={classes.grid}>
 			{props.products.map((product) => (
-				<ProductItem key={product.id} product={product} />
+				<ProductItem key={product.id} category={props.category} product={product} />
 			))}
 		</ul>
 	);

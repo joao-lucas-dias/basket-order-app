@@ -9,7 +9,7 @@ import Header from "./Header/Header";
 import PriceDisplay from "./PriceDisplay/PriceDisplay";
 import Image from "next/image";
 
-const ProductItem: React.FC<{ product: Product }> = (props) => {
+const ProductItem: React.FC<{ category: string; product: Product }> = (props) => {
 	const { quantityInfo } = props.product;
 
 	const [quantity, setQuantity] = useState(quantityInfo.amount.min);
@@ -29,6 +29,7 @@ const ProductItem: React.FC<{ product: Product }> = (props) => {
 		dispatch(
 			addToCart({
 				id: `item-${props.product.id}`,
+				category: props.category,
 				image: props.product.image,
 				name: props.product.header.name,
 				sellingUnit: props.product.header.sellingUnit,
