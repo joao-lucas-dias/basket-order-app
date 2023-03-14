@@ -13,13 +13,16 @@ const Checkout: React.FC<{ onCheckout: () => void }> = (props) => {
 				<span>{euro.format(cost.subtotal)}</span>
 			</div>
 			<div className={classes.section}>
-				<span>Delivery Cost</span>
-				<span>{euro.format(cost.delivery)}</span>
+				<span className={classes.delivery}>
+					<span>Delivery*</span>
+					<span className={classes.info}>{"* (Free for orders over 15 €)"}</span>
+				</span>
+				<span>{cost.subtotal >= 15 ? "FREE" : euro.format(cost.delivery)}</span>
 			</div>
 			<span className={classes.line}></span>
 			<div className={`${classes.section} ${classes.total}`}>
 				<span>Total</span>
-				<span>{euro.format(cost.subtotal + cost.delivery)}</span>
+				<span>{euro.format(cost.subtotal + (cost.subtotal >= 15 ? 0 : 5))}</span>
 			</div>
 			<button onClick={props.onCheckout} className={classes.button}>
 				FINISH ORDER
