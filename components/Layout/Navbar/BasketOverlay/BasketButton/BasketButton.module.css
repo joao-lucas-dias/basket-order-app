@@ -9,15 +9,37 @@
 }
 
 .badge {
-	background-color: red;
+	background-color: #b94517;
 	border-radius: 50%;
 	color: white;
 	display: inline-block;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	line-height: 1;
-	padding: 0.5em;
+	padding: 0.4em;
 	position: absolute;
 	right: 0;
 	top: 0;
 	transform: translate(50%, -50%);
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
