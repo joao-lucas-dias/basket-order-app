@@ -1,30 +1,17 @@
-.wrapper {
-  width: 50%;
-}
-
-.container {
-  margin-top: .25em;
+.selector {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
   border: 1px solid black;
   border-radius: 5px;
 }
 
-.container > * {
-  display: flex;
-  flex-direction: column;
-}
-
 .display {
-  width: 100%;
+  flex-grow: 1;
   text-align: center;
-  justify-content: space-around;
-  padding: .5em;
-  gap: .15em;
-}
+  align-self: center;
 
-.display > * {
-  height: 50%;
+  padding-inline: 1em;
 }
 
 .quantity {
@@ -38,14 +25,12 @@
 }
 
 .buttons {
-  width: 50%;
-  justify-content: space-between;
-  gap: 2px;
+  display: grid;
+  gap: 1px;
 }
 
 .buttons > * {
-  height: 90%;
-  padding: .25em .5em;
+  padding: .25em .75em;
   border: none;
   cursor: pointer;
   
@@ -53,12 +38,4 @@
   font-weight: bold;
   color: white;
   background-color: #854E42;
-}
-
-.increment {
-  border-radius: 0 5px 0 0;
-}
-
-.decrement {
-  border-radius: 0 0 5px 0;
 }

@@ -13,16 +13,16 @@ const Header: React.FC<{ product: Product }> = (props) => {
 
 	return (
 		<div className={classes.header}>
-			<span>
-				<span className={classes.name}>{header.name}</span>
-				<span className={classes["unit-info"]}>{` (${parseUnit(header.sellingUnit)})`}</span>
-			</span>
+			<p className={classes.title}>
+				{header.name}
+				<span>{` (${parseUnit(header.sellingUnit)})`}</span>
+			</p>
 			{Object.values(unitInfo)[0] !== "" && (
-				<span className={classes.info}>
+				<p className={classes.info}>
           {`1 ${unitInfo.base} ≈ ${unitInfo.comp.amount} ${unitInfo.comp.unit}`}
-        </span>
+        </p>
 			)}
-		</div>
+		</div> 
 	);
 };
 

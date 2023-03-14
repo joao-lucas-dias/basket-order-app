@@ -1,11 +1,8 @@
-.price {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.price-display {
+	text-align: center;
 }
 
-.amount {
+.price {
 	font-size: 1.5rem;
 	font-weight: bold;
 }

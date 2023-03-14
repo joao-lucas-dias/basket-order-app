@@ -8,18 +8,18 @@ const QuantitySelector: React.FC<{
 	onDecrement: () => void;
 }> = (props) => {
 	return (
-		<div className={classes.wrapper}>
+		<div>
 			<span>Quantity</span>
-			<div className={classes.container}>
-				<div className={classes.display}>
-					<span className={classes.quantity}>{props.quantity}</span>
-					<span className={classes.unit}>{props.quantityInfo.unit}</span>
-				</div>
+			<div className={classes.selector}>
+				<span className={classes.display}>
+					<p className={classes.quantity}>{props.quantity}</p>
+					<p className={classes.unit}>{props.quantityInfo.unit}</p>
+				</span>
 				<div className={classes.buttons}>
-					<button onClick={props.onIncrement} className={classes.increment}>
+					<button onClick={props.onIncrement}>
 						+
 					</button>
-					<button onClick={props.onDecrement} className={classes.decrement}>
+					<button onClick={props.onDecrement}>
 						-
 					</button>
 				</div>
