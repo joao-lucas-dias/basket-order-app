@@ -48,8 +48,11 @@
   padding: .25em .5em;
   border: none;
   cursor: pointer;
-
-  background-color: gray;
+  
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  background-color: #854E42;
 }
 
 .increment {
