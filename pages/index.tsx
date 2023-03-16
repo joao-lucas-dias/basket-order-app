@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import classes from "../styles/home.module.css";
+import classes from "../styles/HomePage.module.css";
 
 const HomePage = () => {
 	const router = useRouter();
@@ -10,7 +10,7 @@ const HomePage = () => {
 	};
 
 	return (
-		<>
+		<main className={classes.main}>
 			<section className={classes.section} id="hero-section">
 				<div id="main">
 					<h1>Fresh produce from our Garden to your Table</h1>
@@ -145,7 +145,7 @@ const HomePage = () => {
 				<p>Take the next step and experience the quality of our products for yourself.</p>
 				<button onClick={goToStoreHandler}>Visit our Store</button>
 			</section>
-		</>
+		</main>
 	);
 };
 

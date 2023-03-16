@@ -35,8 +35,3 @@ video {
 	display: block;
 	max-width: 100%;
 }
-
-main {
-	padding-inline: 10rem;
-	padding-block: 4rem;
-}
