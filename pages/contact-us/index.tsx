@@ -1,5 +1,11 @@
+import classes from "@/styles/ContactPage.module.css";
+
 const ContactPage = () => {
-  return <h1>Contact Page!</h1>;
+	return (
+		<main className={classes.main}>
+			<h1>Contact Page!</h1>
+		</main>
+	);
 };
 
 export default ContactPage;

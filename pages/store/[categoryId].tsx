@@ -4,11 +4,11 @@ import { mongoDBConnectionString } from "@/secrets";
 import { MongoClient } from "mongodb";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
-
-import classes from "@/styles/products.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCartVisibility } from "@/store/basketSlice";
 import { RootState } from "@/store/store";
+
+import classes from "@/styles/ProductsPage.module.css";
 
 const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 	const router = useRouter();
@@ -23,13 +23,13 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 	};
 
 	return (
-		<>
+		<main className={classes.main}>
 			<div className={classes.header}>
 				<button onClick={goBack}>{`< Categories`}</button>
 				<h1>{router.query.categoryId}</h1>
 			</div>
 			<ProductsList category={router.query.categoryId!.toString()} products={props.products} />
-		</>
+		</main>
 	);
 };
 

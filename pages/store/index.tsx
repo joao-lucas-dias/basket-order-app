@@ -4,8 +4,14 @@ import { mongoDBConnectionString } from "@/secrets";
 import { MongoClient } from "mongodb";
 import { GetStaticProps } from "next";
 
+import classes from "@/styles/CategoriesPage.module.css";
+
 const CategoriesPage: React.FC<{ categories: Category[] }> = (props) => {
-	return <CategoriesList categories={props.categories} />;
+	return (
+		<main className={classes.main}>
+			<CategoriesList categories={props.categories} />
+		</main>
+	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -15,7 +21,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	const dataCollection = db.collection("categories");
 
-	const data = await dataCollection.find({}, { projection: { name: 1, image: 1 } }).toArray();
+	const data = await dataCollection
+		.find({}, { projection: { name: 1, image: 1 } })
+		.toArray();
 
 	const categories: Category[] = data.map((element) => {
 		return {
