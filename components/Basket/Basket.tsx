@@ -8,10 +8,6 @@ import BasketCategory from "./BasketCategory/BasketCategory";
 const Basket = () => {
 	const categories = useSelector((state: RootState) => state.basket.categories);
 
-	const checkoutHandler = () => {
-		console.log(categories);
-	};
-
 	return (
 		<div className={classes.wrapper}>
 			{categories.length === 0 ? (
@@ -23,7 +19,7 @@ const Basket = () => {
 							return <BasketCategory category={category}/>;
 						})}
 					</ul>
-					<Checkout onCheckout={checkoutHandler} />
+					<Checkout />
 				</>
 			)}
 		</div>

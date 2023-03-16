@@ -1,30 +1,37 @@
+import { toggleCartVisibility } from "@/store/basketSlice";
 import { RootState } from "@/store/store";
 import { euro } from "@/store/utils";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./Checkout.module.css";
 
-const Checkout: React.FC<{ onCheckout: () => void }> = (props) => {
-	const cost = useSelector((state: RootState) => state.basket.cost);
+const Checkout = () => {
+	const basket = useSelector((state: RootState) => state.basket);
+	const dispatch = useDispatch();
+
+	const checkoutHandler = () => {
+		console.log(basket.categories);
+		dispatch(toggleCartVisibility());
+	};
 
 	return (
 		<div className={classes.wrapper}>
 			<div className={classes.section}>
 				<span>Subtotal</span>
-				<span>{euro.format(cost.subtotal)}</span>
+				<span>{euro.format(basket.cost.subtotal)}</span>
 			</div>
 			<div className={classes.section}>
 				<span className={classes.delivery}>
-					<span>Delivery*</span>
-					<span className={classes.info}>{"* (Free for orders over 15 €)"}</span>
+					<p>Delivery*</p>
+					<p className={classes.info}>{"* (Free for orders over 15 €)"}</p>
 				</span>
-				<span>{cost.subtotal >= 15 ? "FREE" : euro.format(cost.delivery)}</span>
+				<span>{basket.cost.subtotal >= 15 ? "FREE" : euro.format(basket.cost.delivery)}</span>
 			</div>
 			<span className={classes.line}></span>
 			<div className={`${classes.section} ${classes.total}`}>
 				<span>Total</span>
-				<span>{euro.format(cost.subtotal + (cost.subtotal >= 15 ? 0 : 5))}</span>
+				<span>{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}</span>
 			</div>
-			<button onClick={props.onCheckout} className={classes.button}>
+			<button onClick={checkoutHandler} className={classes.button}>
 				FINISH ORDER
 			</button>
 		</div>
