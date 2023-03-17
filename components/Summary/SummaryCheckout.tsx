@@ -8,7 +8,7 @@ const SummaryCheckout = () => {
 	const cost = useSelector((state: RootState) => state.basket.cost);
 
 	return (
-		<div style={{ display: "grid", gap: "1em" }}>
+		<div className={classes.wrapper}>
 			<span className={classes.header}>Summary</span>
 			<div className={classes["summary-container"]}>
 				<div className={classes.section}>

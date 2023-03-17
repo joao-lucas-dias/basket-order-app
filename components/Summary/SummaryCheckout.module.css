@@ -1,3 +1,11 @@
+.wrapper {
+  position: sticky;
+  top: 15rem;
+  align-self: start;
+  display: grid;
+  gap: 1em;
+}
+
 .header {
   font-size: 2rem;
   font-weight: bold;
