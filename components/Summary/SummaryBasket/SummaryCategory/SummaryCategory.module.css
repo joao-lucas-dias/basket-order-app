@@ -1,4 +1,18 @@
+.container {
+  display: grid;
+  gap: 1em;
+}
+
+.label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.25em;
+}
+
 .item-list {
   display: grid;
   gap: 1rem;
+  padding-inline: 1em;
 }

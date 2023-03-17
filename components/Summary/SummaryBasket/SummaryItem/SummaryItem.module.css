@@ -1,6 +1,5 @@
 .item-container {
   display: flex;
-  gap: 1rem;
   border: 1px solid gray;
   border-radius: 10px;
   overflow: hidden;
@@ -15,7 +14,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: .5em;
+  padding: .5em 1em;
 }
 
 .body > * {
