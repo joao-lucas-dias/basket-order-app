@@ -107,13 +107,21 @@ const basketSlice = createSlice({
 			);
 			const quantityInfo = action.payload.quantityInfo;
 
+			const oldSubtotal = state.cost.subtotal;
+			const priceToChange = item!.quantityInfo.amount.step * item!.priceInfo.amount;
+			let newSubtotal: number = oldSubtotal;
+			
 			if (action.payload.type === "INC") {
 				item!.quantity += quantityInfo.amount.step;
+				newSubtotal = oldSubtotal + priceToChange;
 			} else {
 				if (item!.quantity > quantityInfo.amount.min) {
 					item!.quantity -= quantityInfo.amount.step;
+					newSubtotal = oldSubtotal - priceToChange;
 				}
 			}
+
+			state.cost.subtotal = newSubtotal;
 		}
 	}
 });
