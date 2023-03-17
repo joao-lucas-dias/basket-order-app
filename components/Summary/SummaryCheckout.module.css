@@ -1,0 +1,45 @@
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.summary-container {
+  border: 1px solid black;
+  display: grid;
+  gap: .75rem;
+  padding: 2rem;
+}
+
+.section {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  font-size: 1rem;
+  font-weight: normal;
+  color: gray;
+}
+
+.line {
+  border-top: 2px solid lightgray;
+}
+
+.total {
+  font-size: 2rem;
+}
+
+.button {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-block: .75em;
+
+  background-color: #854E42;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+}

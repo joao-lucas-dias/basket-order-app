@@ -1,6 +1,8 @@
 .main {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10rem;
 
   padding-inline: 15rem;
+  padding-block: 6rem;
 }

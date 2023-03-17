@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+
+  border: 2px solid gray;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button {
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding-inline: .75em;
+  cursor: pointer;
+  background-color: #89f08e;
+}
+
+.quantity {
+  flex-grow: 1;
+  padding-inline: 1em;
+  padding-block: .25em;
+  text-align: center;
+}
+
+.amount {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 1rem;
+  color: gray;
+}
