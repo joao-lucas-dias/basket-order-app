@@ -1,6 +1,6 @@
 .wrapper {
   position: sticky;
-  top: 15rem;
+  top: 14rem;
   align-self: start;
   display: grid;
   gap: 1em;
@@ -44,6 +44,7 @@
   font-size: 1.25rem;
   font-weight: bold;
   padding-block: .75em;
+  margin-top: .5em;
 
   background-color: #854E42;
   color: white;
