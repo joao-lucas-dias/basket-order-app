@@ -1,8 +1,8 @@
-.nav {
+.nav-full {
 	position: sticky;
 	top: 0;
 	left: 0;
-	
+
 	width: 100%;
 	padding-inline: 8em;
 	padding-block: 4em;
@@ -18,6 +18,11 @@
 .link {
 	text-decoration: none;
 	color: black;
+}
+
+.stacked {
+	display: grid;
+	gap: 1em;
 }
 
 .logo {
@@ -57,4 +62,17 @@
 	padding-block: 0.5em;
 
 	border: 3px solid #89f08e;
+}
+
+.nav-simple {
+	position: sticky;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	display: grid;
+	place-content: center;
+	padding-block: 2em;
+	background-color: white;
+	border-bottom: 1px solid black;
 }

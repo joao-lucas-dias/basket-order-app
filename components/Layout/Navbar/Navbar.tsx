@@ -8,9 +8,12 @@ const Navbar = () => {
 	const router = useRouter();
 
 	const inStore = router.pathname.startsWith("/store");
+	const inSummary = router.pathname.endsWith("/order-summary");
 
-	return (
-		<nav className={classes.nav}>
+	const navStyle = inSummary ? "simple" : "full";
+
+	return navStyle === "full" ? (
+		<nav className={classes["nav-full"]}>
 			<Link href="/" className={`${classes.logo} ${classes.link}`}>
 				<span></span>
 				<h1>Diddly Squat</h1>
@@ -27,9 +30,22 @@ const Navbar = () => {
 					</Link>
 				</li>
 				<li>
-					{inStore ? <BasketOverlay /> : <Link href="/store" className={`${classes.store} ${classes.link}`}>Store</Link>}
+					{inStore ? (
+						<BasketOverlay />
+					) : (
+						<Link href="/store" className={`${classes.store} ${classes.link}`}>
+							Store
+						</Link>
+					)}
 				</li>
 			</ul>
+		</nav>
+	) : (
+		<nav className={classes["nav-simple"]}>
+			<Link href="/" className={`${classes.logo} ${classes.link}`}>
+				<span></span>
+				<h1>Diddly Squat</h1>
+			</Link>
 		</nav>
 	);
 };
