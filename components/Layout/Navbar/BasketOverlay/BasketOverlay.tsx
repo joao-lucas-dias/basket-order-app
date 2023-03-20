@@ -27,14 +27,6 @@ const BasketOverlay = () => {
 		}, 250);
 	};
 
-	const overlayClasses = `${classes["modal-overlay"]} ${
-		modalIsOpen && classes["overlay-opening"]
-	}`;
-
-	const contentClasses = `${classes["modal-content"]} ${
-		modalIsOpen && classes["modal-opening"]
-	}`;
-
 	const getNumberOfBasketItems = () => {
 		let counter: number = 0;
 
@@ -44,6 +36,15 @@ const BasketOverlay = () => {
 
 		return counter;
 	};
+
+	const overlayClasses = `${classes["modal-overlay"]} ${
+		modalIsOpen && classes["overlay-opening"]
+	}`;
+
+	const contentClasses = `${classes["modal-content"]} 
+		${modalIsOpen && classes["modal-opening"]} 
+		${getNumberOfBasketItems() === 0 && classes["content-empty"]}
+	`;
 
 	return (
 		<>
@@ -57,7 +58,10 @@ const BasketOverlay = () => {
 				overlayClasses={overlayClasses}
 				contentClasses={contentClasses}
 			>
-				<Basket />
+				<Basket
+					numberOfItems={getNumberOfBasketItems()}
+					closeModalHandler={handleCloseModal}
+				/>
 			</Modal>
 		</>
 	);

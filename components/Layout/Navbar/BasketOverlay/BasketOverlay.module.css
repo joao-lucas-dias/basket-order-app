@@ -42,10 +42,8 @@
   height: 100dvh;
 
   display: grid;
-	grid-template-rows: 1fr auto;
+	grid-template-rows: auto 1fr auto;
 
-  border: 1px solid lightgray;
-  border-radius: 10px;
   background-color: burlywood;
 }
 
@@ -62,6 +60,10 @@
 		right: 0;
 		opacity: 1;
 	}
+}
+
+.content-empty {
+	grid-template-rows: auto 1fr;
 }
 
 .modal-closing {
