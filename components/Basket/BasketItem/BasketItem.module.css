@@ -28,10 +28,9 @@
 
 .header {
 	min-width: 10ch;
-	max-width: 12ch;
+	max-width: 35ch;
 	word-wrap: break-word;
 	vertical-align: top;
-	line-height: 60%;
 }
 
 .name {

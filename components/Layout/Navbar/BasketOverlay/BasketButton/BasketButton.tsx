@@ -1,16 +1,9 @@
-import { toggleCartVisibility } from "@/store/basketSlice";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 
 import classes from "./BasketButton.module.css";
 
-const BasketButton: React.FC<{ numOfItems: number }> = (props) => {
+const BasketButton: React.FC<{ numOfItems: number, onOpenModalHandler: () => void }> = (props) => {
 	const [buttonAnimation, setButtonAnimation] = useState(false);
-	const dispatch = useDispatch();
-  
-  const toggleBasketHandler = () => {
-		dispatch(toggleCartVisibility());
-	};
 
 	const buttonClasses = `${classes.button} ${buttonAnimation ? classes.bump : ""}`;
 
@@ -31,7 +24,7 @@ const BasketButton: React.FC<{ numOfItems: number }> = (props) => {
 	}, [props.numOfItems]);
 
 	return (
-		<button onClick={toggleBasketHandler} className={buttonClasses}>
+		<button onClick={props.onOpenModalHandler} className={buttonClasses}>
 			My Basket
 			<span className={classes.badge}>{props.numOfItems}</span>
 		</button>

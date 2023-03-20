@@ -1,0 +1,80 @@
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+}
+
+.overlay-opening {
+	animation: fadein 0.3s;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.overlay-closing {
+	animation: fadeout 0.3s;
+}
+
+@keyframes fadeout {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.modal-content {
+	position: fixed;
+  top: 0;
+  right: 0;
+	min-width: 25%;
+  height: 100dvh;
+
+  display: grid;
+	grid-template-rows: 1fr auto;
+
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: burlywood;
+}
+
+.modal-opening {
+  animation: fadein-right 0.3s;
+}
+
+@keyframes fadein-right {
+	0% {
+		right: -100%;
+		opacity: 0;
+	}
+	100% {
+		right: 0;
+		opacity: 1;
+	}
+}
+
+.modal-closing {
+  animation: fadeout-right 0.3s;
+}
+
+@keyframes fadeout-right {
+	0% {
+		right: 0;
+		opacity: 1;
+	}
+	100% {
+		right: -100%;
+		opacity: 0;
+	}
+}

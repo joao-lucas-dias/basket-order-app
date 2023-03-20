@@ -9,20 +9,20 @@ const Basket = () => {
 	const categories = useSelector((state: RootState) => state.basket.categories);
 
 	return (
-		<div className={classes.wrapper}>
+		<>
 			{categories.length === 0 ? (
 				"Basket is Empty!"
 			) : (
 				<>
 					<ul className={classes["category-list"]}>
 						{categories.map((category) => {
-							return <BasketCategory category={category}/>;
+							return <BasketCategory key={category.name} category={category}/>;
 						})}
 					</ul>
 					<Checkout />
 				</>
 			)}
-		</div>
+		</>
 	);
 };
 
