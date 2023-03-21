@@ -1,7 +1,14 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
   font-size: 2rem;
   font-weight: bold;
 }
+
+.button {}
 
 .basket-container {
   display: grid;
