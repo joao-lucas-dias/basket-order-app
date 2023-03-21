@@ -25,7 +25,7 @@ const BasketButton: React.FC<{ numOfItems: number, onOpenModalHandler: () => voi
 
 	return (
 		<button onClick={props.onOpenModalHandler} className={buttonClasses}>
-			My Basket
+			<span className={classes.label}>My Basket</span>
 			<span className={classes.badge}>{props.numOfItems}</span>
 		</button>
 	);

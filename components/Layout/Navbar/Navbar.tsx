@@ -15,8 +15,8 @@ const Navbar = () => {
 	return navStyle === "full" ? (
 		<nav className={classes["nav-full"]}>
 			<Link href="/" className={`${classes.logo} ${classes.link}`}>
-				<span></span>
-				<h1>Diddly Squat</h1>
+				<span className={classes["logo-image"]}></span>
+				<span className={classes["logo-name"]}>Diddly Squat</span>
 			</Link>
 			<ul className={classes.menu}>
 				<li>
@@ -43,8 +43,8 @@ const Navbar = () => {
 	) : (
 		<nav className={classes["nav-simple"]}>
 			<Link href="/" className={`${classes.logo} ${classes.link}`}>
-				<span></span>
-				<h1>Diddly Squat</h1>
+				<span className={classes["logo-image"]}></span>
+				<span className={classes["logo-name"]}>Diddly Squat</span>
 			</Link>
 		</nav>
 	);

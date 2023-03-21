@@ -8,6 +8,10 @@
   cursor: pointer;
 }
 
+.label {
+  font-weight: bold;
+}
+
 .badge {
 	background-color: #b94517;
 	border-radius: 50%;

@@ -4,15 +4,16 @@
 	left: 0;
 
 	width: 100%;
+	max-height: calc(96px + 55px);
 	padding-inline: 8em;
-	padding-block: 4em;
+	padding-block: 3em;
 
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 
 	background-color: white;
-	border-bottom: 1px solid black;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .link {
@@ -32,26 +33,26 @@
 	gap: 1em;
 }
 
-.logo > span {
+.logo-image {
 	height: 100%;
 	aspect-ratio: 1/1;
 	border-radius: 50%;
 	background-color: #89f08e;
 }
 
-.logo > h1 {
-	font-size: 3.5rem;
-	font-weight: 800;
+.logo-name {
+	font-size: 3rem;
+	font-weight: bold;
 	white-space: nowrap;
 }
 
 .menu {
-	font-size: 2rem;
+	font-size: 1.75rem;
 
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 6rem;
+	gap: 3em;
 
 	list-style: none;
 }
@@ -70,9 +71,10 @@
 	left: 0;
 
 	width: 100%;
+	max-height: calc(96px + 55px);
 	display: grid;
 	place-content: center;
-	padding-block: 2em;
+	padding-block: 3em;
 	background-color: white;
 	border-bottom: 1px solid black;
 }

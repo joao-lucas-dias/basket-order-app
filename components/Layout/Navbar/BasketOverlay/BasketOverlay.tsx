@@ -11,10 +11,11 @@ const BasketOverlay = () => {
 	const basket = useSelector((state: RootState) => state.basket);
 	const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
-	const body = document.getElementsByTagName("body")[0];
+	let body: HTMLBodyElement;
 
 	const handleOpenModal = () => {
-		body.classList.add(classes["modal-open"]);
+		body = document.getElementsByTagName("body")[0];
+		body.classList.toggle(classes["modal-open"]);
 		setModalIsOpen(true);
 	};
 
@@ -25,7 +26,8 @@ const BasketOverlay = () => {
 		const content = document.getElementById("modal-content");
 		content?.classList.replace(classes["modal-opening"], classes["modal-closing"]);
 
-		body.classList.remove(classes["modal-open"]);
+		body = document.getElementsByTagName("body")[0];
+		body.classList.toggle(classes["modal-open"]);
 
 		setTimeout(() => {
 			setModalIsOpen(false);

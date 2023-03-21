@@ -1,18 +1,16 @@
-import { toggleCartVisibility } from "@/store/basketSlice";
 import { RootState } from "@/store/store";
 import { euro } from "@/store/utils";
 import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import classes from "./Checkout.module.css";
 
-const Checkout = () => {
+const Checkout: React.FC<{ onCheckout: () => void }> = (props) => {
 	const basket = useSelector((state: RootState) => state.basket);
 	const router = useRouter();
-	const dispatch = useDispatch();
 
 	const checkoutHandler = () => {
+		props.onCheckout();
 		router.push("/store/order-summary");
-		dispatch(toggleCartVisibility());
 	};
 
 	return (

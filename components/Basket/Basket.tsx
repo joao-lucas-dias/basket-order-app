@@ -21,7 +21,7 @@ const Basket: React.FC<{ numberOfItems: number; closeModalHandler: () => void }>
 						return <BasketCategory key={category.name} category={category} />;
 					})}
 				</ul>
-				<Checkout />
+				<Checkout onCheckout={props.closeModalHandler} />
 			</>
 		);
 

@@ -1,5 +1,6 @@
 .main {
   display: grid;
+  align-items: start;
   grid-template-columns: 2fr 1fr;
   gap: 10rem;
 

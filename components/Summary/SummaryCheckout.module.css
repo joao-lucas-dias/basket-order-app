@@ -1,7 +1,6 @@
 .wrapper {
   position: sticky;
-  top: 14rem;
-  align-self: start;
+  top: calc(151px + 6em);
   display: grid;
   gap: 1em;
 }
