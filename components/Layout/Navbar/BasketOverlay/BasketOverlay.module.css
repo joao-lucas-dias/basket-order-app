@@ -62,6 +62,10 @@
 	}
 }
 
+.modal-open {
+	overflow: hidden;
+}
+
 .content-empty {
 	grid-template-rows: auto 1fr;
 }
