@@ -1,4 +1,7 @@
 import { QuantityInfo } from "@/models/product";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+
 import classes from "./QuantitySelector.module.css";
 
 const QuantitySelector: React.FC<{
@@ -17,10 +20,10 @@ const QuantitySelector: React.FC<{
 				</span>
 				<div className={classes.buttons}>
 					<button onClick={props.onIncrement}>
-						+
+						<AddIcon />
 					</button>
 					<button onClick={props.onDecrement}>
-						-
+						<RemoveIcon />
 					</button>
 				</div>
 			</div>

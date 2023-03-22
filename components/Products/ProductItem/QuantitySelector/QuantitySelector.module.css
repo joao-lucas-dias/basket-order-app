@@ -1,17 +1,17 @@
 .selector {
   display: flex;
   justify-content: space-between;
+  min-width: 15ch;
   overflow: hidden;
   border: 1px solid black;
   border-radius: 5px;
 }
 
 .display {
+  display: grid;
+  place-content: center;
   flex-grow: 1;
   text-align: center;
-  align-self: center;
-
-  padding-inline: 1em;
 }
 
 .quantity {
@@ -26,16 +26,17 @@
 
 .buttons {
   display: grid;
-  gap: 1px;
+  grid-row-gap: 1px;
 }
 
 .buttons > * {
-  padding: .25em .75em;
+  display: grid;
+  place-content: center;
+  padding: .25em .5em;
   border: none;
   cursor: pointer;
   
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.5rem;
   color: white;
   background-color: #854E42;
 }

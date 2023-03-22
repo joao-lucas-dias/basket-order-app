@@ -3,6 +3,7 @@ import { removeFromCart } from "@/store/basketSlice";
 import { euro } from "@/store/utils";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import classes from "./BasketItem.module.css";
 
@@ -44,7 +45,7 @@ const BasketItem: React.FC<{ item: BasketItem }> = (props) => {
 				</div>
 				<div>
 					<button onClick={removeItemHandler} className={classes.button}>
-						X
+						<DeleteIcon fontSize="medium" />
 					</button>
 					<div className={classes["price-info"]}>
 						<span className={classes.info}>

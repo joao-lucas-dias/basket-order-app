@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleCartVisibility } from "@/store/basketSlice";
 import { RootState } from "@/store/store";
 
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
 import classes from "@/styles/ProductsPage.module.css";
 
 const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
@@ -17,18 +19,24 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 
 	const goBack = () => {
 		router.push("/store");
-		showBasket && setTimeout(() => {
-			dispatch(toggleCartVisibility());
-		}, 500);
+		showBasket &&
+			setTimeout(() => {
+				dispatch(toggleCartVisibility());
+			}, 500);
 	};
 
 	return (
 		<main className={classes.main}>
 			<div className={classes.header}>
-				<button onClick={goBack}>{`<- Categories`}</button>
+				<button className={classes.button} onClick={goBack}>
+					<ArrowBackIcon /> Categories
+				</button>
 				<h1>{router.query.categoryId}</h1>
 			</div>
-			<ProductsList category={router.query.categoryId!.toString()} products={props.products} />
+			<ProductsList
+				category={router.query.categoryId!.toString()}
+				products={props.products}
+			/>
 		</main>
 	);
 };
