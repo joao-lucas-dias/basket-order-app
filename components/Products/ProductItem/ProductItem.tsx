@@ -46,7 +46,7 @@ const ProductItem: React.FC<{ category: string; product: Product }> = (props) =>
 	};
 
 	return (
-		<li className={classes.wrapper}>
+		<li className={classes.container}>
 			<Image
 				src={`/images/products${props.product.image.url}`}
 				alt={props.product.image.alt}
@@ -70,7 +70,7 @@ const ProductItem: React.FC<{ category: string; product: Product }> = (props) =>
 				</div>
 			</div>
 			<button className={classes.button} onClick={addToCartHandler}>
-				ADD TO BASKET
+				Add to Basket
 			</button>
 		</li>
 	);

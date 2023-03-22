@@ -25,7 +25,7 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 	return (
 		<main className={classes.main}>
 			<div className={classes.header}>
-				<button onClick={goBack}>{`< Categories`}</button>
+				<button onClick={goBack}>{`<- Categories`}</button>
 				<h1>{router.query.categoryId}</h1>
 			</div>
 			<ProductsList category={router.query.categoryId!.toString()} products={props.products} />

@@ -1,16 +1,12 @@
 .main {
 	padding-block: 6rem;
-	padding-inline: 8rem;
+	padding-inline: 12rem;
+
+	background-color: aliceblue;
 }
 
 .header {
 	margin-bottom: 2rem;
-}
-
-.header > a {
-	font-size: 1.5rem;
-	text-decoration: none;
-	color: black;
 }
 
 .header > h1 {
