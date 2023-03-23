@@ -4,6 +4,7 @@ import { euro } from "@/store/utils";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import QuantitySelector from "./QuantitySelector/QuantitySelector";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import classes from "./SummaryItem.module.css";
 
@@ -50,7 +51,7 @@ const SummaryItem: React.FC<{ item: BasketItem }> = (props) => {
 				</div>
 				<div>
 					<button onClick={removeItemHandler} className={classes.button}>
-						X
+						<DeleteIcon />
 					</button>
 					<span className={classes["price-info"]}>
 						<p className={classes.info}>

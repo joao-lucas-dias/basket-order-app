@@ -1,9 +1,9 @@
 .main {
-  display: grid;
-  align-items: start;
+	padding-inline: 20rem;
+	padding-block: 6rem;
+  
+	display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 10rem;
-
-  padding-inline: 20rem;
-  padding-block: 6rem;
+  grid-column-gap: 10rem;
+  align-items: start;
 }

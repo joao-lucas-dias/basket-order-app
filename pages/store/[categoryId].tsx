@@ -29,7 +29,7 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 		<main className={classes.main}>
 			<div className={classes.header}>
 				<button className={classes.button} onClick={goBack}>
-					<ArrowBackIcon /> Categories
+					<ArrowBackIcon fontSize="large" /> <span>Categories</span>
 				</button>
 				<h1>{router.query.categoryId}</h1>
 			</div>

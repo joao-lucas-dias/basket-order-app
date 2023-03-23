@@ -1,32 +1,43 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .label {
-  font-size: 2rem;
-  font-weight: bold;
+	font-size: 2rem;
+	font-weight: bold;
 }
 
 .button {
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
-	padding: 0.5em 2.5em;
+	padding-block: 0.5em;
 	font-size: 1.25rem;
 	font-weight: bold;
 	color: #71bd75;
-	background-color: white;
-	border: 2px solid #71bd75;
+	background: none;
+	border: 2px solid transparent;
 	cursor: pointer;
+
+	transition: all 0.2s ease-out;
+}
+
+.button:hover {
+	color: #4c9950;
+	background-color: white;
+	padding-inline: 1.5em;
+	border: 2px solid #4c9950;
+	border-radius: 10px;
 }
 
 .basket-container {
-  display: grid;
-  gap: 1.5em;
-  list-style: none;
+	display: grid;
+	gap: 1.5em;
+	list-style: none;
 
-  border: 1px solid black;
+	border: 1px solid black;
 
-  padding: 2rem;
+	padding: 2rem;
 }

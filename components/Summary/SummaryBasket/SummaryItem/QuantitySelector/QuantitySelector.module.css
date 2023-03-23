@@ -7,12 +7,19 @@
 }
 
 .button {
-  border: none;
-  font-size: 1.25rem;
-  font-weight: bold;
-  padding-inline: .75em;
+  display: grid;
+  place-content: center;
+  font-size: 1.5rem;
+  padding: .25em .5em;
   cursor: pointer;
-  background-color: #89f08e;
+  border: none;
+
+  background-color: #D18373;
+  color: white;
+}
+
+.button:hover {
+  background-color: #9E6357;
 }
 
 .quantity {

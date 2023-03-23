@@ -38,5 +38,9 @@
   
   font-size: 1.5rem;
   color: white;
-  background-color: #854E42;
+  background-color: #D18373;
+}
+
+.buttons > *:hover {
+  background-color: #9E6357;
 }

@@ -19,12 +19,22 @@
 .button {
 	display: flex;
 	align-items: center;
-	gap: 0.5em;
-	padding: 0.5em 2.5em;
-	font-size: 1.25rem;
+	gap: 0.25em;
+	padding-block: 0.35em;
+	font-size: 1.75rem;
 	font-weight: bold;
 	color: #71bd75;
-	background-color: white;
-	border: 2px solid #71bd75;
+	background: none;
+	border: 2px solid transparent;
 	cursor: pointer;
+
+	transition: all .2s ease-out;
+}
+
+.button:hover {
+	color: #4c9950;
+	background-color: white;
+	padding-inline: 1.5em;
+	border: 2px solid #4c9950;
+	border-radius: 10px;
 }

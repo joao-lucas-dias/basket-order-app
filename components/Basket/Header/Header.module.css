@@ -20,5 +20,11 @@
 	font-size: 1.25rem;
 	cursor: pointer;
 	background: none;
-	border: none;
+	border: 2px solid transparent;
+	transition: all .2s ease-in-out;
+}
+
+.button:hover {
+	padding-inline: .5em;
+	border-bottom: 2px solid black;
 }

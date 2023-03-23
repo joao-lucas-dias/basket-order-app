@@ -1,8 +1,8 @@
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import SummaryCategory from "./SummaryCategory/SummaryCategory";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { useRouter } from "next/router";
 
 import classes from "./SummaryBasket.module.css";
 
@@ -19,7 +19,7 @@ const SummaryBasket = () => {
 			<div className={classes.header}>
 				<span className={classes.label}>My Basket</span>
 				<button className={classes.button} onClick={storeButtonHandler}>
-					<ArrowBackIcon /> Keep Shopping
+					<ArrowBackIcon /> Back to Store
 				</button>
 			</div>
 			<ul className={classes["basket-container"]}>

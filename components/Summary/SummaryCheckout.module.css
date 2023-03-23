@@ -2,12 +2,12 @@
   position: sticky;
   top: calc(151px + 6em);
   display: grid;
-  gap: 1em;
+  grid-row-gap: 1.5em;
 }
 
 .header {
-  font-size: 2rem;
-  font-weight: bold;
+	font-size: 2rem;
+	font-weight: bold;
 }
 
 .summary-container {
@@ -45,9 +45,13 @@
   padding-block: .75em;
   margin-top: .5em;
 
-  background-color: #854E42;
+  background-color: #71bd75;
   color: white;
   cursor: pointer;
   border-radius: 10px;
   border: none;
+}
+
+.button:hover {
+  background-color: #4c9950;
 }

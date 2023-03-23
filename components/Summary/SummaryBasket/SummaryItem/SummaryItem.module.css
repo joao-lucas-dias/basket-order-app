@@ -36,7 +36,6 @@
 }
 
 .button {
-  grid-area: button;
   background: none;
 	border: none;
 	align-self: flex-end;
@@ -44,8 +43,11 @@
 	font-size: 1.2rem;
 }
 
+.button:hover {
+  color: gray;
+}
+
 .selector {
-  grid-area: quantity-selector;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -57,7 +59,6 @@
 }
 
 .price-info {
-  grid-area: price-info;
   display: grid;
 	text-align: right;
 }

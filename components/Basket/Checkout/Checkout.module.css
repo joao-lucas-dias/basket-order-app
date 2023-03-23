@@ -45,4 +45,10 @@
   cursor: pointer;
   border-radius: 10px;
   border: none;
+
+  transition: all .2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #523029;
 }

@@ -1,8 +1,8 @@
 .container {
 	display: grid;
-	gap: .75em;
-  max-width: 80%;
-	padding: .75em;
+	gap: 0.75em;
+	max-width: 80%;
+	padding: 0.75em;
 	background-color: white;
 	border: 2px solid gray;
 	border-radius: 10px;
@@ -33,9 +33,9 @@
 
 .button {
 	padding-block: 0.45em;
-	margin-top: .25em;
+	margin-top: 0.25em;
 
-	background-color: #7DD181;
+	background-color: #7dd181;
 	color: white;
 	border: none;
 	border-radius: 10px;
@@ -47,4 +47,14 @@
 	white-space: nowrap;
 	text-align: center;
 	cursor: pointer;
+
+	transition: background-color 0.175s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.button:hover {
+	background-color: green;
+}
+
+.button:active {
+	transform: scale(0.9);
 }
