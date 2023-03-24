@@ -57,6 +57,17 @@
 	list-style: none;
 }
 
+.menu > li:not(:last-child):after {
+	display: block;
+	content: "";
+	border-bottom: solid 2px var(--color-neutral-darkest);
+	transform: scaleX(0);
+	transition: transform 150ms ease-in-out;
+}
+.menu > li:not(:last-child):hover:after {
+	transform: scaleX(1);
+}
+
 .store {
 	font-weight: bold;
 	padding-inline: 2em;
