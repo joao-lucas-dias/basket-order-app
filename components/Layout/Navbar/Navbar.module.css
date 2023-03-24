@@ -12,13 +12,13 @@
 	flex-direction: row;
 	justify-content: space-between;
 
-	background-color: white;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color: var(--color-background-nav);
+	box-shadow: var(--box-shadow-bottom);
 }
 
 .link {
 	text-decoration: none;
-	color: black;
+	color: var(--color-neutral-darkest);
 }
 
 .stacked {
@@ -37,7 +37,7 @@
 	height: 100%;
 	aspect-ratio: 1/1;
 	border-radius: 50%;
-	background-color: #89f08e;
+	background-color: var(--color-primary);
 }
 
 .logo-name {
@@ -62,7 +62,7 @@
 	padding-inline: 2em;
 	padding-block: 0.5em;
 
-	border: 3px solid #89f08e;
+	border: 3px solid var(--color-primary);
 }
 
 .nav-simple {
@@ -75,6 +75,6 @@
 	display: grid;
 	place-content: center;
 	padding-block: 3em;
-	background-color: white;
-	border-bottom: 1px solid black;
+	background-color: var(--color-background-nav);
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

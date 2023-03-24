@@ -6,4 +6,6 @@
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 10rem;
   align-items: start;
+
+  background-color: var(--color-background-main);
 }

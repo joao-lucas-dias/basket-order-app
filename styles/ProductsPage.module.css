@@ -2,7 +2,7 @@
 	padding-block: 6rem;
 	padding-inline: 12rem;
 
-	background-color: aliceblue;
+	background-color: var(--color-background-main);
 }
 
 .header {
@@ -23,7 +23,7 @@
 	padding-block: 0.35em;
 	font-size: 1.75rem;
 	font-weight: bold;
-	color: #71bd75;
+	color: var(--color-primary);
 	background: none;
 	border: 2px solid transparent;
 	cursor: pointer;
@@ -32,9 +32,9 @@
 }
 
 .button:hover {
-	color: #4c9950;
-	background-color: white;
+	color: var(--color-primary-darker);
+	background-color: var(--color-neutral-light);
 	padding-inline: 1.5em;
-	border: 2px solid #4c9950;
+	border: 2px solid var(--color-primary-darker);
 	border-radius: 10px;
 }

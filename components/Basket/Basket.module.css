@@ -1,7 +1,7 @@
 .category-list {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5em;
+	gap: 1em;
 	list-style: none;
 	overflow-y: scroll;
 	padding: 1rem;

@@ -1,6 +1,8 @@
 .wrapper {
+	border: 2px solid var(--color-neutral-darker);
 	border-radius: 10px;
-	background-color: white;
+	box-shadow: var(--box-shadow-bottom);
+	background-color: var(--color-neutral-light);
 	display: flex;
 	gap: 0.5em;
 	padding: 0.75rem;
@@ -54,7 +56,7 @@
 
 .info {
 	font-size: 1rem;
-	color: gray;
+	color: var(--color-neutral-darker);
 }
 
 .price {
@@ -72,5 +74,5 @@
 }
 
 .button:hover {
-	color: gray;
+	color: var(--color-neutral-darker);
 }

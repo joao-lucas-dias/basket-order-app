@@ -9,5 +9,5 @@
 
 .unit {
 	font-size: 1.25rem;
-	color: gray;
+	color: var(--color-neutral-darker);
 }

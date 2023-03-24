@@ -4,9 +4,9 @@
   padding-block: 0.5em;
 
   border: none;
-  outline: 3px solid #89f08e;
-  background-color: white;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+  outline: 3px solid var(--color-primary);
+  background-color: var(--color-neutral-light);
+  box-shadow: var(--box-shadow-large);
 
   transition: all .25s ease-in-out;
 
@@ -14,7 +14,8 @@
 }
 
 .button:hover {
-  outline: 5px solid #89f08e;
+  outline: 5px solid var(--color-primary-darker);
+  border-radius: 10px;
   scale: 1.075;
 }
 
@@ -26,9 +27,9 @@
 }
 
 .badge {
-	background-color: #b94517;
+	background-color: var(--color-secondary-darker);
 	border-radius: 50%;
-	color: white;
+	color: var(--color-neutral-light);
 	display: inline-block;
 	font-size: 1.5rem;
 	line-height: 1;

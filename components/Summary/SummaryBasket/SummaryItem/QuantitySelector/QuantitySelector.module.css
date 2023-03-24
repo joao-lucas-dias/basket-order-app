@@ -1,7 +1,7 @@
 .container {
   display: flex;
 
-  border: 2px solid gray;
+  border: 2px solid var(--color-neutral-darker);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -14,12 +14,12 @@
   cursor: pointer;
   border: none;
 
-  background-color: #D18373;
-  color: white;
+  background-color: var(--color-secondary);
+  color: var(--color-neutral-light);
 }
 
 .button:hover {
-  background-color: #9E6357;
+  background-color: var(--color-secondary-darker);
 }
 
 .quantity {
@@ -36,5 +36,5 @@
 
 .unit {
   font-size: 1rem;
-  color: gray;
+  color: var(--color-neutral-darker);
 }

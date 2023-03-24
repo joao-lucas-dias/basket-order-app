@@ -1,7 +1,7 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	gap: .5em;
+	gap: .75em;
 }
 
 .header {
@@ -12,7 +12,7 @@
 	padding-bottom: .1em;
 	background-color: transparent;
 	border: none;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid var(--color-neutral-darkest);
 	cursor: pointer;
 }
 
@@ -23,13 +23,13 @@
 }
 
 .line {
-	border: 1px solid black;
+	border: 1px solid var(--color-neutral-darkest);
 }
 
 .item-list {
 	display: flex;
 	flex-direction: column;
-	gap: 0.25em;
+	gap: 0.5em;
 	padding-inline: .25em;
 	list-style: none;
 }

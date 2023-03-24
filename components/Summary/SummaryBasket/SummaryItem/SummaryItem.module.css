@@ -1,20 +1,23 @@
 .item-container {
   display: flex;
-  border: 1px solid gray;
+  gap: 1em;
+  padding: .5em;
+  border: 2px solid var(--color-neutral-darker);
   border-radius: 10px;
+  box-shadow: var(--box-shadow-bottom);
   overflow: hidden;
 }
 
 .image {
   width: 170px;
   height: 100%;
+  border-radius: 10px;
 }
 
 .body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: .5em 1em;
 }
 
 .body > * {
@@ -44,7 +47,7 @@
 }
 
 .button:hover {
-  color: gray;
+  color: var(--color-neutral-darker);
 }
 
 .selector {
@@ -65,7 +68,7 @@
 
 .info {
 	font-size: 1rem;
-	color: gray;
+	color: var(--color-neutral-darker);
 }
 
 .price {

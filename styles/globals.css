@@ -35,3 +35,21 @@ video {
 	display: block;
 	max-width: 100%;
 }
+
+:root {
+	--color-background-main: #EBF7FF ;
+	--color-background-nav: #FFEED6;
+
+	--color-primary: #53A65A;
+	--color-primary-darker: #267D35;
+	--color-secondary: #A66C5F;
+	--color-secondary-darker: #8b4513;
+
+	--color-neutral-light: #fff;
+	--color-neutral-darker: gray;
+	--color-neutral-darkest: #000;
+
+	--box-shadow-bottom: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	--box-shadow-top: 0px -4px 4px rgba(0, 0, 0, 0.25);
+	--box-shadow-large: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
