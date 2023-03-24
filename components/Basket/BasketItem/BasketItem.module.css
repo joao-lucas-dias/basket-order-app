@@ -4,14 +4,15 @@
 	box-shadow: var(--box-shadow-bottom);
 	background-color: var(--color-neutral-light);
 	display: flex;
-	gap: 0.5em;
-	padding: 0.75rem;
+	gap: 0.75em;
+	padding: 0.5em;
 }
 
 .image {
+	aspect-ratio: 1/1;
 	border-radius: 10px;
 	width: 90px;
-	height: 90px;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -25,12 +26,12 @@
 .body > * {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .header {
 	min-width: 10ch;
-	max-width: 35ch;
+	max-width: 25ch;
 	word-wrap: break-word;
 	vertical-align: top;
 }

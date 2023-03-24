@@ -9,8 +9,10 @@
 }
 
 .image {
+  aspect-ratio: 16/10;
   width: 170px;
   height: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 
