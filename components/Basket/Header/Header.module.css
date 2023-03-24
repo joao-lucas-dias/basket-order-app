@@ -15,17 +15,29 @@
 }
 
 .button {
+	background: none;
+	border: none;
+}
+
+.button:after {
+	display: block;
+	content: "";
+	border-bottom: solid 2px var(--color-primary);
+	transform: scaleX(0);
+	transition: transform 150ms ease-in-out;
+}
+
+.button:hover:after {
+	transform: scaleX(1);
+}
+
+.button__content {
 	display: flex;
 	align-items: center;
 	gap: 0.1em;
+	padding-inline: .25em;
 	font-size: 1.25rem;
 	cursor: pointer;
 	background: none;
-	border: 2px solid transparent;
 	transition: all .2s ease-in-out;
-}
-
-.button:hover {
-	padding-inline: .5em;
-	border-bottom: 2px solid var(--color-neutral-darkest);
 }

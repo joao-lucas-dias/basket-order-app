@@ -15,7 +15,7 @@
 
 .category__image {
 	object-fit: cover;
-	height: 250px;
+	height: 230px;
 }
 
 .category__label {
@@ -23,4 +23,5 @@
 	font-weight: bold;
 	padding-block: 0.4em;
 	border-top: 2px solid var(--color-neutral-darker);
+	background-color: var(--color-neutral-light);
 }

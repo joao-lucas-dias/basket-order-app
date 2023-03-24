@@ -7,7 +7,7 @@ const Header: React.FC<{ numberOfItems: number; onCloseModal: () => void }> = (p
 		<div className={classes.container}>
 			<span className={classes.label}>{`My Basket (${props.numberOfItems})`}</span>
 			<button className={classes.button} onClick={props.onCloseModal}>
-				close <CloseIcon />
+				<span className={classes.button__content}>close <CloseIcon /></span>
 			</button>
 		</div>
 	);
