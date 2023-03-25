@@ -29,15 +29,17 @@ const Navbar = () => {
 						Contact Us
 					</Link>
 				</li>
-				<li>
-					{inStore ? (
+				{inStore ? (
+					<li>
 						<BasketOverlay />
-					) : (
-						<Link href="/store" className={`${classes.store} ${classes.link}`}>
+					</li>
+				) : (
+					<li className={classes.store}>
+						<Link href="/store" className={classes.link}>
 							Store
 						</Link>
-					)}
-				</li>
+					</li>
+				)}
 			</ul>
 		</nav>
 	) : (

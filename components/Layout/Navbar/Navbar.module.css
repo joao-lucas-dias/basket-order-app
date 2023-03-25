@@ -71,10 +71,19 @@
 
 .store {
 	font-weight: bold;
-	padding-inline: 2em;
-	padding-block: 0.5em;
+	padding: .5em 2em;
+	cursor: pointer;
+	border: none;
+  outline: 3px solid var(--color-primary);
+	background-color: var(--color-neutral-light);
 
-	border: 3px solid var(--color-primary);
+	transition: all .25s ease-in-out;
+}
+
+.store:hover {
+  outline: 5px solid var(--color-primary-darker);
+  border-radius: 10px;
+  scale: 1.075;
 }
 
 .nav-simple {
