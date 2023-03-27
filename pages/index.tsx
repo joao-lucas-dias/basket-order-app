@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import CheckIcon from "@mui/icons-material/Check";
 
 import classes from "../styles/HomePage.module.css";
+import Image from "next/image";
 
 const HomePage = () => {
 	const router = useRouter();
@@ -29,7 +30,15 @@ const HomePage = () => {
 						Visit our Store
 					</button>
 				</div>
-				<span className={classes.hero__image}></span>
+				<Image
+					src={"/images/home/lettuce-field.jpg"}
+					alt="Picture of a lettuce field"
+					className={classes.hero__image}
+					width={2000}
+					height={2000}
+					quality={100}
+					priority
+				/>
 			</section>
 			<section
 				className={`${classes.section} ${classes.section__secondary} ${classes.section__bg__primary}`}
@@ -37,7 +46,15 @@ const HomePage = () => {
 				<h2 className={classes["sub-heading-2"]}>Why choose us?</h2>
 				<div className={classes.benefits__section__body}>
 					<div className={classes.benefit}>
-						<span className={classes.benefit__image}></span>
+						<Image
+							src={"/images/home/vegetables.jpg"}
+							alt="Picture of vegetables"
+							className={classes.benefit__image}
+							width={2000}
+							height={2000}
+							quality={100}
+							priority
+						/>
 						<div className={classes.benefit__body}>
 							<h3 className={classes["sub-heading-3"]}>Freshest Products</h3>
 							<p className={classes["p-text"]}>
@@ -48,7 +65,15 @@ const HomePage = () => {
 						</div>
 					</div>
 					<div className={classes.benefit}>
-						<span className={classes.benefit__image}></span>
+						<Image
+							src={"/images/home/hands-planting.jpg"}
+							alt="Picture of someone plating lettuce"
+							className={classes.benefit__image}
+							width={2000}
+							height={2000}
+							quality={100}
+							priority
+						/>
 						<div className={classes.benefit__body}>
 							<h3 className={classes["sub-heading-3"]}>Responsible Farming</h3>
 							<p className={classes["p-text"]}>
@@ -59,7 +84,15 @@ const HomePage = () => {
 						</div>
 					</div>
 					<div className={classes.benefit}>
-						<span className={classes.benefit__image}></span>
+						<Image
+							src={"/images/home/vegetable-stand.jpg"}
+							alt="Picture of a vegetable stand"
+							className={classes.benefit__image}
+							width={2000}
+							height={2000}
+							quality={100}
+							priority
+						/>
 						<div className={classes.benefit__body}>
 							<h3 className={classes["sub-heading-3"]}>Personalization</h3>
 							<p className={classes["p-text"]}>
@@ -86,7 +119,15 @@ const HomePage = () => {
 							preferences.”
 						</p>
 						<span className={classes.social__card__tag}>
-							<span className={classes.social__image}></span>
+							<Image
+								src={"/images/home/john-doe.jpg"}
+								alt="John Doe's profile picture"
+								className={classes.social__image}
+								width={2000}
+								height={2000}
+								quality={100}
+								priority
+							/>
 							<h4 className={classes["sub-heading-4"]}>John Doe</h4>
 						</span>
 					</div>
@@ -99,7 +140,15 @@ const HomePage = () => {
 							Greens, for making it easy for me to eat well and stay healthy!”
 						</p>
 						<div className={classes.social__card__tag}>
-							<span className={classes.social__image}></span>
+							<Image
+								src={"/images/home/max-pugstappen.jpg"}
+								alt="Max Pugstappen's profile picture"
+								className={classes.social__image}
+								width={2000}
+								height={2000}
+								quality={100}
+								priority
+							/>
 							<h4 className={classes["sub-heading-4"]}>Max Pugstappen</h4>
 						</div>
 					</div>
@@ -111,7 +160,15 @@ const HomePage = () => {
 							I'll definitely be a repeat customer!”
 						</p>
 						<div className={classes.social__card__tag}>
-							<span className={classes.social__image}></span>
+							<Image
+								src={"/images/home/sarah-smith.jpg"}
+								alt="Sarah Smith's profile picture"
+								className={classes.social__image}
+								width={2000}
+								height={2000}
+								quality={100}
+								priority
+							/>
 							<h4 className={classes["sub-heading-4"]}>Sarah Smith</h4>
 						</div>
 					</div>
@@ -123,7 +180,15 @@ const HomePage = () => {
 							local farm and sustainable farming practices. Thank you, Local Greens!”
 						</p>
 						<div className={classes.social__card__tag}>
-							<span className={classes.social__image}></span>
+							<Image
+								src={"/images/home/jessica-thomson.jpg"}
+								alt="Jessica Thomson's profile picture"
+								className={classes.social__image}
+								width={2000}
+								height={2000}
+								quality={100}
+								priority
+							/>
 							<h4 className={classes["sub-heading-4"]}>Jessica Thomson</h4>
 						</div>
 					</div>
@@ -135,7 +200,15 @@ const HomePage = () => {
 							huge plus. Thank you, Local Greens, for making it easy to eat well!”
 						</p>
 						<div className={classes.social__card__tag}>
-							<span className={classes.social__image}></span>
+							<Image
+								src={"/images/home/mike-johnson.jpg"}
+								alt="Mike Johnson's profile picture"
+								className={classes.social__image}
+								width={2000}
+								height={2000}
+								quality={100}
+								priority
+							/>
 							<h4 className={classes["sub-heading-4"]}>Mike Johnson</h4>
 						</div>
 					</div>
