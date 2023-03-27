@@ -10,7 +10,7 @@
   display: grid;
   place-content: center;
   font-size: 1.5rem;
-  padding: .25em .5em;
+  padding: .25em;
   cursor: pointer;
   border: none;
 
@@ -24,8 +24,7 @@
 
 .quantity {
   flex-grow: 1;
-  width: 9ch;
-  padding-inline: 1em;
+  width: 7ch;
   text-align: center;
 }
 

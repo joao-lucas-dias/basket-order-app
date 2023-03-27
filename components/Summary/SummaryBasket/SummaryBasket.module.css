@@ -37,8 +37,8 @@
 	gap: 1.5em;
 	list-style: none;
 
-	background-color: var(--color-neutral-light);
-	border: 1px solid var(--color-neutral-darkest);
+	border: 2px solid var(--color-neutral-darkest);
+	border-radius: 10px;
 
 	padding: 2rem;
 }
