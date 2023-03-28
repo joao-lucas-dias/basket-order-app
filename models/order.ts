@@ -1,4 +1,14 @@
-import { BasketItem } from "./basket";
+export interface OrderItem {
+  name: string;
+  category: string;
+  sellingUnit: string;
+  quantity: number;
+  priceInfo: {
+    amount: number;
+    unit: string;
+  }
+  totalPrice: string;
+}
 
 export default interface Order {
   contactInfo: {
@@ -7,7 +17,7 @@ export default interface Order {
     email: string;
   },
   basket: {
-    products: BasketItem[];
-    cost: number;
+    products: OrderItem[];
+    totalCost: string;
   }
 }

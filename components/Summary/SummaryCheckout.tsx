@@ -1,5 +1,4 @@
-import { BasketItem } from "@/models/basket";
-import Order from "@/models/order";
+import Order, { OrderItem } from "@/models/order";
 import { RootState } from "@/store/store";
 import { euro } from "@/store/utils";
 import { useSelector } from "react-redux";
@@ -10,21 +9,32 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 	const basket = useSelector((state: RootState) => state.basket);
 
 	const submitHandler = () => {
-		const products: BasketItem[] = [];
+		const products: OrderItem[] = [];
 
 		for (var category of basket.categories) {
-			category.items.map(item => products.push(item));
+			category.items.map((item) =>
+				products.push({
+					name: item.name,
+					category: item.category,
+					sellingUnit: item.sellingUnit,
+					quantity: item.quantity,
+					priceInfo: item.priceInfo,
+					totalPrice: euro.format(item.quantity * item.priceInfo.amount)
+				})
+			);
 		}
 
 		const order: Order = {
 			contactInfo: {
-				name: 'John Doe',
-				phoneNumber: '+351123456789',
-				email: 'john.doe@email.com'
+				name: "John Doe",
+				phoneNumber: "+351123456789",
+				email: "john.doe@email.com"
 			},
 			basket: {
 				products: products,
-				cost: basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5)
+				totalCost: euro.format(
+					basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5)
+				)
 			}
 		};
 
@@ -44,12 +54,16 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						<p>Delivery*</p>
 						<p className={classes.info}>{"* (Free for orders over 15 €)"}</p>
 					</span>
-					<span>{basket.cost.subtotal >= 15 ? "FREE" : euro.format(basket.cost.delivery)}</span>
+					<span>
+						{basket.cost.subtotal >= 15 ? "FREE" : euro.format(basket.cost.delivery)}
+					</span>
 				</div>
 				<span className={classes.line}></span>
 				<div className={`${classes.section} ${classes.total}`}>
 					<span>Total</span>
-					<span>{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}</span>
+					<span>
+						{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}
+					</span>
 				</div>
 				<button onClick={submitHandler} className={classes.button}>
 					ORDER
