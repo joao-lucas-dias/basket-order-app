@@ -81,11 +81,11 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 			<span className={classes.header}>Summary</span>
 			<div className={classes["summary-container"]}>
 				<div className={classes.basket__price}>
-					<p className={classes.section}>
+					<div className={classes.section}>
 						<span>Subtotal</span>
 						<span>{euro.format(basket.cost.subtotal)}</span>
-					</p>
-					<p className={classes.section}>
+					</div>
+					<div className={classes.section}>
 						<span className={classes.delivery}>
 							<p>Delivery*</p>
 							<p className={classes.info}>{"* (Free for orders over 15 €)"}</p>
@@ -93,14 +93,14 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						<span>
 							{basket.cost.subtotal >= 15 ? "FREE" : euro.format(basket.cost.delivery)}
 						</span>
-					</p>
+					</div>
 					<span className={classes.line}></span>
-					<p className={`${classes.section} ${classes.total}`}>
+					<div className={`${classes.section} ${classes.total}`}>
 						<span>Total</span>
 						<span>
 							{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}
 						</span>
-					</p>
+					</div>
 				</div>
 
 				<form className={classes.form}>
