@@ -51,6 +51,7 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 		const order: Order = {
 			customerInfo: {
 				name: formName,
+				address: formAddress,
 				phoneNumber: formPhoneNumber,
 				email: formEmail
 			},

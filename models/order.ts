@@ -13,6 +13,7 @@ export interface OrderItem {
 export default interface Order {
   customerInfo: {
     name: string;
+    address: string;
     phoneNumber: string;
     email: string;
   },
