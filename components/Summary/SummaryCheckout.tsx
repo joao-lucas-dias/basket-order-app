@@ -1,14 +1,31 @@
+import { useState, ChangeEvent, FormEvent } from "react";
 import Order, { OrderItem } from "@/models/order";
 import { RootState } from "@/store/store";
 import { euro } from "@/store/utils";
 import { useSelector } from "react-redux";
+import TextField from "@mui/material/TextField";
 
 import classes from "./SummaryCheckout.module.css";
 
 const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (props) => {
 	const basket = useSelector((state: RootState) => state.basket);
+	const [formName, setFormName] = useState("");
+	const [formPhoneNumber, setFormPhoneNumber] = useState("");
+	const [formEmail, setFormEmail] = useState("");
 
-	const submitHandler = () => {
+	const nameChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+		setFormName(event.target.value);
+	};
+	const phoneNumberChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+		setFormPhoneNumber(event.target.value);
+	};
+	const emailChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+		setFormEmail(event.target.value);
+	};
+
+	const submitHandler = (event: FormEvent) => {
+		event.preventDefault();
+
 		const products: OrderItem[] = [];
 
 		for (var category of basket.categories) {
@@ -25,10 +42,10 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 		}
 
 		const order: Order = {
-			contactInfo: {
-				name: "John Doe",
-				phoneNumber: "+351123456789",
-				email: "john.doe@email.com"
+			customerInfo: {
+				name: formName,
+				phoneNumber: formPhoneNumber,
+				email: formEmail
 			},
 			basket: {
 				products: products,
@@ -65,9 +82,36 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}
 					</span>
 				</div>
-				<button onClick={submitHandler} className={classes.button}>
-					ORDER
-				</button>
+
+				<form className={classes.form}>
+					<TextField
+						value={formName}
+						onChange={nameChangeHandler}
+						required
+						label="Name"
+						type="text"
+						size="small"
+					/>
+					<TextField
+						value={formPhoneNumber}
+						onChange={phoneNumberChangeHandler}
+						required
+						label="Phone Number"
+						type="tel"
+						size="small"
+					/>
+					<TextField
+						value={formEmail}
+						onChange={emailChangeHandler}
+						required
+						label="E-mail"
+						type="email"
+						size="small"
+					/>
+					<button type="submit" onClick={submitHandler} className={classes.button}>
+						ORDER
+					</button>
+				</form>
 			</div>
 		</div>
 	);

@@ -41,11 +41,15 @@
   font-size: 2rem;
 }
 
+.form {
+  display: grid;
+  grid-row-gap: 1em;
+}
+
 .button {
   font-size: 1.25rem;
   font-weight: bold;
   padding-block: .75em;
-  margin-top: .5em;
 
   background-color: var(--color-primary);
   color: var(--color-neutral-light);
