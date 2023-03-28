@@ -10,15 +10,22 @@ import classes from "./SummaryCheckout.module.css";
 const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (props) => {
 	const basket = useSelector((state: RootState) => state.basket);
 	const [formName, setFormName] = useState("");
+	const [formAddress, setFormAddress] = useState("");
 	const [formPhoneNumber, setFormPhoneNumber] = useState("");
 	const [formEmail, setFormEmail] = useState("");
 
 	const nameChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		setFormName(event.target.value);
 	};
+
+	const addressChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+		setFormAddress(event.target.value);
+	};
+
 	const phoneNumberChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		setFormPhoneNumber(event.target.value);
 	};
+
 	const emailChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		setFormEmail(event.target.value);
 	};
@@ -93,6 +100,14 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						size="small"
 					/>
 					<TextField
+						value={formAddress}
+						onChange={addressChangeHandler}
+						required
+						label="Address"
+						type="text"
+						size="small"
+					/>
+					<TextField
 						value={formPhoneNumber}
 						onChange={phoneNumberChangeHandler}
 						required
@@ -109,7 +124,7 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						size="small"
 					/>
 					<button type="submit" onClick={submitHandler} className={classes.button}>
-						ORDER
+						PLACE ORDER
 					</button>
 				</form>
 			</div>
