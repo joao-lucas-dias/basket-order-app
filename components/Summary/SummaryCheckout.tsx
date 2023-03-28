@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import TextField from "@mui/material/TextField";
 
 import classes from "./SummaryCheckout.module.css";
+import { Button } from "@mui/material";
 
 const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (props) => {
 	const basket = useSelector((state: RootState) => state.basket);
@@ -28,6 +29,15 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 
 	const emailChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
 		setFormEmail(event.target.value);
+	};
+
+	const validateForm = () => {
+		return (
+			formName.length > 0 &&
+			formAddress.length > 0 &&
+			formPhoneNumber.length > 0 &&
+			formEmail.length > 0
+		);
 	};
 
 	const submitHandler = (event: FormEvent) => {
@@ -70,25 +80,27 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 		<div className={classes.wrapper}>
 			<span className={classes.header}>Summary</span>
 			<div className={classes["summary-container"]}>
-				<div className={classes.section}>
-					<span>Subtotal</span>
-					<span>{euro.format(basket.cost.subtotal)}</span>
-				</div>
-				<div className={classes.section}>
-					<span className={classes.delivery}>
-						<p>Delivery*</p>
-						<p className={classes.info}>{"* (Free for orders over 15 €)"}</p>
-					</span>
-					<span>
-						{basket.cost.subtotal >= 15 ? "FREE" : euro.format(basket.cost.delivery)}
-					</span>
-				</div>
-				<span className={classes.line}></span>
-				<div className={`${classes.section} ${classes.total}`}>
-					<span>Total</span>
-					<span>
-						{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}
-					</span>
+				<div className={classes.basket__price}>
+					<p className={classes.section}>
+						<span>Subtotal</span>
+						<span>{euro.format(basket.cost.subtotal)}</span>
+					</p>
+					<p className={classes.section}>
+						<span className={classes.delivery}>
+							<p>Delivery*</p>
+							<p className={classes.info}>{"* (Free for orders over 15 €)"}</p>
+						</span>
+						<span>
+							{basket.cost.subtotal >= 15 ? "FREE" : euro.format(basket.cost.delivery)}
+						</span>
+					</p>
+					<span className={classes.line}></span>
+					<p className={`${classes.section} ${classes.total}`}>
+						<span>Total</span>
+						<span>
+							{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}
+						</span>
+					</p>
 				</div>
 
 				<form className={classes.form}>
@@ -124,9 +136,16 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						type="email"
 						size="small"
 					/>
-					<button type="submit" onClick={submitHandler} className={classes.button}>
+					<Button
+						disabled={!validateForm()}
+						type="submit"
+						onClick={submitHandler}
+						variant="contained"
+						size="medium"
+						className={classes.button}
+					>
 						PLACE ORDER
-					</button>
+					</Button>
 				</form>
 			</div>
 		</div>

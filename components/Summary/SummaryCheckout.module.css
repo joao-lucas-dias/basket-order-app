@@ -15,8 +15,13 @@
   border: 2px solid var(--color-neutral-darkest);
   border-radius: 10px;
   display: grid;
-  gap: .75rem;
-  padding: 2rem;
+  gap: 1.5em;
+  padding: 1.5em;
+}
+
+.basket__price {
+  display: grid;
+  grid-row-gap: .75em;
 }
 
 .section {
@@ -47,16 +52,15 @@
 }
 
 .button {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
-  padding-block: .75em;
+  padding-block: .5em;
+  border-radius: 5px;
 
   background-color: var(--color-primary);
   color: var(--color-neutral-light);
-  cursor: pointer;
-  border-radius: 10px;
-  border: none;
-  transition: background-color 0.175s ease-in-out;
+
+  transition: all 0.175s ease-in-out;
 }
 
 .button:hover {
