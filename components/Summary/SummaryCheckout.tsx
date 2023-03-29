@@ -108,6 +108,7 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						value={formName}
 						onChange={nameChangeHandler}
 						required
+						color="success"
 						label="Name"
 						type="text"
 						size="small"
@@ -116,6 +117,7 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						value={formAddress}
 						onChange={addressChangeHandler}
 						required
+						color="success"
 						label="Address"
 						type="text"
 						size="small"
@@ -124,6 +126,7 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						value={formPhoneNumber}
 						onChange={phoneNumberChangeHandler}
 						required
+						color="success"
 						label="Phone Number"
 						type="tel"
 						size="small"
@@ -132,6 +135,7 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						value={formEmail}
 						onChange={emailChangeHandler}
 						required
+						color="success"
 						label="E-mail"
 						type="email"
 						size="small"
