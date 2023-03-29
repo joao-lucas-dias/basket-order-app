@@ -9,7 +9,6 @@ export default function App({ Component, pageProps }: AppProps) {
 		<Provider store={store}>
 			<Navbar />
 			<Component {...pageProps} />
-			<div>FOOTER</div>
 		</Provider>
 	);
 }

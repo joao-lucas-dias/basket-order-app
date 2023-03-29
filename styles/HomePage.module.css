@@ -17,10 +17,6 @@
 	grid-row-gap: 2em;
 }
 
-.section__bg__main {
-	background-color: var(--color-background-main);
-}
-
 .section__bg__main h3,
 .section__bg__main h4 {
 	color: var(--color-primary);

@@ -14,7 +14,7 @@ const HomePage = () => {
 	return (
 		<main className={classes.main}>
 			<section
-				className={`${classes.section} ${classes.section__hero} ${classes.section__bg__main}`}
+				className={`${classes.section} ${classes.section__hero}`}
 			>
 				<div className={classes["flex-group"]}>
 					<div className={classes["text-group"]}>
@@ -104,7 +104,7 @@ const HomePage = () => {
 				</div>
 			</section>
 			<section
-				className={`${classes.section} ${classes.section__secondary} ${classes.section__bg__main}`}
+				className={`${classes.section} ${classes.section__secondary}`}
 			>
 				<h2 className={classes["sub-heading-2"]}>
 					Hear from some of our satisfied customers
@@ -252,7 +252,7 @@ const HomePage = () => {
 				</div>
 			</section>
 			<section
-				className={`${classes.section} ${classes.section__secondary} ${classes.section__bg__main}`}
+				className={`${classes.section} ${classes.section__secondary}`}
 			>
 				<h2 className={classes["sub-heading-2"]}>Like what you see?</h2>
 				<div className={classes.cta__secondary__body}>
