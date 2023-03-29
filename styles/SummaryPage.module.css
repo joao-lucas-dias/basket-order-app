@@ -1,11 +1,118 @@
 .main {
 	padding-inline: 20rem;
 	padding-block: 6rem;
-  
-	display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-column-gap: 10rem;
-  align-items: start;
 
-  background-color: var(--color-background-main);
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-column-gap: 10rem;
+	align-items: start;
+
+	background-color: var(--color-background-main);
+}
+
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+}
+
+.overlay-opening {
+	animation: fadein 0.3s;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.overlay-closing {
+	animation: fadeout 0.3s;
+}
+
+@keyframes fadeout {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.modal-container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	min-width: 25%;
+	padding: 5em;
+
+	background-color: var(--color-neutral-light);
+	border: 5px solid var(--color-neutral-darkest);
+	border-radius: 50px;
+}
+
+.modal-opening {
+	animation: fadein 0.3s;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.modal-open {
+	overflow: hidden;
+}
+
+.modal-closing {
+	animation: fadeout 0.3s;
+}
+
+@keyframes fadeout {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.modal__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
+}
+
+.modal__heading {
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.modal__button {
+	font-size: 1.25em;
+	font-weight: bold;
+	padding-inline: 2.5em;
+
+	border-radius: 5px;
+	background-color: var(--color-primary);
+	color: var(--color-neutral-light);
+
+	transition: all 0.175s ease-in-out;
+}
+
+.modal__button:hover {
+	background-color: var(--color-primary-darker);
 }

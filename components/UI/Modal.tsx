@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 interface ModalProps {
 	isOpen: boolean;
-	onClose: () => void;
+	onClose?: () => void;
 	overlayClasses: string;
 	contentClasses: string;
 	children: React.ReactNode;
@@ -25,7 +25,7 @@ const Modal: React.FC<ModalProps> = ({
 
 	const handleCloseModal = (event: React.MouseEvent<HTMLDivElement>) => {
 		if (event.target === event.currentTarget) {
-			onClose();
+			onClose!();
 		}
 	};
 
