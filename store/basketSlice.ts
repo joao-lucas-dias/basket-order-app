@@ -122,11 +122,14 @@ const basketSlice = createSlice({
 			}
 
 			state.cost.subtotal = newSubtotal;
+		},
+		resetBasket: () => {
+			return initialState
 		}
 	}
 });
 
-export const { toggleCartVisibility, toggleCategoryVisibility, addToCart, removeFromCart, updateQuantity } =
+export const { toggleCartVisibility, toggleCategoryVisibility, addToCart, removeFromCart, updateQuantity, resetBasket } =
 	basketSlice.actions;
 
 export default basketSlice.reducer;

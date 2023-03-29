@@ -8,9 +8,12 @@ import { useRouter } from "next/router";
 import classes from "@/styles/SummaryPage.module.css";
 import Button from "@mui/material/Button";
 import HomeIcon from '@mui/icons-material/Home';
+import { useDispatch } from "react-redux";
+import { resetBasket } from "@/store/basketSlice";
 
 const SummaryPage = () => {
 	const router = useRouter();
+	const dispatch = useDispatch();
 	const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
 
 	const orderSubmitHandler = async (order: Order) => {
@@ -45,6 +48,7 @@ const SummaryPage = () => {
 
 	const goToHomePage = () => {
 		router.push("/");
+		dispatch(resetBasket());
 	};
 
 	return (
