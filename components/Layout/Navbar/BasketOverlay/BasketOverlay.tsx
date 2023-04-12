@@ -1,8 +1,8 @@
-import Basket from "@/components/Basket/Basket";
-import Modal from "@/components/UI/Modal";
-import { RootState } from "@/store/store";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import Basket from "@/components/Basket/Basket";
+import Modal from "@/components/UI/Modal";
 import BasketButton from "./BasketButton/BasketButton";
 
 import classes from "./BasketOverlay.module.css";
@@ -15,19 +15,19 @@ const BasketOverlay = () => {
 
 	const handleOpenModal = () => {
 		body = document.getElementsByTagName("body")[0];
-		body.classList.toggle(classes["modal-open"]);
+		body.classList.toggle(classes.modal__open);
 		setModalIsOpen(true);
 	};
 
 	const handleCloseModal = () => {
-		const overlay = document.getElementById("modal-overlay");
-		overlay?.classList.replace(classes["overlay-opening"], classes["overlay-closing"]);
+		const overlay = document.getElementById("modal-background");
+		overlay?.classList.replace(classes.background__opening, classes.background__closing);
 
 		const content = document.getElementById("modal-content");
-		content?.classList.replace(classes["modal-opening"], classes["modal-closing"]);
+		content?.classList.replace(classes.modal__opening, classes.modal__closing);
 
 		body = document.getElementsByTagName("body")[0];
-		body.classList.toggle(classes["modal-open"]);
+		body.classList.toggle(classes.modal__open);
 
 		setTimeout(() => {
 			setModalIsOpen(false);
@@ -44,13 +44,13 @@ const BasketOverlay = () => {
 		return counter;
 	};
 
-	const overlayClasses = `${classes["modal-overlay"]} ${
-		modalIsOpen && classes["overlay-opening"]
+	const backgroundClasses = `${classes.modal__background} ${
+		modalIsOpen && classes.background__opening
 	}`;
 
-	const contentClasses = `${classes["modal-content"]} 
-		${modalIsOpen && classes["modal-opening"]} 
-		${getNumberOfBasketItems() === 0 && classes["content-empty"]}
+	const contentClasses = `${classes.modal__content} 
+		${modalIsOpen && classes.modal__opening} 
+		${getNumberOfBasketItems() === 0 && classes.modal__content__empty}
 	`;
 
 	return (
@@ -62,7 +62,7 @@ const BasketOverlay = () => {
 			<Modal
 				isOpen={modalIsOpen}
 				onClose={handleCloseModal}
-				overlayClasses={overlayClasses}
+				backgroundClasses={backgroundClasses}
 				contentClasses={contentClasses}
 			>
 				<Basket

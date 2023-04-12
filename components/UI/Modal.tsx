@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 interface ModalProps {
 	isOpen: boolean;
 	onClose?: () => void;
-	overlayClasses: string;
+	backgroundClasses: string;
 	contentClasses: string;
 	children: React.ReactNode;
 }
@@ -12,7 +12,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({
 	isOpen,
 	onClose,
-	overlayClasses,
+	backgroundClasses,
 	contentClasses,
 	children
 }) => {
@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({
 
 	const modalContent = (
 		<>
-			<div id="modal-overlay" className={overlayClasses} onClick={handleCloseModal}>
+			<div id="modal-background" className={backgroundClasses} onClick={handleCloseModal}>
 				<div id="modal-content" className={contentClasses} ref={modalRef}>
 					{children}
 				</div>

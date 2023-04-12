@@ -40,6 +40,7 @@ video {
 :root {
 	--color-background-main: #EBF7FF ;
 	--color-background-nav: #FFEED6;
+	--color-background-modal: rgba(0, 0, 0, 0.5);
 
 	--color-primary: #53A65A;
 	--color-primary-darker: #267D35;
