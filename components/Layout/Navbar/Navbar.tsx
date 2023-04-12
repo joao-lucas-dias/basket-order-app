@@ -15,17 +15,21 @@ const Navbar = () => {
 
 	const navStyle = inSummary ? "simple" : "full";
 
+	const navLogo = (
+		<Link href="/" className={`${classes.logo} ${classes.link}`}>
+			<span className={classes.logo__image}></span>
+			<span className={classes.logo__name}>Local Greens</span>
+		</Link>
+	);
+
 	return navStyle === "full" ? (
-		<nav className={classes["nav-full"]}>
-			<Link href="/" className={`${classes.logo} ${classes.link}`}>
-				<span className={classes["logo-image"]}></span>
-				<span className={classes["logo-name"]}>Local Greens</span>
-			</Link>
+		<nav className={`${classes.navbar} ${classes.navbar__full}`}>
+			{navLogo}
 			<ul className={classes.menu}>
 				<li>
 					<Link
 						href="/about-us"
-						className={`${classes.link} ${inAboutUs && classes.active}`}
+						className={`${classes.link} ${inAboutUs && classes.link__active}`}
 					>
 						About Us
 					</Link>
@@ -33,7 +37,7 @@ const Navbar = () => {
 				<li>
 					<Link
 						href="/contact-us"
-						className={`${classes.link} ${inContactUs && classes.active}`}
+						className={`${classes.link} ${inContactUs && classes.link__active}`}
 					>
 						Contact Us
 					</Link>
@@ -43,8 +47,8 @@ const Navbar = () => {
 						<BasketOverlay />
 					</li>
 				) : (
-					<li className={classes.store}>
-						<Link href="/store" className={classes.link__store}>
+					<li className={classes.store__button}>
+						<Link href="/store" className={`${classes.link} ${classes.store__link}`}>
 							Store
 						</Link>
 					</li>
@@ -52,12 +56,7 @@ const Navbar = () => {
 			</ul>
 		</nav>
 	) : (
-		<nav className={classes["nav-simple"]}>
-			<Link href="/" className={`${classes.logo} ${classes.link}`}>
-				<span className={classes["logo-image"]}></span>
-				<span className={classes["logo-name"]}>Local Greens</span>
-			</Link>
-		</nav>
+		<nav className={`${classes.navbar} ${classes.navbar__simple}`}>{navLogo}</nav>
 	);
 };
 
