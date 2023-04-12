@@ -1,4 +1,4 @@
-.category {
+.wrapper {
 	display: grid;
 	background-color: var(--color-neutral-light);
 	border: 2px solid var(--color-neutral-darker);
@@ -9,18 +9,19 @@
 	transition: all .2s ease-in-out;
 }
 
-.category:hover {
+.wrapper:hover {
 	scale: 102%;
 }
 
-.category__image {
+.image {
 	object-fit: cover;
 	height: 230px;
 }
 
-.category__label {
+.label {
 	font-size: 1.75rem;
 	font-weight: bold;
+	text-align: center;
 	padding-block: 0.4em;
 	border-top: 2px solid var(--color-neutral-darker);
 	background-color: var(--color-neutral-light);
