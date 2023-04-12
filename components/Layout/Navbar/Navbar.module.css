@@ -69,6 +69,10 @@
 	transform: scaleX(1);
 }
 
+.active {
+	border-bottom: solid 2px var(--color-primary);
+}
+
 .store {
 	transition: all .25s ease-in-out;
 }

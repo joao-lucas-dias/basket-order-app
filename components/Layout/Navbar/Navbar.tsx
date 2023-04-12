@@ -10,6 +10,9 @@ const Navbar = () => {
 	const inStore = router.pathname.startsWith("/store");
 	const inSummary = router.pathname.endsWith("/order-summary");
 
+	const inContactUs = router.pathname.startsWith("/contact-us");
+	const inAboutUs = router.pathname.startsWith("/about-us");
+
 	const navStyle = inSummary ? "simple" : "full";
 
 	return navStyle === "full" ? (
@@ -20,12 +23,18 @@ const Navbar = () => {
 			</Link>
 			<ul className={classes.menu}>
 				<li>
-					<Link href="/about-us" className={classes.link}>
+					<Link
+						href="/about-us"
+						className={`${classes.link} ${inAboutUs && classes.active}`}
+					>
 						About Us
 					</Link>
 				</li>
 				<li>
-					<Link href="/contact-us" className={classes.link}>
+					<Link
+						href="/contact-us"
+						className={`${classes.link} ${inContactUs && classes.active}`}
+					>
 						Contact Us
 					</Link>
 				</li>

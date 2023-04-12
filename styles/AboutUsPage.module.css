@@ -1,6 +1,39 @@
-.main {
-	padding-block: 6rem;
-	padding-inline: 8rem;
+.section {
+	display: flex;
+	gap: 10em;
+	padding: 6rem 14rem;
+	background-color: #daf9d9;
+}
 
+.column {
+	flex: 1;
+}
+
+.flipped {
+	flex-direction: row-reverse;
 	background-color: var(--color-background-main);
+}
+
+.section__image {
+	object-fit: cover;
+	height: 300px;
+}
+
+.section__main__image {
+	object-fit: cover;
+	aspect-ratio: 2/3;
+	width: 50%;
+	height: 650px;
+}
+
+.section__heading {
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-bottom: 0.75em;
+}
+
+.section__paragraph {
+	font-size: 1.25rem;
+	font-weight: normal;
+	line-height: 1.3;
 }
