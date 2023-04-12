@@ -1,32 +1,29 @@
 .button {
-  position: relative;
-  padding-inline: 2em;
-  padding-block: 0.5em;
+	position: relative;
+	padding: 0.5em 2em;
 
-  border: none;
-  outline: 3px solid var(--color-primary);
-  background-color: var(--color-neutral-light);
-  box-shadow: var(--box-shadow-large);
-
-  transition: all .25s ease-in-out;
-
-  cursor: pointer;
+	border: none;
+	outline: 3px solid var(--color-primary);
+	background-color: var(--color-neutral-light);
+	box-shadow: var(--box-shadow-large);
+	cursor: pointer;
+	transition: all 0.25s ease-in-out;
 }
 
 .button:hover {
-  outline: 5px solid var(--color-primary-darker);
-  border-radius: 10px;
-  scale: 1.075;
+	outline: 5px solid var(--color-primary-darker);
+	border-radius: 10px;
+	scale: 1.075;
 }
 
-.label {
-  display: flex;
-  align-items: center;
-  gap: .5em;
-  font-weight: bold;
+.button__label {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	font-weight: bold;
 }
 
-.badge {
+.button__badge {
 	background-color: var(--color-secondary-darker);
 	border-radius: 50%;
 	color: var(--color-neutral-light);
@@ -40,24 +37,24 @@
 	transform: translate(50%, -50%);
 }
 
-.bump {
-  animation: bump 300ms ease-out;
+.button__bump {
+	animation: bump 300ms ease-out;
 }
 
 @keyframes bump {
-  0% {
-    transform: scale(1);
-  }
-  10% {
-    transform: scale(0.9);
-  }
-  30% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
+	0% {
+		transform: scale(1);
+	}
+	10% {
+		transform: scale(0.9);
+	}
+	30% {
+		transform: scale(1.1);
+	}
+	50% {
+		transform: scale(1.15);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
