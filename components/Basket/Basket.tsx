@@ -13,7 +13,9 @@ const Basket: React.FC<{ numberOfItems: number; closeModalHandler: () => void }>
 
 	const modalBody =
 		props.numberOfItems === 0 ? (
-			<span>Basket is Empty!</span>
+			<div className={classes.basket__empty}>
+				<span>Your Basket is Empty!</span>
+			</div>
 		) : (
 			<>
 				<ul className={classes["category-list"]}>

@@ -6,3 +6,10 @@
 	overflow-y: scroll;
 	padding: 1rem;
 }
+
+.basket__empty {
+	padding: 2rem;
+
+	font-size: 1.5rem;
+	font-weight: bold;
+}

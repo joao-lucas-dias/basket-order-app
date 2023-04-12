@@ -19,7 +19,7 @@ const Navbar = () => {
 		<nav className={classes["nav-full"]}>
 			<Link href="/" className={`${classes.logo} ${classes.link}`}>
 				<span className={classes["logo-image"]}></span>
-				<span className={classes["logo-name"]}>Diddly Squat</span>
+				<span className={classes["logo-name"]}>Local Greens</span>
 			</Link>
 			<ul className={classes.menu}>
 				<li>

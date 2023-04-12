@@ -17,13 +17,15 @@
 .section__image {
 	object-fit: cover;
 	height: 300px;
+	border-radius: 25px;
 }
 
 .section__main__image {
 	object-fit: cover;
-	aspect-ratio: 2/3;
-	width: 50%;
-	height: 650px;
+	aspect-ratio: 1;
+	max-width: 50%;
+	height: 100%;
+	border-radius: 25px;
 }
 
 .section__heading {
