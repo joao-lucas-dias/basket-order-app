@@ -1,7 +1,8 @@
-import { RootState } from "@/store/store";
-import { euro } from "@/store/utils";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { euro } from "@/store/utils";
+
 import classes from "./Checkout.module.css";
 
 const Checkout: React.FC<{ onCheckout: () => void }> = (props) => {
@@ -20,16 +21,20 @@ const Checkout: React.FC<{ onCheckout: () => void }> = (props) => {
 				<span>{euro.format(basket.cost.subtotal)}</span>
 			</div>
 			<div className={classes.section}>
-				<span className={classes.delivery}>
+				<span className={classes.delivery__label}>
 					<p>Delivery*</p>
-					<p className={classes.info}>{"* (Free for orders over 15 €)"}</p>
+					<p className={classes.delivery__info}>{"* (Free for orders over 15 €)"}</p>
 				</span>
-				<span>{basket.cost.subtotal >= 15 ? "FREE" : euro.format(basket.cost.delivery)}</span>
+				<span>
+					{basket.cost.subtotal >= 15 ? "FREE" : euro.format(basket.cost.delivery)}
+				</span>
 			</div>
 			<span className={classes.line}></span>
-			<div className={`${classes.section} ${classes.total}`}>
+			<div className={`${classes.section} ${classes.section__total}`}>
 				<span>Total</span>
-				<span>{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}</span>
+				<span>
+					{euro.format(basket.cost.subtotal + (basket.cost.subtotal >= 15 ? 0 : 5))}
+				</span>
 			</div>
 			<button onClick={checkoutHandler} className={classes.button}>
 				FINISH ORDER

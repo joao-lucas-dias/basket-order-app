@@ -16,17 +16,13 @@
 	cursor: pointer;
 }
 
-.label {
+.header__label {
 	text-transform: capitalize;
 	font-size: 1.5rem;
 	font-weight: bold;
 }
 
-.line {
-	border: 1px solid var(--color-neutral-darkest);
-}
-
-.item-list {
+.item__list {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5em;

@@ -14,12 +14,12 @@
 	font-weight: bold;
 }
 
-.button {
+.close__button {
 	background: none;
 	border: none;
 }
 
-.button:after {
+.close__button:after {
 	display: block;
 	content: "";
 	border-bottom: solid 2px var(--color-primary);
@@ -27,17 +27,17 @@
 	transition: transform 150ms ease-in-out;
 }
 
-.button:hover:after {
+.close__button:hover:after {
 	transform: scaleX(1);
 }
 
-.button__content {
+.close__button__content {
 	display: flex;
 	align-items: center;
 	gap: 0.1em;
-	padding-inline: .25em;
+	padding-inline: 0.25em;
 	font-size: 1.25rem;
 	cursor: pointer;
 	background: none;
-	transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }

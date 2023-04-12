@@ -1,10 +1,10 @@
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
-
-import classes from "./Basket.module.css";
 import Checkout from "./Checkout/Checkout";
 import BasketCategory from "./BasketCategory/BasketCategory";
 import Header from "./Header/Header";
+
+import classes from "./Basket.module.css";
 
 const Basket: React.FC<{ numberOfItems: number; closeModalHandler: () => void }> = (
 	props
@@ -18,7 +18,7 @@ const Basket: React.FC<{ numberOfItems: number; closeModalHandler: () => void }>
 			</div>
 		) : (
 			<>
-				<ul className={classes["category-list"]}>
+				<ul className={classes.basket__content}>
 					{categories.map((category) => {
 						return <BasketCategory key={category.name} category={category} />;
 					})}

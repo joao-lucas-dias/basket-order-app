@@ -1,9 +1,9 @@
+import { useDispatch } from "react-redux";
+import Image from "next/image";
 import { BasketItem } from "@/models/basket";
 import { removeFromCart } from "@/store/basketSlice";
 import { euro } from "@/store/utils";
-import Image from "next/image";
-import { useDispatch } from "react-redux";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import classes from "./BasketItem.module.css";
 
@@ -11,10 +11,12 @@ const BasketItem: React.FC<{ item: BasketItem }> = (props) => {
 	const dispatch = useDispatch();
 
 	const removeItemHandler = () => {
-		dispatch(removeFromCart({
-			itemId: props.item.id,
-			category: props.item.category
-		}));
+		dispatch(
+			removeFromCart({
+				itemId: props.item.id,
+				category: props.item.category
+			})
+		);
 	};
 
 	const parseUnit = (unit: string) => {
@@ -36,18 +38,18 @@ const BasketItem: React.FC<{ item: BasketItem }> = (props) => {
 			<div className={classes.body}>
 				<div>
 					<span className={classes.header}>
-						<span className={classes.name}>{props.item.name}</span>
-						<span className={classes["unit-info"]}>{` (${parseUnit(
+						<span className={classes.header__name}>{props.item.name}</span>
+						<span className={classes.header__unit}>{` (${parseUnit(
 							props.item.sellingUnit
 						)})`}</span>
 					</span>
 					<span className={classes.quantity}>{`Quantity: ${props.item.quantity}`}</span>
 				</div>
 				<div>
-					<button onClick={removeItemHandler} className={classes.button}>
+					<button onClick={removeItemHandler} className={classes.close__button}>
 						<DeleteIcon fontSize="medium" />
 					</button>
-					<div className={classes["price-info"]}>
+					<div className={classes.price__info}>
 						<span className={classes.info}>
 							{euro.format(props.item.priceInfo.amount)} / {props.item.priceInfo.unit}
 						</span>

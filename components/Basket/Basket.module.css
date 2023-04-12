@@ -1,4 +1,4 @@
-.category-list {
+.basket__content {
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
@@ -8,8 +8,7 @@
 }
 
 .basket__empty {
-	padding: 2rem;
-
 	font-size: 1.5rem;
 	font-weight: bold;
+	padding: 2rem;
 }

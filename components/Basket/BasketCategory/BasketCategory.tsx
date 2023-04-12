@@ -1,6 +1,6 @@
+import { useDispatch } from "react-redux";
 import { BasketCategory } from "@/models/basket";
 import { toggleCategoryVisibility } from "@/store/basketSlice";
-import { useDispatch } from "react-redux";
 import BasketItem from "../BasketItem/BasketItem";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -18,12 +18,12 @@ const BasketCategory: React.FC<{ category: BasketCategory }> = (props) => {
 		<li className={classes.wrapper}>
 			<button onClick={toggleCategory} className={classes.header}>
 				<span
-					className={classes.label}
+					className={classes.header__label}
 				>{`${props.category.name} (${props.category.items.length})`}</span>
 				{props.category.showCategory ? <ExpandLessIcon /> : <ExpandMoreIcon />}
 			</button>
 			{props.category.showCategory && (
-				<ul className={classes["item-list"]}>
+				<ul className={classes.item__list}>
 					{props.category.items.map((item) => (
 						<BasketItem key={item.name} item={item} />
 					))}

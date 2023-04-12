@@ -1,54 +1,53 @@
 .wrapper {
-  display: grid;
-  gap: .75rem;
+	display: grid;
+	gap: 0.75em;
 	box-shadow: var(--box-shadow-top);
 	background-color: var(--color-neutral-light);
 	border-radius: 10px;
-  padding-inline: 1.5rem;
-  padding-block: 1rem;
+	padding: 1em 1.5em;
 }
 
 .line {
-  border-top: 2px solid lightgray;
+	border-top: 2px solid lightgray;
 }
 
 .section {
-  font-size: 1.5rem;
-  font-weight: 800;
+	font-size: 1.5rem;
+	font-weight: bold;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.delivery {
-  display: grid;
+.delivery__label {
+	display: grid;
 }
 
-.info {
-  font-size: 1rem;
-  font-weight: 200;
-  color: var(--color-neutral-darker);
+.delivery__info {
+	font-size: 1rem;
+	font-weight: 200;
+	color: var(--color-neutral-darker);
 }
 
-.total {
-  font-size: 2rem;
+.section__total {
+	font-size: 2rem;
 }
 
 .button {
-  font-size: 1.25rem;
-  font-weight: bold;
-  padding-block: .75em;
+	font-size: 1.25rem;
+	font-weight: bold;
+	padding-block: 0.75em;
 
-  background-color: var(--color-secondary);
-  color: var(--color-neutral-light);
-  cursor: pointer;
-  border-radius: 10px;
-  border: none;
+	background-color: var(--color-secondary);
+	color: var(--color-neutral-light);
+	cursor: pointer;
+	border-radius: 10px;
+	border: none;
 
-  transition: all .2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
-  background-color: var(--color-secondary-darker);
+	background-color: var(--color-secondary-darker);
 }
