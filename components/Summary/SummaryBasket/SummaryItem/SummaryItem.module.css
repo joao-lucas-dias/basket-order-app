@@ -1,4 +1,4 @@
-.item-container {
+.wrapper {
   display: flex;
   gap: 1em;
   padding: .5em;
@@ -36,12 +36,23 @@
   font-weight: bold;
 }
 
-.unit-info {
+.unit_info {
   font-size: 1rem;
   font-weight: normal;
 }
 
-.button {
+.selector_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.selector_label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.delete_button {
   background: none;
 	border: none;
 	align-self: flex-end;
@@ -49,27 +60,16 @@
 	font-size: 1.2rem;
 }
 
-.button:hover {
+.delete_button:hover {
   color: var(--color-neutral-darker);
 }
 
-.selector {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.label {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.price-info {
+.price_info__wrapper {
   display: grid;
 	text-align: right;
 }
 
-.info {
+.price_info {
 	font-size: 1rem;
 	color: var(--color-neutral-darker);
 }

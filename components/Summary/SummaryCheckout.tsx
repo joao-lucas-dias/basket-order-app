@@ -1,12 +1,12 @@
 import { useState, ChangeEvent, FormEvent } from "react";
+import { useSelector } from "react-redux";
 import Order, { OrderItem } from "@/models/order";
 import { RootState } from "@/store/store";
 import { euro } from "@/store/utils";
-import { useSelector } from "react-redux";
 import TextField from "@mui/material/TextField";
+import { Button } from "@mui/material";
 
 import classes from "./SummaryCheckout.module.css";
-import { Button } from "@mui/material";
 
 const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (props) => {
 	const basket = useSelector((state: RootState) => state.basket);
@@ -79,7 +79,7 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 	return (
 		<div className={classes.wrapper}>
 			<span className={classes.header}>Summary</span>
-			<div className={classes["summary-container"]}>
+			<div className={classes.content}>
 				<div className={classes.basket__price}>
 					<div className={classes.section}>
 						<span>Subtotal</span>
@@ -102,7 +102,6 @@ const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (pr
 						</span>
 					</div>
 				</div>
-
 				<form className={classes.form}>
 					<TextField
 						value={formName}

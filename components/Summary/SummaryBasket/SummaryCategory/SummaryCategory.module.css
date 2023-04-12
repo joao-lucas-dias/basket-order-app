@@ -11,8 +11,8 @@
   padding-bottom: 0.25em;
 }
 
-.item-list {
+.item_list {
   display: grid;
-  gap: 1rem;
+  gap: 1em;
   padding-inline: 1em;
 }

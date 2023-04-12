@@ -10,7 +10,7 @@
 	font-weight: bold;
 }
 
-.summary-container {
+.content {
   background-color: var(--color-neutral-light);
   border: 2px solid var(--color-neutral-darkest);
   border-radius: 10px;

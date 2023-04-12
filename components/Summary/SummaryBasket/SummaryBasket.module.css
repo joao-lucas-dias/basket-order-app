@@ -4,12 +4,12 @@
 	align-items: center;
 }
 
-.label {
+.header__label {
 	font-size: 2rem;
 	font-weight: bold;
 }
 
-.button {
+.header__return_button {
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
@@ -24,7 +24,7 @@
 	transition: all 0.2s ease-out;
 }
 
-.button:hover {
+.header__return_button:hover {
 	color: var(--color-primary-darker);
 	background-color: var(--color-neutral-light);
 	padding-inline: 1.5em;
@@ -32,7 +32,7 @@
 	border-radius: 10px;
 }
 
-.basket-container {
+.content {
 	display: grid;
 	gap: 1.5em;
 	list-style: none;
@@ -40,5 +40,5 @@
 	border: 2px solid var(--color-neutral-darkest);
 	border-radius: 10px;
 
-	padding: 2rem;
+	padding: 2em;
 }

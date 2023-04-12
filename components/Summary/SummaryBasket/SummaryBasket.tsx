@@ -1,6 +1,6 @@
-import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import { RootState } from "@/store/store";
 import SummaryCategory from "./SummaryCategory/SummaryCategory";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
@@ -17,12 +17,12 @@ const SummaryBasket = () => {
 	return (
 		<div style={{ display: "grid", gap: "1em" }}>
 			<div className={classes.header}>
-				<span className={classes.label}>My Basket</span>
-				<button className={classes.button} onClick={storeButtonHandler}>
+				<span className={classes.header__label}>My Basket</span>
+				<button className={classes.header__return_button} onClick={storeButtonHandler}>
 					<ArrowBackIcon /> Back to Store
 				</button>
 			</div>
-			<ul className={classes["basket-container"]}>
+			<ul className={classes.content}>
 				{categories.map((category) => (
 					<SummaryCategory key={category.name} category={category} />
 				))}

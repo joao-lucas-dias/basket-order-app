@@ -7,7 +7,7 @@ const SummaryCategory: React.FC<{ category: BasketCategory }> = (props) => {
 	return (
 		<li className={classes.container}>
 			<span className={classes.label}>{props.category.name}</span>
-			<ul className={classes["item-list"]}>
+			<ul className={classes.item_list}>
 				{props.category.items.map((item) => (
 					<SummaryItem key={item.id} item={item} />
 				))}

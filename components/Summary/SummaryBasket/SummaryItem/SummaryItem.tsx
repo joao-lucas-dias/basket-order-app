@@ -1,10 +1,10 @@
+import Image from "next/image";
+import { useDispatch } from "react-redux";
 import { BasketItem } from "@/models/basket";
 import { removeFromCart } from "@/store/basketSlice";
 import { euro } from "@/store/utils";
-import Image from "next/image";
-import { useDispatch } from "react-redux";
 import QuantitySelector from "./QuantitySelector/QuantitySelector";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import classes from "./SummaryItem.module.css";
 
@@ -27,7 +27,7 @@ const SummaryItem: React.FC<{ item: BasketItem }> = (props) => {
 	};
 
 	return (
-		<li className={classes["item-container"]}>
+		<li className={classes.wrapper}>
 			<Image
 				src={`/images/products${props.item.image.url}`}
 				alt={props.item.image.alt}
@@ -40,21 +40,21 @@ const SummaryItem: React.FC<{ item: BasketItem }> = (props) => {
 				<div>
 					<p className={classes.title}>
 						{props.item.name}{" "}
-						<span className={classes["unit-info"]}>{` (${parseUnit(
+						<span className={classes.unit_info}>{` (${parseUnit(
 							props.item.sellingUnit
 						)})`}</span>
 					</p>
-					<div className={classes.selector}>
-						<p className={classes.label}>QTY</p>
+					<div className={classes.selector_wrapper}>
+						<p className={classes.selector_label}>QTY</p>
 						<QuantitySelector item={props.item} />
 					</div>
 				</div>
 				<div>
-					<button onClick={removeItemHandler} className={classes.button}>
+					<button onClick={removeItemHandler} className={classes.delete_button}>
 						<DeleteIcon />
 					</button>
-					<span className={classes["price-info"]}>
-						<p className={classes.info}>
+					<span className={classes.price_info__wrapper}>
+						<p className={classes.price_info}>
 							{euro.format(props.item.priceInfo.amount)} / {props.item.priceInfo.unit}
 						</p>
 						<p className={classes.price}>
