@@ -12,7 +12,7 @@ const Header: React.FC<{ product: Product }> = (props) => {
 	};
 
 	return (
-		<div className={classes.header}>
+		<div className={classes.wrapper}>
 			<p className={classes.title}>
 				{header.name}
 				<span>{` (${parseUnit(header.sellingUnit)})`}</span>

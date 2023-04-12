@@ -1,4 +1,4 @@
-.container {
+.wrapper {
 	display: grid;
 	gap: 0.75em;
 	max-width: 80%;
@@ -25,7 +25,7 @@
 	border-top: 2px solid var(--color-neutral-darkest);
 }
 
-.price-quantity {
+.price__quantity {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -52,7 +52,7 @@
 }
 
 .button:hover {
-	background-color: var(--color-primary-darker);;
+	background-color: var(--color-primary-darker);
 }
 
 .button:active {

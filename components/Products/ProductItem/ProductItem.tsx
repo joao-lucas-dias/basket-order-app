@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-
+import Image from "next/image";
 import Product from "@/models/product";
-import classes from "./ProductItem.module.css";
 import QuantitySelector from "./QuantitySelector/QuantitySelector";
 import { addToCart } from "@/store/basketSlice";
 import Header from "./Header/Header";
 import PriceDisplay from "./PriceDisplay/PriceDisplay";
-import Image from "next/image";
+
+import classes from "./ProductItem.module.css";
 
 const ProductItem: React.FC<{ category: string; product: Product }> = (props) => {
 	const { quantityInfo } = props.product;
@@ -46,7 +46,7 @@ const ProductItem: React.FC<{ category: string; product: Product }> = (props) =>
 	};
 
 	return (
-		<li className={classes.container}>
+		<li className={classes.wrapper}>
 			<Image
 				src={`/images/products${props.product.image.url}`}
 				alt={props.product.image.alt}
@@ -59,7 +59,7 @@ const ProductItem: React.FC<{ category: string; product: Product }> = (props) =>
 			<div className={classes.body}>
 				<Header product={props.product} />
 				<span className={classes.line}></span>
-				<div className={classes["price-quantity"]}>
+				<div className={classes.price__quantity}>
 					<PriceDisplay price={props.product.price} />
 					<QuantitySelector
 						quantity={quantity}

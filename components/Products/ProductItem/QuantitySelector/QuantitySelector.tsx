@@ -1,22 +1,22 @@
 import { QuantityInfo } from "@/models/product";
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 import classes from "./QuantitySelector.module.css";
 
 const QuantitySelector: React.FC<{
-	quantity: number, 
-	quantityInfo: QuantityInfo,
+	quantity: number;
+	quantityInfo: QuantityInfo;
 	onIncrement: () => void;
 	onDecrement: () => void;
 }> = (props) => {
 	return (
 		<div>
 			<span>Quantity</span>
-			<div className={classes.selector}>
+			<div className={classes.wrapper}>
 				<span className={classes.display}>
-					<p className={classes.quantity}>{props.quantity}</p>
-					<p className={classes.unit}>{props.quantityInfo.unit}</p>
+					<p className={classes.display__quantity}>{props.quantity}</p>
+					<p className={classes.display__unit}>{props.quantityInfo.unit}</p>
 				</span>
 				<div className={classes.buttons}>
 					<button onClick={props.onIncrement}>
