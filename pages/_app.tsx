@@ -1,9 +1,10 @@
-import "../styles/globals.css";
+import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import Navbar from "@/components/Layout/Navbar/Navbar";
-import { Provider } from "react-redux";
 import store from "@/store/store";
-import { Roboto_Flex } from '@next/font/google';
+import { Roboto_Flex } from "@next/font/google";
+
+import "../styles/globals.css";
 
 const roboto = Roboto_Flex({ subsets: ["latin"] });
 

@@ -1,8 +1,8 @@
 .section {
 	display: flex;
 	gap: 10em;
-	padding: 6rem 14rem;
-	background-color: #daf9d9;
+	padding: 6em 14em;
+	background-color: var(--color-background-main);
 }
 
 .column {
@@ -11,7 +11,7 @@
 
 .flipped {
 	flex-direction: row-reverse;
-	background-color: var(--color-background-main);
+	background-color: var(--color-background-primary);
 }
 
 .section__image {
@@ -20,7 +20,7 @@
 	border-radius: 25px;
 }
 
-.section__main__image {
+.section_main__image {
 	object-fit: cover;
 	aspect-ratio: 1;
 	max-width: 50%;

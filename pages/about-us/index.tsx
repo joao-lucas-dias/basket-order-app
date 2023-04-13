@@ -1,5 +1,6 @@
-import classes from "@/styles/AboutUsPage.module.css";
 import Image from "next/image";
+
+import classes from "@/styles/AboutUsPage.module.css";
 
 const AboutUsPage = () => {
 	return (
@@ -38,7 +39,7 @@ const AboutUsPage = () => {
 				<Image
 					src="/images/about/farmer.jpg"
 					alt="Picture of a farmer."
-					className={`${classes.section__main__image} ${classes.column}`}
+					className={`${classes.section_main__image} ${classes.column}`}
 					width={2000}
 					height={2000}
 					quality={100}
