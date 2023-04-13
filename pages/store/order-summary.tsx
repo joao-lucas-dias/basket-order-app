@@ -49,6 +49,8 @@ const SummaryPage = () => {
 	const goToHomePage = () => {
 		router.push("/");
 		dispatch(resetBasket());
+		body = document.getElementsByTagName("body")[0];
+		body.classList.toggle(classes.modal__open);
 	};
 
 	return (
