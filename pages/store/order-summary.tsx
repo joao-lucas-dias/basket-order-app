@@ -1,15 +1,15 @@
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 import SummaryBasket from "@/components/Summary/SummaryBasket/SummaryBasket";
 import SummaryCheckout from "@/components/Summary/SummaryCheckout";
 import Modal from "@/components/UI/Modal";
 import Order from "@/models/order";
-import { useState } from "react";
-import { useRouter } from "next/router";
+import Button from "@mui/material/Button";
+import HomeIcon from "@mui/icons-material/Home";
+import { resetBasket } from "@/store/basketSlice";
 
 import classes from "@/styles/SummaryPage.module.css";
-import Button from "@mui/material/Button";
-import HomeIcon from '@mui/icons-material/Home';
-import { useDispatch } from "react-redux";
-import { resetBasket } from "@/store/basketSlice";
 
 const SummaryPage = () => {
 	const router = useRouter();
@@ -35,16 +35,16 @@ const SummaryPage = () => {
 
 	const handleOpenModal = () => {
 		body = document.getElementsByTagName("body")[0];
-		body.classList.toggle(classes["modal-open"]);
+		body.classList.toggle(classes.modal__open);
 		setModalIsOpen(true);
 	};
 
-	const overlayClasses = `${classes["modal-overlay"]} ${
-		modalIsOpen && classes["overlay-opening"]
+	const backgroundClasses = `${classes.modal__background} ${
+		modalIsOpen && classes.background__opening
 	}`;
 
-	const contentClasses = `${classes["modal-container"]} 
-		${modalIsOpen && classes["modal-opening"]}`;
+	const contentClasses = `${classes.modal__wrapper} 
+		${modalIsOpen && classes.modal__opening}`;
 
 	const goToHomePage = () => {
 		router.push("/");
@@ -57,11 +57,14 @@ const SummaryPage = () => {
 			<SummaryCheckout onOrderSubmit={orderSubmitHandler} />
 			<Modal
 				isOpen={modalIsOpen}
-				overlayClasses={overlayClasses}
+				backgroundClasses={backgroundClasses}
 				contentClasses={contentClasses}
 			>
 				<div className={classes.modal__content}>
 					<h1 className={classes.modal__heading}>Thank you for your order!</h1>
+					<p className={classes.normal_text}>
+						You will receive information about your order status on the provided e-mail.
+					</p>
 					<Button
 						type="button"
 						onClick={goToHomePage}

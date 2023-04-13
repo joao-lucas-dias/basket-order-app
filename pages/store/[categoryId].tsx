@@ -1,13 +1,12 @@
-import ProductsList from "@/components/Products/ProductsList/ProductsList";
-import Product from "@/models/product";
-import { mongoDBConnectionString } from "@/secrets";
 import { MongoClient } from "mongodb";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
+import ProductsList from "@/components/Products/ProductsList/ProductsList";
+import Product from "@/models/product";
+import { mongoDBConnectionString } from "@/secrets";
 import { toggleCartVisibility } from "@/store/basketSlice";
 import { RootState } from "@/store/store";
-
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 import classes from "@/styles/ProductsPage.module.css";
@@ -28,7 +27,7 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 	return (
 		<main className={classes.main}>
 			<div className={classes.header}>
-				<button className={classes.button} onClick={goBack}>
+				<button className={classes.return_button} onClick={goBack}>
 					<ArrowBackIcon fontSize="large" /> <span>Categories</span>
 				</button>
 				<h1>{router.query.categoryId}</h1>

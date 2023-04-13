@@ -1,6 +1,6 @@
 .main {
-	padding-block: 6rem;
-	padding-inline: 12rem;
+	padding-block: 6em;
+	padding-inline: 12em;
 
 	background-color: var(--color-background-main);
 }
@@ -12,11 +12,11 @@
 .header > h1 {
 	text-align: center;
 	font-size: 2.5rem;
-	font-weight: 800;
+	font-weight: bold;
 	text-transform: capitalize;
 }
 
-.button {
+.return_button {
 	display: flex;
 	align-items: center;
 	gap: 0.25em;
@@ -28,10 +28,10 @@
 	border: 2px solid transparent;
 	cursor: pointer;
 
-	transition: all .2s ease-out;
+	transition: all 0.2s ease-out;
 }
 
-.button:hover {
+.return_button:hover {
 	color: var(--color-primary-darker);
 	background-color: var(--color-neutral-light);
 	padding-inline: 1.5em;

@@ -1,12 +1,12 @@
+import { MongoClient } from "mongodb";
+import { GetStaticProps } from "next";
 import CategoriesList from "@/components/Categories/CategoriesList/CategoriesList";
 import Category from "@/models/category";
 import { mongoDBConnectionString } from "@/secrets";
-import { MongoClient } from "mongodb";
-import { GetStaticProps } from "next";
 
-import classes from "@/styles/CategoriesPage.module.css";
+import classes from "@/styles/StoreHomePage.module.css";
 
-const CategoriesPage: React.FC<{ categories: Category[] }> = (props) => {
+const StoreHomePage: React.FC<{ categories: Category[] }> = (props) => {
 	return (
 		<main className={classes.main}>
 			<CategoriesList categories={props.categories} />
@@ -42,4 +42,4 @@ export const getStaticProps: GetStaticProps = async () => {
 	};
 };
 
-export default CategoriesPage;
+export default StoreHomePage;
