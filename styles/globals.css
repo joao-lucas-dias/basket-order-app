@@ -38,7 +38,8 @@ video {
 }
 
 :root {
-	--color-background-main: #EBF7FF ;
+	--color-background-main: #EBF7FF;
+	--color-background-primary: #daf9d9;
 	--color-background-nav: #FFEED6;
 	--color-background-modal: rgba(0, 0, 0, 0.5);
 
