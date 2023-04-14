@@ -15,6 +15,8 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 	const showBasket = useSelector((state: RootState) => state.basket.showBasket);
 	const dispatch = useDispatch();
 
+	console.log(router.query.categoryId);
+
 	const goBack = () => {
 		router.push("/store");
 		showBasket &&
