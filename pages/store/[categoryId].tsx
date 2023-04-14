@@ -62,6 +62,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 				params: {
 					categoryId: "aromatics"
 				}
+			},
+			{
+				params: {
+					categoryId: "groceries"
+				}
 			}
 		]
 	};
