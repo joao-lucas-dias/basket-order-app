@@ -16,13 +16,7 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 	const showBasket = useSelector((state: RootState) => state.basket.showBasket);
 	const dispatch = useDispatch();
 
-	var categoryId: string = "";
-
-	useEffect(() => {
-		if (!router.isReady) return;
-
-		categoryId = router.query.categoryId![0];
-	}, [router.isReady]);
+	const categoryId = router.query.categoryId;
 
 	const goBack = () => {
 		router.push("/store");
@@ -40,7 +34,7 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 				</button>
 				<h1>{categoryId}</h1>
 			</div>
-			<ProductsList category={categoryId.toString()} products={props.products} />
+			<ProductsList category={categoryId!.toString()} products={props.products} />
 		</main>
 	);
 };
