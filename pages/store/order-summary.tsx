@@ -26,7 +26,6 @@ const SummaryPage = () => {
 		});
 
 		const data = await response.json();
-		console.log(data);
 
 		handleOpenModal();
 	};

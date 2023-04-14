@@ -4,7 +4,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 // POST /api/orders
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const order = req.body;
-  console.log(order);
 
   const MONGODB_URI = process.env.MONGODB_URI!;
 
@@ -13,8 +12,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const ordersCollection = db.collection('orders');
   const result = await ordersCollection.insertOne(order);
-
-  console.log(result);
 
   mongoClient.close();
 

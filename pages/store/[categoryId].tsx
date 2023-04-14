@@ -47,7 +47,7 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	return {
-		fallback: true,
+		fallback: false,
 		paths: [
 			{
 				params: {
