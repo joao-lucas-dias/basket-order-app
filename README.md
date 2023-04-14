@@ -1,38 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Basket Order App
 
-## Getting Started
+This project was inspired by a family member's current personal business and the possibily associated with creating a website for it. This business envolves managing and cultivating small agricultural terrains, producing a variety of products and selling them in baskets.
 
-First, run the development server:
+So, this project represents what could be a template for a website or web app that would not only serve the purpose of advertising the business but also serve as a better way for customers to order their baskets.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[Add link here]
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Note: Because of time constrains, the current layout and design is only really suitable for larger screen sizes.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Development
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This project was built using popular web development tools that I was somewhat confortable with and others that I got to know better and were appropriate for the job:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Typescript, HTML, CSS;
+- React & Redux;
+- Next.js (with MongoDB);
+- Vercel (for deployment);
 
-## Learn More
+### Desing
 
-To learn more about Next.js, take a look at the following resources:
+Not being a designer, coming up with look for this project was definitely a challenge and something that took some time. For the most part, I had an idea of the main content I wanted and some general design ideas. After that,I manly researched about common and "correct" practices and looked at many examples for inspiration. The current design tries to follow some of those popular practices while keeping a relatively simple but functional look.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+(While understanding the importance of making responsive websites, to avoid spending even more time coming up with a design that also worked on smaller screen sizes, for now, this website is optimised for larger screens.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Roadmap
 
-## Deploy on Vercel
+Because the initial idea for this project was related to a relatively small business, there are some common features that weren't deemed as absolutely necessary but would make sense in the context of the project. Thus, the current state of the project contemplates a basic set of features and functionalities, mainly for advertising the business and allowing customers to make their orders.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+So, as part of a possible roadmap, there are some other features and functionalities that are not yet present and might be added in the future, like:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Fix layout to be responisve (only works in larger screen sizes);
+- Support for proper user authentication, allowing for customer profiles and, for example, keeping track of past orders;
+- Support for integrated payment methods;
+- Choosing different languages (for example pt-pt and english);
+- Choosing different website color themes (light or dark);
