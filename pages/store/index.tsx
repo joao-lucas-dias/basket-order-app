@@ -2,7 +2,6 @@ import { MongoClient } from "mongodb";
 import { GetStaticProps } from "next";
 import CategoriesList from "@/components/Categories/CategoriesList/CategoriesList";
 import Category from "@/models/category";
-import { mongoDBConnectionString } from "@/secrets";
 
 import classes from "@/styles/StoreHomePage.module.css";
 
@@ -15,7 +14,9 @@ const StoreHomePage: React.FC<{ categories: Category[] }> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-	const client = await MongoClient.connect(mongoDBConnectionString);
+	const MONGODB_URI = process.env.MONGODB_URI!;
+
+	const client = await MongoClient.connect(MONGODB_URI);
 
 	const db = client.db();
 

@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import ProductsList from "@/components/Products/ProductsList/ProductsList";
 import Product from "@/models/product";
-import { mongoDBConnectionString } from "@/secrets";
 import { toggleCartVisibility } from "@/store/basketSlice";
 import { RootState } from "@/store/store";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -69,7 +68,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-	const client = await MongoClient.connect(mongoDBConnectionString);
+	const MONGODB_URI = process.env.MONGODB_URI!;
+
+	const client = await MongoClient.connect(MONGODB_URI);
 
 	const db = client.db();
 

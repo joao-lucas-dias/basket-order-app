@@ -1,4 +1,3 @@
-import { mongoDBConnectionString } from "@/secrets";
 import { MongoClient } from "mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -7,7 +6,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const order = req.body;
   console.log(order);
 
-  const mongoClient = await MongoClient.connect(mongoDBConnectionString);
+  const MONGODB_URI = process.env.MONGODB_URI!;
+
+	const mongoClient = await MongoClient.connect(MONGODB_URI);
   const db = mongoClient.db();
 
   const ordersCollection = db.collection('orders');
