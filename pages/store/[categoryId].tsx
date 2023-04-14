@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import ProductsList from "@/components/Products/ProductsList/ProductsList";
@@ -15,7 +16,13 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 	const showBasket = useSelector((state: RootState) => state.basket.showBasket);
 	const dispatch = useDispatch();
 
-	console.log(router.query.categoryId);
+	var categoryId: string = "";
+
+	useEffect(() => {
+		if (!router.isReady) return;
+
+		categoryId = router.query.categoryId![0];
+	}, [router.isReady]);
 
 	const goBack = () => {
 		router.push("/store");
@@ -31,12 +38,9 @@ const ProductsPage: React.FC<{ products: Product[] }> = (props) => {
 				<button className={classes.return_button} onClick={goBack}>
 					<ArrowBackIcon fontSize="large" /> <span>Categories</span>
 				</button>
-				<h1>{router.query.categoryId}</h1>
+				<h1>{categoryId}</h1>
 			</div>
-			<ProductsList
-				category={router.query.categoryId!.toString()}
-				products={props.products}
-			/>
+			<ProductsList category={categoryId.toString()} products={props.products} />
 		</main>
 	);
 };
