@@ -1,18 +1,18 @@
 .wrapper {
-  display: grid;
+	display: grid;
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: bold;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .title span {
-  font-size: 1.1rem;
-  font-weight: normal;
+	font-size: 1.1rem;
+	font-weight: normal;
 }
 
 .info {
-  font-size: 1.1rem;
-  color: var(--color-neutral-darker);
+	font-size: 1.1rem;
+	color: var(--color-neutral-darker);
 }

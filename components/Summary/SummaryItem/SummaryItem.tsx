@@ -1,10 +1,10 @@
-import Image from "next/image";
-import { useDispatch } from "react-redux";
 import { BasketItem } from "@/models/basket";
 import { removeFromCart } from "@/store/basketSlice";
 import { euro } from "@/store/utils";
-import QuantitySelector from "./QuantitySelector";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Image from "next/image";
+import { useDispatch } from "react-redux";
+import QuantitySelector from "./QuantitySelector";
 
 import classes from "@/styles/components/Summary/SummaryItem.module.css";
 

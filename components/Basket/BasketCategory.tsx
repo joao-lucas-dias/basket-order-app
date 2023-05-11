@@ -1,9 +1,9 @@
-import { useDispatch } from "react-redux";
 import { BasketCategory } from "@/models/basket";
 import { toggleCategoryVisibility } from "@/store/basketSlice";
-import BasketItem from "./BasketItem";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useDispatch } from "react-redux";
+import BasketItem from "./BasketItem";
 
 import classes from "@/styles/components/Basket/BasketCategory.module.css";
 

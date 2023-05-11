@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import Image from "next/image";
 import CheckIcon from "@mui/icons-material/Check";
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 import classes from "../styles/pages/HomePage.module.css";
 

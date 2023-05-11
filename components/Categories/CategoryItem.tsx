@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Category from "@/models/category";
+import Image from "next/image";
 import Link from "next/link";
 
 import classes from "@/styles/components/Categories/CategoryItem.module.css";

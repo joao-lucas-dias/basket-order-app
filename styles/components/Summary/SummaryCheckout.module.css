@@ -1,8 +1,8 @@
 .wrapper {
-  position: sticky;
-  top: calc(151px + 6em);
-  display: grid;
-  grid-row-gap: 1.5em;
+	position: sticky;
+	top: calc(151px + 6em);
+	display: grid;
+	grid-row-gap: 1.5em;
 }
 
 .header {
@@ -11,58 +11,58 @@
 }
 
 .content {
-  background-color: var(--color-neutral-light);
-  border: 2px solid var(--color-neutral-darkest);
-  border-radius: 10px;
-  display: grid;
-  gap: 1.5em;
-  padding: 1.5em;
+	background-color: var(--color-neutral-light);
+	border: 2px solid var(--color-neutral-darkest);
+	border-radius: 10px;
+	display: grid;
+	gap: 1.5em;
+	padding: 1.5em;
 }
 
 .basket__price {
-  display: grid;
-  grid-row-gap: .75em;
+	display: grid;
+	grid-row-gap: 0.75em;
 }
 
 .section {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	font-size: 1.5rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .info {
-  font-size: 1rem;
-  font-weight: normal;
-  color: var(--color-neutral-darker);
+	font-size: 1rem;
+	font-weight: normal;
+	color: var(--color-neutral-darker);
 }
 
 .line {
-  border-top: 2px solid lightgray;
+	border-top: 2px solid lightgray;
 }
 
 .total {
-  font-size: 2rem;
+	font-size: 2rem;
 }
 
 .form {
-  display: grid;
-  grid-row-gap: 1em;
+	display: grid;
+	grid-row-gap: 1em;
 }
 
 .button {
-  font-size: 1rem;
-  font-weight: bold;
-  padding-block: .5em;
-  border-radius: 5px;
+	font-size: 1rem;
+	font-weight: bold;
+	padding-block: 0.5em;
+	border-radius: 5px;
 
-  background-color: var(--color-primary);
-  color: var(--color-neutral-light);
+	background-color: var(--color-primary);
+	color: var(--color-neutral-light);
 
-  transition: all 0.175s ease-in-out;
+	transition: all 0.175s ease-in-out;
 }
 
 .button:hover {
-  background-color: var(--color-primary-darker);
+	background-color: var(--color-primary-darker);
 }

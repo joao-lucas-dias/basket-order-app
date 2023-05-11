@@ -1,59 +1,59 @@
 .wrapper {
-  display: flex;
-  gap: 1em;
-  padding: .5em;
-  background-color: var(--color-neutral-light);
-  border: 2px solid var(--color-neutral-darker);
-  border-radius: 10px;
-  box-shadow: var(--box-shadow-bottom);
-  overflow: hidden;
+	display: flex;
+	gap: 1em;
+	padding: 0.5em;
+	background-color: var(--color-neutral-light);
+	border: 2px solid var(--color-neutral-darker);
+	border-radius: 10px;
+	box-shadow: var(--box-shadow-bottom);
+	overflow: hidden;
 }
 
 .image {
-  aspect-ratio: 16/10;
-  width: 170px;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+	aspect-ratio: 16/10;
+	width: 170px;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
 }
 
 .body {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .body > * {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: .5em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 0.5em;
 }
 
 .title {
-  grid-area: title;
-  font-size: 1.5rem;
-  font-weight: bold;
+	grid-area: title;
+	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 .unit_info {
-  font-size: 1rem;
-  font-weight: normal;
+	font-size: 1rem;
+	font-weight: normal;
 }
 
 .selector_wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 }
 
 .selector_label {
-  font-size: 1rem;
-  font-weight: bold;
+	font-size: 1rem;
+	font-weight: bold;
 }
 
 .delete_button {
-  background: none;
+	background: none;
 	border: none;
 	align-self: flex-end;
 	cursor: pointer;
@@ -61,11 +61,11 @@
 }
 
 .delete_button:hover {
-  color: var(--color-neutral-darker);
+	color: var(--color-neutral-darker);
 }
 
 .price_info__wrapper {
-  display: grid;
+	display: grid;
 	text-align: right;
 }
 

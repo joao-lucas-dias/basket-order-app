@@ -1,6 +1,6 @@
-import Image from "next/image";
-import PhoneIcon from "@mui/icons-material/Phone";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import PhoneIcon from "@mui/icons-material/Phone";
+import Image from "next/image";
 
 import classes from "@/styles/pages/ContactPage.module.css";
 

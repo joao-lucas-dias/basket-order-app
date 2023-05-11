@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
-import { useRouter } from "next/router";
 import { RootState } from "@/store/store";
-import SummaryCategory from "./SummaryCategory";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import SummaryCategory from "./SummaryCategory";
 
 import classes from "@/styles/components/Summary/SummaryBasket.module.css";
 

@@ -1,13 +1,13 @@
-import { useState } from "react";
-import { useRouter } from "next/router";
-import { useDispatch } from "react-redux";
 import SummaryBasket from "@/components/Summary/SummaryBasket";
 import SummaryCheckout from "@/components/Summary/SummaryCheckout";
 import Modal from "@/components/UI/Modal";
 import Order from "@/models/order";
-import Button from "@mui/material/Button";
-import HomeIcon from "@mui/icons-material/Home";
 import { resetBasket } from "@/store/basketSlice";
+import HomeIcon from "@mui/icons-material/Home";
+import Button from "@mui/material/Button";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import classes from "@/styles/pages/SummaryPage.module.css";
 

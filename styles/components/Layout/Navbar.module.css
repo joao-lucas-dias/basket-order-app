@@ -76,7 +76,7 @@
 }
 
 .store__button {
-	transition: all .25s ease-in-out;
+	transition: all 0.25s ease-in-out;
 }
 
 .store__button:hover {
@@ -84,14 +84,14 @@
 }
 
 .store__link {
-	padding: .5em 2em;
+	padding: 0.5em 2em;
 	border: none;
 	outline: 3px solid var(--color-primary);
 	background-color: var(--color-neutral-light);
-	transition: all .25s ease-in-out;
+	transition: all 0.25s ease-in-out;
 }
 
 .store__link:hover {
-  outline: 5px solid var(--color-primary-darker);
-  border-radius: 10px;
+	outline: 5px solid var(--color-primary-darker);
+	border-radius: 10px;
 }

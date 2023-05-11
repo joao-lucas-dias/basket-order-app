@@ -1,11 +1,11 @@
+import Product from "@/models/product";
+import { addToCart } from "@/store/basketSlice";
+import Image from "next/image";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import Image from "next/image";
-import Product from "@/models/product";
-import ProductQuantitySelector from "./ProductQuantitySelector";
-import { addToCart } from "@/store/basketSlice";
 import ProductHeader from "./ProductHeader";
 import ProductPriceDisplay from "./ProductPriceDisplay";
+import ProductQuantitySelector from "./ProductQuantitySelector";
 
 import classes from "@/styles/components/Products/ProductItem.module.css";
 

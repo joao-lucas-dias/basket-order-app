@@ -1,8 +1,8 @@
-import { useDispatch } from "react-redux";
 import { BasketItem } from "@/models/basket";
 import { updateQuantity } from "@/store/basketSlice";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { useDispatch } from "react-redux";
 
 import classes from "@/styles/components/Summary/QuantitySelector.module.css";
 

@@ -31,7 +31,11 @@ const Modal: React.FC<ModalProps> = ({
 
 	const modalContent = (
 		<>
-			<div id="modal-background" className={backgroundClasses} onClick={onClose && handleCloseModal}>
+			<div
+				id="modal-background"
+				className={backgroundClasses}
+				onClick={onClose && handleCloseModal}
+			>
 				<div id="modal-content" className={contentClasses} ref={modalRef}>
 					{children}
 				</div>

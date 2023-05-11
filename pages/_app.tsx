@@ -1,8 +1,8 @@
-import { Provider } from "react-redux";
-import type { AppProps } from "next/app";
 import Navbar from "@/components/Layout/Navbar/Navbar";
 import store from "@/store/store";
 import { Roboto_Flex } from "@next/font/google";
+import type { AppProps } from "next/app";
+import { Provider } from "react-redux";
 
 import "../styles/globals.css";
 

@@ -1,7 +1,7 @@
-import { MongoClient } from "mongodb";
-import { GetStaticProps } from "next";
 import CategoriesList from "@/components/Categories/CategoriesList";
 import Category from "@/models/category";
+import { MongoClient } from "mongodb";
+import { GetStaticProps } from "next";
 
 import classes from "@/styles/pages/StoreHomePage.module.css";
 

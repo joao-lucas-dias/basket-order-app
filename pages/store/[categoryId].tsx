@@ -1,12 +1,12 @@
-import { MongoClient } from "mongodb";
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
 import ProductsList from "@/components/Products/ProductsList";
 import Product from "@/models/product";
 import { toggleCartVisibility } from "@/store/basketSlice";
 import { RootState } from "@/store/store";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { MongoClient } from "mongodb";
+import { GetStaticPaths, GetStaticProps } from "next";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
 
 import classes from "@/styles/pages/ProductsPage.module.css";
 

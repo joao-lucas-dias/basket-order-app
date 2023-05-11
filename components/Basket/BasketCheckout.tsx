@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { euro } from "@/store/utils";
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 
 import classes from "@/styles/components/Basket/BasketCheckout.module.css";
 

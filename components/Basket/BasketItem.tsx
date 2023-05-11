@@ -1,9 +1,9 @@
-import { useDispatch } from "react-redux";
-import Image from "next/image";
 import { BasketItem } from "@/models/basket";
 import { removeFromCart } from "@/store/basketSlice";
 import { euro } from "@/store/utils";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Image from "next/image";
+import { useDispatch } from "react-redux";
 
 import classes from "@/styles/components/Basket/BasketItem.module.css";
 

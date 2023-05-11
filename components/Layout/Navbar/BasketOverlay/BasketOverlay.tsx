@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
 import Basket from "@/components/Basket/Basket";
 import Modal from "@/components/UI/Modal";
+import { RootState } from "@/store/store";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import BasketOverlayButton from "./BasketOverlayButton";
 
 import classes from "@/styles/components/Layout/BasketOverlay.module.css";

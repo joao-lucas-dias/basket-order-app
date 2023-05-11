@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { useEffect, useState } from "react";
 
 import classes from "@/styles/components/Layout/BasketOverlayButton.module.css";
 
-const BasketOverlayButton: React.FC<{ numOfItems: number; onOpenModalHandler: () => void }> = (
-	props
-) => {
+const BasketOverlayButton: React.FC<{
+	numOfItems: number;
+	onOpenModalHandler: () => void;
+}> = (props) => {
 	const [buttonAnimation, setButtonAnimation] = useState(false);
 
 	const buttonClasses = `${classes.button} ${buttonAnimation && classes.button__bump}`;

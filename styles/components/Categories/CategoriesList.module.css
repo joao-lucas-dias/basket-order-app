@@ -1,6 +1,6 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 2em 3.5em;
-  list-style: none;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-gap: 2em 3.5em;
+	list-style: none;
 }

@@ -1,5 +1,4 @@
-import { BasketItem } from "@/models/basket";
-import { BasketCategory } from "@/models/basket";
+import { BasketCategory, BasketItem } from "@/models/basket";
 import { QuantityInfo } from "@/models/product";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -36,7 +35,9 @@ const basketSlice = createSlice({
 			state.showBasket = !state.showBasket;
 		},
 		toggleCategoryVisibility: (state, action: PayloadAction<string>) => {
-			const category = state.categories.find((category) => category.name === action.payload);
+			const category = state.categories.find(
+				(category) => category.name === action.payload
+			);
 			category!.showCategory = !category!.showCategory;
 		},
 		addToCart: (state, action: PayloadAction<BasketItem>) => {
@@ -110,7 +111,7 @@ const basketSlice = createSlice({
 			const oldSubtotal = state.cost.subtotal;
 			const priceToChange = item!.quantityInfo.amount.step * item!.priceInfo.amount;
 			let newSubtotal: number = oldSubtotal;
-			
+
 			if (action.payload.type === "INC") {
 				item!.quantity += quantityInfo.amount.step;
 				newSubtotal = oldSubtotal + priceToChange;
@@ -124,12 +125,18 @@ const basketSlice = createSlice({
 			state.cost.subtotal = newSubtotal;
 		},
 		resetBasket: () => {
-			return initialState
+			return initialState;
 		}
 	}
 });
 
-export const { toggleCartVisibility, toggleCategoryVisibility, addToCart, removeFromCart, updateQuantity, resetBasket } =
-	basketSlice.actions;
+export const {
+	toggleCartVisibility,
+	toggleCategoryVisibility,
+	addToCart,
+	removeFromCart,
+	updateQuantity,
+	resetBasket
+} = basketSlice.actions;
 
 export default basketSlice.reducer;

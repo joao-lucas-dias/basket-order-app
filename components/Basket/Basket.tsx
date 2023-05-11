@@ -1,7 +1,7 @@
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
-import BasketCheckout from "./BasketCheckout";
 import BasketCategory from "./BasketCategory";
+import BasketCheckout from "./BasketCheckout";
 import BasketHeader from "./BasketHeader";
 
 import classes from "@/styles/components/Basket/Basket.module.css";
