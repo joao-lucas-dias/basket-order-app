@@ -2,9 +2,9 @@ import { QuantityInfo } from "@/models/product";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-import classes from "./QuantitySelector.module.css";
+import classes from "@/styles/components/Products/ProductQuantitySelector.module.css";
 
-const QuantitySelector: React.FC<{
+const ProductQuantitySelector: React.FC<{
 	quantity: number;
 	quantityInfo: QuantityInfo;
 	onIncrement: () => void;
@@ -31,4 +31,4 @@ const QuantitySelector: React.FC<{
 	);
 };
 
-export default QuantitySelector;
+export default ProductQuantitySelector;

@@ -1,14 +1,13 @@
-import Image from "next/image";
 import { useDispatch } from "react-redux";
+import Image from "next/image";
 import { BasketItem } from "@/models/basket";
 import { removeFromCart } from "@/store/basketSlice";
 import { euro } from "@/store/utils";
-import QuantitySelector from "./QuantitySelector/QuantitySelector";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-import classes from "./SummaryItem.module.css";
+import classes from "@/styles/components/Basket/BasketItem.module.css";
 
-const SummaryItem: React.FC<{ item: BasketItem }> = (props) => {
+const BasketItem: React.FC<{ item: BasketItem }> = (props) => {
 	const dispatch = useDispatch();
 
 	const removeItemHandler = () => {
@@ -38,33 +37,30 @@ const SummaryItem: React.FC<{ item: BasketItem }> = (props) => {
 			/>
 			<div className={classes.body}>
 				<div>
-					<p className={classes.title}>
-						{props.item.name}{" "}
-						<span className={classes.unit_info}>{` (${parseUnit(
+					<span className={classes.header}>
+						<span className={classes.header__name}>{props.item.name}</span>
+						<span className={classes.header__unit}>{` (${parseUnit(
 							props.item.sellingUnit
 						)})`}</span>
-					</p>
-					<div className={classes.selector_wrapper}>
-						<p className={classes.selector_label}>QTY</p>
-						<QuantitySelector item={props.item} />
-					</div>
+					</span>
+					<span className={classes.quantity}>{`Quantity: ${props.item.quantity}`}</span>
 				</div>
 				<div>
-					<button onClick={removeItemHandler} className={classes.delete_button}>
-						<DeleteIcon />
+					<button onClick={removeItemHandler} className={classes.close__button}>
+						<DeleteIcon fontSize="medium" />
 					</button>
-					<span className={classes.price_info__wrapper}>
-						<p className={classes.price_info}>
+					<div className={classes.price__info}>
+						<span className={classes.info}>
 							{euro.format(props.item.priceInfo.amount)} / {props.item.priceInfo.unit}
-						</p>
-						<p className={classes.price}>
+						</span>
+						<span className={classes.price}>
 							{euro.format(props.item.quantity * props.item.priceInfo.amount)}
-						</p>
-					</span>
+						</span>
+					</div>
 				</div>
 			</div>
 		</li>
 	);
 };
 
-export default SummaryItem;
+export default BasketItem;

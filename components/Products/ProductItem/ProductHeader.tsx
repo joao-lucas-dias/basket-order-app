@@ -1,7 +1,8 @@
 import Product from "@/models/product";
-import classes from "./Header.module.css";
 
-const Header: React.FC<{ product: Product }> = (props) => {
+import classes from "@/styles/components/Products/ProductHeader.module.css";
+
+const ProductHeader: React.FC<{ product: Product }> = (props) => {
   const header = props.product.header;
   const unitInfo = header.unitInfo;
 
@@ -26,4 +27,4 @@ const Header: React.FC<{ product: Product }> = (props) => {
 	);
 };
 
-export default Header;
+export default ProductHeader;

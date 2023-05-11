@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import CheckIcon from "@mui/icons-material/Check";
 
-import classes from "../styles/HomePage.module.css";
+import classes from "../styles/pages/HomePage.module.css";
 
 const HomePage = () => {
 	const router = useRouter();

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Category from "@/models/category";
 import Link from "next/link";
 
-import classes from "./CategoryItem.module.css";
+import classes from "@/styles/components/Categories/CategoryItem.module.css";
 
 const CategoryItem: React.FC<{ category: Category }> = (props) => {
 	const category = props.category.name.trim().toLowerCase();

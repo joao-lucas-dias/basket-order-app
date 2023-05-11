@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import BasketOverlay from "./BasketOverlay/BasketOverlay";
 
-import classes from "./Navbar.module.css";
+import classes from "@/styles/components/Layout/Navbar.module.css";
 
 const Navbar = () => {
 	const router = useRouter();

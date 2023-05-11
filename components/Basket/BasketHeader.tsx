@@ -1,8 +1,8 @@
 import CloseIcon from "@mui/icons-material/Close";
 
-import classes from "./Header.module.css";
+import classes from "@/styles/components/Basket/BasketHeader.module.css";
 
-const Header: React.FC<{ numberOfItems: number; onCloseModal: () => void }> = (props) => {
+const BasketHeader: React.FC<{ numberOfItems: number; onCloseModal: () => void }> = (props) => {
 	return (
 		<div className={classes.container}>
 			<span className={classes.label}>{`My Basket (${props.numberOfItems})`}</span>
@@ -15,4 +15,4 @@ const Header: React.FC<{ numberOfItems: number; onCloseModal: () => void }> = (p
 	);
 };
 
-export default Header;
+export default BasketHeader;

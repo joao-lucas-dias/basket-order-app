@@ -1,7 +1,7 @@
 import Category from "@/models/category";
-import CategoryItem from "../CategoryItem/CategoryItem";
+import CategoryItem from "./CategoryItem";
 
-import classes from "./CategoriesList.module.css";
+import classes from "@/styles/components/Categories/CategoriesList.module.css";
 
 const CategoriesList: React.FC<{ categories: Category[] }> = (props) => {
 	return (

@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import { euro } from "@/store/utils";
 
-import classes from "./Checkout.module.css";
+import classes from "@/styles/components/Basket/BasketCheckout.module.css";
 
-const Checkout: React.FC<{ onCheckout: () => void }> = (props) => {
+const BasketCheckout: React.FC<{ onCheckout: () => void }> = (props) => {
 	const basket = useSelector((state: RootState) => state.basket);
 	const router = useRouter();
 
@@ -43,4 +43,4 @@ const Checkout: React.FC<{ onCheckout: () => void }> = (props) => {
 	);
 };
 
-export default Checkout;
+export default BasketCheckout;

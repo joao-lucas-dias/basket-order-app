@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
 import { BasketCategory } from "@/models/basket";
 import { toggleCategoryVisibility } from "@/store/basketSlice";
-import BasketItem from "../BasketItem/BasketItem";
+import BasketItem from "./BasketItem";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import classes from "./BasketCategory.module.css";
+import classes from "@/styles/components/Basket/BasketCategory.module.css";
 
 const BasketCategory: React.FC<{ category: BasketCategory }> = (props) => {
 	const dispatch = useDispatch();

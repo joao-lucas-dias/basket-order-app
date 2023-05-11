@@ -1,10 +1,10 @@
 import { RootState } from "@/store/store";
 import { useSelector } from "react-redux";
-import Checkout from "./Checkout/Checkout";
-import BasketCategory from "./BasketCategory/BasketCategory";
-import Header from "./Header/Header";
+import BasketCheckout from "./BasketCheckout";
+import BasketCategory from "./BasketCategory";
+import BasketHeader from "./BasketHeader";
 
-import classes from "./Basket.module.css";
+import classes from "@/styles/components/Basket/Basket.module.css";
 
 const Basket: React.FC<{ numberOfItems: number; closeModalHandler: () => void }> = (
 	props
@@ -23,13 +23,13 @@ const Basket: React.FC<{ numberOfItems: number; closeModalHandler: () => void }>
 						return <BasketCategory key={category.name} category={category} />;
 					})}
 				</ul>
-				<Checkout onCheckout={props.closeModalHandler} />
+				<BasketCheckout onCheckout={props.closeModalHandler} />
 			</>
 		);
 
 	return (
 		<>
-			<Header
+			<BasketHeader
 				numberOfItems={props.numberOfItems}
 				onCloseModal={props.closeModalHandler}
 			/>

@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { RootState } from "@/store/store";
-import SummaryCategory from "./SummaryCategory/SummaryCategory";
+import SummaryCategory from "./SummaryCategory";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
-import classes from "./SummaryBasket.module.css";
+import classes from "@/styles/components/Summary/SummaryBasket.module.css";
 
 const SummaryBasket = () => {
 	const categories = useSelector((state: RootState) => state.basket.categories);

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import classes from "@/styles/AboutUsPage.module.css";
+import classes from "@/styles/pages/AboutUsPage.module.css";
 
 const AboutUsPage = () => {
 	return (

@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import Basket from "@/components/Basket/Basket";
 import Modal from "@/components/UI/Modal";
-import BasketButton from "./BasketButton/BasketButton";
+import BasketOverlayButton from "./BasketOverlayButton";
 
-import classes from "./BasketOverlay.module.css";
+import classes from "@/styles/components/Layout/BasketOverlay.module.css";
 
 const BasketOverlay = () => {
 	const basket = useSelector((state: RootState) => state.basket);
@@ -55,7 +55,7 @@ const BasketOverlay = () => {
 
 	return (
 		<>
-			<BasketButton
+			<BasketOverlayButton
 				numOfItems={getNumberOfBasketItems()}
 				onOpenModalHandler={handleOpenModal}
 			/>

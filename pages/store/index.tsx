@@ -1,9 +1,9 @@
 import { MongoClient } from "mongodb";
 import { GetStaticProps } from "next";
-import CategoriesList from "@/components/Categories/CategoriesList/CategoriesList";
+import CategoriesList from "@/components/Categories/CategoriesList";
 import Category from "@/models/category";
 
-import classes from "@/styles/StoreHomePage.module.css";
+import classes from "@/styles/pages/StoreHomePage.module.css";
 
 const StoreHomePage: React.FC<{ categories: Category[] }> = (props) => {
 	return (

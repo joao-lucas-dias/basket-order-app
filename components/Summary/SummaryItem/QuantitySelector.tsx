@@ -4,7 +4,7 @@ import { updateQuantity } from "@/store/basketSlice";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 
-import classes from "./QuantitySelector.module.css";
+import classes from "@/styles/components/Summary/QuantitySelector.module.css";
 
 const QuantitySelector: React.FC<{
 	item: BasketItem;

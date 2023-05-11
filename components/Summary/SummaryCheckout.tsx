@@ -6,7 +6,7 @@ import { euro } from "@/store/utils";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 
-import classes from "./SummaryCheckout.module.css";
+import classes from "@/styles/components/Summary/SummaryCheckout.module.css";
 
 const SummaryCheckout: React.FC<{ onOrderSubmit: (order: Order) => void }> = (props) => {
 	const basket = useSelector((state: RootState) => state.basket);

@@ -2,7 +2,7 @@ import Image from "next/image";
 import PhoneIcon from "@mui/icons-material/Phone";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
-import classes from "@/styles/ContactPage.module.css";
+import classes from "@/styles/pages/ContactPage.module.css";
 
 const ContactPage = () => {
 	return (

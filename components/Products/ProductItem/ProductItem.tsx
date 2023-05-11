@@ -2,12 +2,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import Product from "@/models/product";
-import QuantitySelector from "./QuantitySelector/QuantitySelector";
+import ProductQuantitySelector from "./ProductQuantitySelector";
 import { addToCart } from "@/store/basketSlice";
-import Header from "./Header/Header";
-import PriceDisplay from "./PriceDisplay/PriceDisplay";
+import ProductHeader from "./ProductHeader";
+import ProductPriceDisplay from "./ProductPriceDisplay";
 
-import classes from "./ProductItem.module.css";
+import classes from "@/styles/components/Products/ProductItem.module.css";
 
 const ProductItem: React.FC<{ category: string; product: Product }> = (props) => {
 	const { quantityInfo } = props.product;
@@ -57,11 +57,11 @@ const ProductItem: React.FC<{ category: string; product: Product }> = (props) =>
 				priority
 			/>
 			<div className={classes.body}>
-				<Header product={props.product} />
+				<ProductHeader product={props.product} />
 				<span className={classes.line}></span>
 				<div className={classes.price__quantity}>
-					<PriceDisplay price={props.product.price} />
-					<QuantitySelector
+					<ProductPriceDisplay price={props.product.price} />
+					<ProductQuantitySelector
 						quantity={quantity}
 						quantityInfo={quantityInfo}
 						onIncrement={incrementHandler}
