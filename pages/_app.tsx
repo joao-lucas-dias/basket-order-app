@@ -4,7 +4,7 @@ import { Roboto_Flex } from "@next/font/google";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 
-import "../styles/globals.css";
+import "../styles/main.scss";
 
 const roboto = Roboto_Flex({ subsets: ["latin"] });
 

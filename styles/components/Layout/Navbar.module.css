@@ -5,7 +5,7 @@
 
 	width: 100%;
 	max-height: calc(96px + 55px);
-	padding: 3em 8em;
+	padding: 3em 2em;
 
 	background-color: var(--color-background-nav);
 	box-shadow: var(--box-shadow-bottom);
@@ -37,7 +37,7 @@
 }
 
 .logo__name {
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: bold;
 	white-space: nowrap;
 }

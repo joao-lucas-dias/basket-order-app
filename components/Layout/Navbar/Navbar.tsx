@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import BasketOverlay from "./BasketOverlay/BasketOverlay";
 
 import classes from "@/styles/components/Layout/Navbar.module.css";
 
@@ -23,9 +22,9 @@ const Navbar = () => {
 	);
 
 	return navStyle === "full" ? (
-		<nav className={`${classes.navbar} ${classes.navbar__full}`}>
+		<header className={`${classes.navbar} ${classes.navbar__full}`}>
 			{navLogo}
-			<ul className={classes.menu}>
+			{/* <nav className={classes.menu}>
 				<li>
 					<Link
 						href="/about-us"
@@ -53,10 +52,10 @@ const Navbar = () => {
 						</Link>
 					</li>
 				)}
-			</ul>
-		</nav>
+			</nav> */}
+		</header>
 	) : (
-		<nav className={`${classes.navbar} ${classes.navbar__simple}`}>{navLogo}</nav>
+		<header className={`${classes.navbar} ${classes.navbar__simple}`}>{navLogo}</header>
 	);
 };
 
