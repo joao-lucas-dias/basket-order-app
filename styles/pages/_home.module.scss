@@ -1,4 +1,5 @@
 @use "../abstracts/colors";
+@use "../abstracts/breakpoints" as bp;
 
 .main {
 	display: grid;
@@ -63,9 +64,10 @@
 
 	&__main {
 		flex: 1;
-		display: grid;
-		row-gap: 0.5rem;
-		justify-items: center;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		align-items: center;
 		text-align: center;
 	}
 }
@@ -126,8 +128,8 @@
 			background-color: colors.$color-neutral-darker;
 			border-radius: 50%;
 			aspect-ratio: 1/1;
-			width: 50px;
-			height: 100%;
+			width: 40px;
+			height: auto;
 			object-fit: cover;
 		}
 	}
@@ -161,73 +163,55 @@
 	}
 }
 
-// .hero__text {
-// 	display: flex;
-// 	flex-direction: column;
-// 	gap: 2em;
-// }
+@include bp.media-md {
+	.section {
+		padding: 3rem 5rem;
+	}
 
-// .benefit__wrapper {
-// 	display: flex;
-// 	flex-direction: column;
-// 	gap: 1.5em;
-// 	flex: 1 1 0px;
-// 	text-align: center;
-// }
+	.benefits {
+		&__body {
+			padding-inline: 3.5rem;
+		}
+	}
+}
 
-// .benefit__image {
-// 	height: 250px;
-// 	border-radius: 50%;
-// 	object-fit: cover;
-// }
+@include bp.media-lg {
+	.hero {
+		flex-direction: row-reverse;
 
-// .benefit__body {
-// 	display: grid;
-// 	grid-row-gap: 0.5em;
-// }
+		&__image {
+			max-width: 50%;
+			height: auto;
+		}
 
-// .social_section__body {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	gap: 2.5em;
-// }
+		&__main {
+			gap: 2em;
+			text-align: left;
+		}
+	}
 
-// .social_card__wrapper {
-// 	flex: 1 1 450px;
-// 	display: flex;
-// 	flex-direction: column;
-// 	gap: 1em;
-// 	justify-content: flex-start;
-// }
+	.benefits {
+		&__body {
+			padding: 0;
+			flex-direction: row;
+		}
+	}
 
-// .social_card__tag {
-// 	display: flex;
-// 	gap: 1em;
-// 	align-items: center;
-// }
+	.social_proof {
+		&__body {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 2.5em;
+		}
 
-// .social_card__image {
-// 	background-color: colors.$color-neutral-darker;
-// 	border-radius: 50%;
-// 	aspect-ratio: 1/1;
-// 	width: 50px;
-// 	height: 100%;
-// 	object-fit: cover;
-// }
+		&_item {
+			flex: 1 1 300px;
+		}
+	}
+}
 
-// .features_section__body {
-// 	display: grid;
-// 	place-content: center;
-// 	grid-row-gap: 1.5em;
-// }
-
-// .feature__wrapper {
-// 	display: flex;
-// 	gap: 1em;
-// 	align-items: center;
-// }
-
-// .feature__icon {
-// 	font-size: 4rem;
-// 	color: colors.$color-secondary-darker;
-// }
+@include bp.media-xl {
+	.section {
+		padding: 3.5rem 10rem;
+	}
+}

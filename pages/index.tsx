@@ -19,7 +19,7 @@ const HomePage = () => {
 					alt="Picture of a lettuce field."
 					className={classes.hero__image}
 					width={2000}
-					height={500}
+					height={2000}
 					quality={100}
 					priority
 				/>
