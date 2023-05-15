@@ -20,6 +20,7 @@
 *.pem
 /secrets.ts
 /data
+/dist
 
 # debug
 npm-debug.log*
