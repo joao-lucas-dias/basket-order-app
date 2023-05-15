@@ -1,4 +1,4 @@
-import Navbar from "@/components/Layout/Navbar/Navbar";
+import Header from "@/components/Layout/Header/Header";
 import store from "@/store/store";
 import { Roboto_Flex } from "@next/font/google";
 import type { AppProps } from "next/app";
@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
 					}
 				`}
 			</style>
-			<Navbar />
+			<Header />
 			<Component {...pageProps} />
 		</Provider>
 	);
